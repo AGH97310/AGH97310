@@ -208,9 +208,9 @@ export const Contact = () => {
                 ></textarea>
               </div>
 
-              <button type="submit" className="btn-primary btn-submit">
+              <button type="submit" className="btn-primary btn-submit" disabled={isSubmitting}>
                 <Send size={20} />
-                Envoyer la demande
+                {isSubmitting ? 'Envoi en cours...' : 'Envoyer la demande'}
               </button>
             </form>
           </div>
