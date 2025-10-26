@@ -1,16 +1,12 @@
 from fastapi import APIRouter, HTTPException, status
-from motor.motor_asyncio import AsyncIOMotorDatabase
 from models.contact import ContactRequestCreate, ContactRequest, ContactStatus
 from datetime import datetime
-import os
-from motor.motor_asyncio import AsyncIOMotorClient
 
 router = APIRouter(prefix="/contact", tags=["contact"])
 
-# MongoDB connection
-mongo_url = os.environ['MONGO_URL']
-client = AsyncIOMotorClient(mongo_url)
-db = client[os.environ['DB_NAME']]
+# We'll use the db from server.py through dependency injection
+# For now, we import it directly
+from server import db
 
 @router.post("", response_model=dict, status_code=status.HTTP_201_CREATED)
 async def create_contact_request(contact: ContactRequestCreate):
