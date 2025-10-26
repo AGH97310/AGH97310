@@ -1,0 +1,136 @@
+.whyus-section {
+  padding: 6rem 1.5rem;
+  background: linear-gradient(
+    180deg,
+    var(--bg-page) 0%,
+    rgba(184, 189, 198, 0.08) 100%
+  );
+}
+
+.whyus-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.reasons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.reason-card {
+  background: var(--bg-card);
+  border: 2px solid var(--border-light);
+  border-radius: 1.25rem;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.reason-card:hover {
+  border-color: var(--primary-navy);
+}
+
+.reason-icon-wrapper {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.reason-icon-wrapper.blue {
+  background: rgba(59, 130, 246, 0.1);
+  color: var(--accent-blue);
+}
+
+.reason-icon-wrapper.gray {
+  background: rgba(184, 189, 198, 0.2);
+  color: var(--metallic-dark);
+}
+
+.reason-card:hover .reason-icon-wrapper {
+  transform: scale(1.15);
+}
+
+.reason-card h3 {
+  margin-bottom: 0.75rem;
+}
+
+.reason-description {
+  color: var(--text-secondary);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.trusted-section {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: var(--bg-card);
+  border-radius: 1.25rem;
+  border: 2px solid var(--border-light);
+}
+
+.trusted-title {
+  margin-bottom: 2rem;
+  color: var(--primary-navy);
+}
+
+.trusted-tags {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.trusted-tag {
+  padding: 0.625rem 1.25rem;
+  background: var(--bg-section);
+  border: 1px solid var(--border-light);
+  border-radius: 2rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.trusted-tag:hover {
+  background: var(--primary-navy);
+  color: white;
+  border-color: var(--primary-navy);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .whyus-section {
+    padding: 4rem 1rem;
+  }
+
+  .reasons-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .reason-card {
+    padding: 1.5rem;
+  }
+
+  .trusted-section {
+    padding: 2rem 1rem;
+  }
+
+  .trusted-tags {
+    gap: 0.75rem;
+  }
+
+  .trusted-tag {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+}
