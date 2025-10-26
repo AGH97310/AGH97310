@@ -1,12 +1,9 @@
 from fastapi import APIRouter, HTTPException, status
 from models.contact import ContactRequestCreate, ContactRequest, ContactStatus
 from datetime import datetime
+from database import db
 
 router = APIRouter(prefix="/contact", tags=["contact"])
-
-# We'll use the db from server.py through dependency injection
-# For now, we import it directly
-from server import db
 
 @router.post("", response_model=dict, status_code=status.HTTP_201_CREATED)
 async def create_contact_request(contact: ContactRequestCreate):
