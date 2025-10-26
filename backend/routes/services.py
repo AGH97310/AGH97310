@@ -1,14 +1,10 @@
 from fastapi import APIRouter, HTTPException, status
 from typing import List
-import os
-from motor.motor_asyncio import AsyncIOMotorClient
 
 router = APIRouter(prefix="/services", tags=["services"])
 
-# MongoDB connection
-mongo_url = os.environ['MONGO_URL']
-client = AsyncIOMotorClient(mongo_url)
-db = client[os.environ['DB_NAME']]
+# We'll use the db from server.py through dependency injection
+from server import db
 
 @router.get("", response_model=dict)
 async def get_services(active_only: bool = True):
