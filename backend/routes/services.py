@@ -1,10 +1,8 @@
 from fastapi import APIRouter, HTTPException, status
 from typing import List
+from database import db
 
 router = APIRouter(prefix="/services", tags=["services"])
-
-# We'll use the db from server.py through dependency injection
-from server import db
 
 @router.get("", response_model=dict)
 async def get_services(active_only: bool = True):
