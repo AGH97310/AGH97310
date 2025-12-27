@@ -112,11 +112,14 @@ frontend:
     file: "frontend/src/pages/CGV.jsx"
     stuck_count: 0
     priority: "medium"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: true
         agent: "main"
         comment: "Created CGV page with full legal content. Route /cgv configured."
+      - working: true
+        agent: "testing"
+        comment: "VERIFIED ✅ CGV page working perfectly. Footer link navigation successful, direct URL access (/cgv) working, page displays 'Conditions Générales de Vente' title correctly, 'Retour à l'accueil' link functional."
 
   - task: "Mentions Légales page"
     implemented: true
