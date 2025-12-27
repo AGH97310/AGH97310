@@ -28,7 +28,10 @@ export const PerfumeSectionWithCart = () => {
     { id: 2, img: perfumeBois, name: "1 Bois", brand: "Collection Privée Paris", volume: "50ml", price: 35 },
     { id: 3, img: perfumeAqua, name: "Aqua Pura", brand: "Fragrance World", volume: "100ml", price: 55 },
     { id: 4, img: perfumeYara, name: "Yara Candy", brand: "Lattafa", volume: "100ml", price: 59 },
-    { id: 5, img: perfumeAzure, name: "Jean Lowe Azure", brand: "Maison Alhambra", volume: "100ml", price: 55 }
+    { id: 5, img: perfumeAzure, name: "Jean Lowe Azure", brand: "Maison Alhambra", volume: "100ml", price: 55 },
+    { id: 6, img: perfumeEmeer, name: "Emeer", brand: "Lattafa", volume: "100ml", price: 69 },
+    { id: 7, img: perfumeBrioche, name: "Brioche Vanille", brand: "Lattafa Pride", volume: "100ml", price: 69 },
+    { id: 8, img: perfumeTeriaq, name: "Teriaq", brand: "Lattafa", volume: "100ml", price: 69 }
   ];
 
   // Calculate cart values BEFORE useEffect
