@@ -302,6 +302,7 @@ export const PerfumeSectionWithCart = () => {
               <CardContent className="perfume-info">
                 <p className="perfume-brand">{perfume.brand}</p>
                 <p className="perfume-name">{perfume.name}</p>
+                <p className="perfume-volume">{perfume.volume}</p>
                 <p className="perfume-price-display">{perfume.price}€</p>
                 <Button 
                   className="perfume-add-btn"
