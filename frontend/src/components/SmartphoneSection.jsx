@@ -9,6 +9,12 @@ import './SmartphoneSection.css';
 const samsungA56 = "https://customer-assets.emergentagent.com/job_it-assistance/artifacts/o8o00gpl_samsung-galaxy-a56-5g-128-go-gris-eu-neuf.jpg";
 const samsungA36 = "https://customer-assets.emergentagent.com/job_it-assistance/artifacts/aeh31gvd_samsung-galaxy-a36-5g-256-go-blanc-non-eu-neuf.jpg";
 const samsungA26 = "https://customer-assets.emergentagent.com/job_it-assistance/artifacts/rjyuttl7_samsung-galaxy-a26-5g-256-go-noir-non-eu-neuf.jpg";
+const samsungA17 = "https://customer-assets.emergentagent.com/job_it-assistance/artifacts/wf2xc1qn_samsung-galaxy-a17-5g-128-go-gris-eu-neuf.jpg";
+
+// Images des iPhones
+const iphoneSE = "https://customer-assets.emergentagent.com/job_it-assistance/artifacts/vaj1h8xz_iphone-se-5g-2022-64-go-noir-neuf.jpg";
+const iphone16 = "https://customer-assets.emergentagent.com/job_it-assistance/artifacts/vbxqzgeu_iphone-16-128-go-myea3zda-rose-neuf.jpg";
+const iphone16e = "https://customer-assets.emergentagent.com/job_it-assistance/artifacts/tgiku6r5_iphone-16e-256-go-md1t4qla-noir-neuf.jpg";
 
 export const SmartphoneSection = () => {
   const { toast } = useToast();
