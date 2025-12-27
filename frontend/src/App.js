@@ -27,6 +27,7 @@ const Home = () => {
         <Hero />
         <Services />
         <ConsoleSection />
+        <SmartphoneSection />
         <PerfumeSectionWithCart />
         <IndividualServices />
         <BusinessServices />
