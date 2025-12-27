@@ -176,6 +176,37 @@ test_plan:
   test_all: false
   test_priority: "high_first"
 
+frontend:
+  - task: "New Smartphone Section with PayPal integration"
+    implemented: true
+    working: true
+    file: "frontend/src/components/SmartphoneSection.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Added new SmartphoneSection with 3 Samsung Galaxy phones (A56 529€, A36 479€, A26 359€) with PayPal modal integration"
+      - working: true
+        agent: "testing"
+        comment: "VERIFIED ✅ New smartphone section working perfectly. All 3 Samsung phones displayed with correct specifications: A56 5G (128 Go Gris 529€), A36 5G (256 Go Blanc 479€), A26 5G (256 Go Noir 359€). PayPal modal opens correctly when clicking 'Acheter', displays product details accurately, and shows PayPal buttons (Pay with PayPal blue button and Debit/Credit Card dark button)."
+
+  - task: "New perfumes at 69€ added to collection"
+    implemented: true
+    working: true
+    file: "frontend/src/components/PerfumeSectionWithCart.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Added 3 new perfumes at 69€ (Emeer, Brioche Vanille, Teriaq) to perfume section, bringing total to 8 perfumes"
+      - working: true
+        agent: "testing"
+        comment: "VERIFIED ✅ New perfumes section working perfectly. Total of 8 perfumes displayed correctly. All 3 new 69€ perfumes verified: Emeer (Lattafa, 100ml, 69€), Brioche Vanille (Lattafa Pride, 100ml, 69€), Teriaq (Lattafa, 100ml, 69€). Cart functionality with new perfumes working - added 2 new perfumes (138€ total), cart calculation correct, PayPal buttons appear when total >= 100€."
+
 agent_communication:
   - agent: "main"
     message: "Fixed critical bug - cartTotal was being used before initialization in useEffect. Moved all cart calculations (getCartTotal, getCartItemCount, cartTotal, cartItemCount, isCartValid) BEFORE the useEffect hook. Also created CGV and Mentions Légales pages to fix broken footer links. Please test: 1) Add perfumes to cart until total >= 100€, 2) Open cart sidebar, 3) Verify PayPal buttons appear, 4) Test footer links to /cgv and /mentions-legales"
@@ -183,6 +214,8 @@ agent_communication:
     message: "COMPREHENSIVE TESTING COMPLETED ✅ All high priority features working perfectly: 1) PayPal integration fully functional - buttons render correctly when cart >= 100€ (tested with 159€ total), 2) Cart functionality excellent - add/remove items, quantity management, total calculation all working, 3) Legal pages navigation working - footer links and direct URLs both functional, 4) CGV and Mentions Légales pages load correctly with proper titles and 'Retour à l'accueil' links. NO CRITICAL ISSUES FOUND. All tasks marked as working=true."
   - agent: "main"
     message: "Added new features: 1) 3 new perfumes at 69€ (Emeer, Brioche Vanille, Teriaq) to perfume section, 2) New SmartphoneSection with 3 Samsung Galaxy phones (A56 529€, A36 479€, A26 359€) with PayPal modal integration. Please test smartphone PayPal modal and new perfumes display."
+  - agent: "testing"
+    message: "NEW FEATURES TESTING COMPLETED ✅ All requested features working perfectly: 1) NEW SMARTPHONE SECTION: All 3 Samsung Galaxy phones displayed with exact specifications (A56 5G 128Go Gris 529€, A36 5G 256Go Blanc 479€, A26 5G 256Go Noir 359€). PayPal modal integration working - opens correctly on 'Acheter' click, shows product details, displays PayPal buttons. 2) NEW PERFUMES: 8 total perfumes displayed (5 existing + 3 new). All 3 new 69€ perfumes verified (Emeer, Brioche Vanille, Teriaq). 3) CART FUNCTIONALITY: New perfumes add to cart correctly, total calculation accurate (tested 138€), PayPal buttons appear when >= 100€. NO CRITICAL ISSUES FOUND."
 
 #    - Update the working status based on user feedback
 #    - If a user reports an issue with a task that was marked as working, increment the stuck_count
