@@ -6,67 +6,21 @@ export const Services = () => {
   const services = [
     {
       id: 1,
-      icon: Key,
-      title: 'Récupération Compte',
-      price: '25€',
-      description: 'Facebook • Gmail • Instagram',
-      features: ['En 30 min max', '100% remote', 'Paiement après succès'],
+      icon: Globe,
+      title: 'Site Vitrine Pro',
+      price: '390€',
+      description: 'Site complet livré en 10 jours pour TPE/PME',
+      features: ['Réservation en ligne', 'Optimisé Google', 'Hébergement 1 an inclus'],
       color: 'blue'
     },
     {
       id: 2,
       icon: Laptop,
-      title: 'Réinstallation Windows',
-      price: '45€',
-      description: 'Windows 10/11 • Tous drivers • Mises à jour',
-      features: ['PC comme neuf en 1h', 'Remote via TeamViewer', 'Garantie 48h'],
+      title: 'Dépannage IT',
+      price: 'Sur devis',
+      description: 'Intervention à distance • Support technique',
+      features: ['PC lent, virus & malwares', 'Comptes bloqués', 'Récupération Facebook/Gmail'],
       color: 'gray'
-    },
-    {
-      id: 3,
-      icon: Zap,
-      title: 'Nettoyage & Optimisation',
-      price: '40€',
-      description: 'Suppression fichiers inutiles • Accélération',
-      features: ['+30% de vitesse garantie', 'Avant/après visible', 'Remote en 45 min'],
-      color: 'blue'
-    },
-    {
-      id: 4,
-      icon: Shield,
-      title: 'Suppression Virus',
-      price: '45€',
-      description: 'Antivirus • Nettoyage profond • Conseils',
-      features: ['Pas de réinstallation', 'Protection durable', 'Garantie 48h'],
-      color: 'gray'
-    },
-    {
-      id: 5,
-      icon: Globe,
-      title: 'Site Vitrine Pro',
-      price: '150€',
-      description: 'Site complet en 48h pour TPE/PME',
-      features: ['Réservation en ligne', 'Optimisé Google', 'Hébergement 1 an inclus'],
-      color: 'blue'
-    },
-    {
-      id: 6,
-      icon: Smartphone,
-      title: 'Maintenance Smartphone',
-      price: '10-15€/mois',
-      description: 'Réparation écran/batterie • Remplacement express',
-      features: ['Suivi parc mobile', 'Support technique', 'Intervention rapide'],
-      color: 'gray'
-    },
-    {
-      id: 7,
-      icon: Briefcase,
-      title: 'Abonnement PME',
-      price: '99€/mois',
-      description: 'Support illimité pour entreprises',
-      features: ['Support prioritaire', '1 intervention/mois sur site', 'Cybersécurité incluse'],
-      color: 'premium',
-      featured: true
     }
   ];
 
