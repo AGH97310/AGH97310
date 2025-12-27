@@ -135,19 +135,6 @@ export const PerfumeSectionWithCart = () => {
       return newCart;
     });
   };
-
-  const getCartTotal = () => {
-    return Object.entries(cart).reduce((total, [id, quantity]) => {
-      const perfume = perfumes.find(p => p.id === parseInt(id));
-      return total + (perfume ? perfume.price * quantity : 0);
-    }, 0);
-  };
-
-  const getCartItemCount = () => {
-    return Object.values(cart).reduce((sum, qty) => sum + qty, 0);
-  };
-
-  const cartTotal = getCartTotal();
   const cartItemCount = getCartItemCount();
   const isCartValid = cartTotal >= 100;
 
