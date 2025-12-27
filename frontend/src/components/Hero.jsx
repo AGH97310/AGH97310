@@ -31,6 +31,10 @@ export const Hero = () => {
             </div>
           </div>
 
+          <p className="body-large hero-subtitle fade-in-up" style={{ animationDelay: '0.2s' }}>
+            Kourou & Guyane entière
+          </p>
+
           <div className="hero-features fade-in-up" style={{ animationDelay: '0.3s' }}>
             <div className="feature-item">
               <CheckCircle size={20} className="feature-icon" />
