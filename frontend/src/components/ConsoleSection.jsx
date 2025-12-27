@@ -4,9 +4,9 @@ import { Button } from './ui/button';
 import { CheckCircle, Zap, Truck, MessageCircle } from 'lucide-react';
 import './ConsoleSection.css';
 
-// Placeholders pour les images - à remplacer par vos vraies images
-const consoleBlancRose = "https://via.placeholder.com/400x400/FFB6C1/000000?text=Console+Blanc/Rose";
-const consoleViolet = "https://via.placeholder.com/400x400/9370DB/FFFFFF?text=Console+Violet/Vert";
+// Images réelles des consoles
+const consoleBlancRose = "https://customer-assets.emergentagent.com/job_guyane-it-service/artifacts/9o1ff2kt_console-de-jeu-video-portable-jellymini5-e5-ecran-ips-5-64-go-blanc-rose.jpg";
+const consoleViolet = "https://customer-assets.emergentagent.com/job_guyane-it-service/artifacts/3im3u2pd_console-de-jeu-video-portable-jellymini5-e5-ecran-ips-5-64-go-violet.jpg";
 
 export const ConsoleSection = () => {
   const paypalButtonRef = useRef(null);
