@@ -11,6 +11,10 @@ const perfumeBois = "https://customer-assets.emergentagent.com/job_guyane-it-ser
 const perfumeAqua = "https://customer-assets.emergentagent.com/job_guyane-it-service/artifacts/ubr0p81i_eau-de-parfum-fragrance-world-aqua-pura-unisexe-70ml.jpg";
 const perfumeYara = "https://customer-assets.emergentagent.com/job_guyane-it-service/artifacts/8g0zblpp_Eau%20de%20Parfum%20Lattafa%20Yara%20Candy%20-%20pour%20femme%20-%20100ml.jpg";
 const perfumeAzure = "https://customer-assets.emergentagent.com/job_guyane-it-service/artifacts/o36iyi9v_eau-de-parfum-maison-alhambra-jean-lowe-azure-100ml.jpg";
+// Nouveaux parfums à 69€
+const perfumeEmeer = "https://customer-assets.emergentagent.com/job_it-assistance/artifacts/m93oobjs_eau-de-parfum-lattafa-emeer-unisex-100ml.jpg";
+const perfumeBrioche = "https://customer-assets.emergentagent.com/job_it-assistance/artifacts/7ruggbue_eau-de-parfum-lattafa-pride-brioche-vanilla-100ml.jpg";
+const perfumeTeriaq = "https://customer-assets.emergentagent.com/job_it-assistance/artifacts/32l14u2d_eau-de-parfum-lattafa-teriaq-unisex-100ml.jpg";
 
 export const PerfumeSectionWithCart = () => {
   const { toast } = useToast();
