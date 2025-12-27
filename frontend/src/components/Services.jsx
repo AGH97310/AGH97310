@@ -1,5 +1,5 @@
 import React from 'react';
-import { Key, Laptop, Zap, Shield, Globe, Smartphone, Briefcase } from 'lucide-react';
+import { Laptop, Globe } from 'lucide-react';
 import './Services.css';
 
 export const Services = () => {
