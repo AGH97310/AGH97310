@@ -14,6 +14,8 @@ import { Contact } from './components/Contact';
 import { FAQ } from './components/FAQ';
 import { Footer } from './components/Footer';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
+import { CGV } from './pages/CGV';
+import { MentionsLegales } from './pages/MentionsLegales';
 import './App.css';
 
 const Home = () => {
