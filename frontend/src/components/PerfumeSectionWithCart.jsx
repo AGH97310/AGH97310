@@ -377,14 +377,6 @@ export const PerfumeSectionWithCart = () => {
 
             <div className="order-info-grid">
               <div className="order-info-item">
-                <Clock className="order-info-icon" />
-                <div>
-                  <p className="order-info-title">Validation des commandes</p>
-                  <p className="order-info-text">Les commandes sont validées chaque vendredi à 19h</p>
-                </div>
-              </div>
-
-              <div className="order-info-item">
                 <Truck className="order-info-icon" />
                 <div>
                   <p className="order-info-title">Délai de livraison</p>
