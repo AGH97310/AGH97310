@@ -142,11 +142,14 @@ frontend:
     file: "frontend/src/components/Footer.jsx"
     stuck_count: 0
     priority: "medium"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: true
         agent: "main"
         comment: "Links to /cgv and /mentions-legales now functional (no longer 404)"
+      - working: true
+        agent: "testing"
+        comment: "VERIFIED ✅ Footer legal links working perfectly. Both CGV and Mentions Légales links in footer navigate correctly to their respective pages, no 404 errors, proper routing configured."
 
 backend:
   - task: "Contact form API"
