@@ -105,13 +105,6 @@ export const SmartphoneSection = () => {
       features: ["5G", "256 Go", "Puce A19", "Neuf"]
     }
   ];
-      storage: "256 Go", 
-      color: "Noir",
-      price: 949,
-      brand: "Apple",
-      features: ["5G", "256 Go", "Puce A18", "Neuf"]
-    }
-  ];
 
   // PayPal Integration for selected phone
   useEffect(() => {
