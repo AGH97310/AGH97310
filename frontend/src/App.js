@@ -6,7 +6,6 @@ import { Hero } from './components/Hero';
 import { Services } from './components/Services';
 import { ConsoleSection } from './components/ConsoleSection';
 import { PerfumeSection } from './components/PerfumeSection';
-import { ServicePosters } from './components/ServicePosters';
 import { IndividualServices } from './components/IndividualServices';
 import { BusinessServices } from './components/BusinessServices';
 import { WhyUs } from './components/WhyUs';
