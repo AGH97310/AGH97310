@@ -1,8 +1,7 @@
 import React from 'react';
 import { Card, CardContent } from './ui/card';
 import { Button } from './ui/button';
-import { Sparkles, ShoppingBag, Clock, Truck, MessageCircle, CreditCard } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Sparkles, ShoppingBag, Clock, Truck, MessageCircle } from 'lucide-react';
 import './PerfumeSection.css';
 
 // Images réelles des parfums
