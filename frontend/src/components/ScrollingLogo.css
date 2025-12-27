@@ -1,4 +1,9 @@
 .scrolling-logo-banner {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  right: 0;
+  z-index: 900;
   width: 100%;
   background: linear-gradient(90deg, 
     rgba(0, 212, 255, 0.1) 0%, 
@@ -9,7 +14,6 @@
   border-bottom: 1px solid rgba(0, 212, 255, 0.3);
   border-top: 1px solid rgba(0, 212, 255, 0.3);
   overflow: hidden;
-  position: relative;
   padding: 0.5rem 0;
   box-shadow: 
     0 0 30px rgba(0, 212, 255, 0.2),
