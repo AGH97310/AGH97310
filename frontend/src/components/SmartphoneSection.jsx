@@ -32,7 +32,7 @@ export const SmartphoneSection = () => {
       color: "Gris",
       price: 529,
       brand: "Samsung",
-      features: ["5G", "128 Go", "Écran AMOLED", "Neuf EU"]
+      features: ["5G", "128 Go", "Écran AMOLED", "Neuf"]
     },
     { 
       id: 2, 
@@ -62,7 +62,7 @@ export const SmartphoneSection = () => {
       color: "Gris",
       price: 279,
       brand: "Samsung",
-      features: ["5G", "128 Go", "Neuf EU"]
+      features: ["5G", "128 Go", "Neuf"]
     },
     { 
       id: 5, 
@@ -88,6 +88,23 @@ export const SmartphoneSection = () => {
       id: 7, 
       img: iphone16e, 
       name: "iPhone 16e", 
+      storage: "256 Go", 
+      color: "Noir",
+      price: 949,
+      brand: "Apple",
+      features: ["5G", "256 Go", "Puce A18", "Neuf"]
+    },
+    { 
+      id: 8, 
+      img: iphone17, 
+      name: "iPhone 17", 
+      storage: "256 Go", 
+      color: "Sauge",
+      price: 1069,
+      brand: "Apple",
+      features: ["5G", "256 Go", "Puce A19", "Neuf"]
+    }
+  ];
       storage: "256 Go", 
       color: "Noir",
       price: 949,
