@@ -30,6 +30,7 @@ export const SmartphoneSection = () => {
       storage: "128 Go", 
       color: "Gris",
       price: 529,
+      brand: "Samsung",
       features: ["5G", "128 Go", "Écran AMOLED", "Neuf EU"]
     },
     { 
@@ -39,6 +40,7 @@ export const SmartphoneSection = () => {
       storage: "256 Go", 
       color: "Blanc",
       price: 479,
+      brand: "Samsung",
       features: ["5G", "256 Go", "Super AMOLED", "Neuf"]
     },
     { 
@@ -48,7 +50,48 @@ export const SmartphoneSection = () => {
       storage: "256 Go", 
       color: "Noir",
       price: 359,
+      brand: "Samsung",
       features: ["5G", "256 Go", "Grand écran", "Neuf"]
+    },
+    { 
+      id: 4, 
+      img: samsungA17, 
+      name: "Samsung Galaxy A17 5G", 
+      storage: "128 Go", 
+      color: "Gris",
+      price: 279,
+      brand: "Samsung",
+      features: ["5G", "128 Go", "Neuf EU"]
+    },
+    { 
+      id: 5, 
+      img: iphoneSE, 
+      name: "iPhone SE 5G 2022", 
+      storage: "64 Go", 
+      color: "Noir",
+      price: 699,
+      brand: "Apple",
+      features: ["5G", "64 Go", "Puce A15", "Neuf"]
+    },
+    { 
+      id: 6, 
+      img: iphone16, 
+      name: "iPhone 16", 
+      storage: "128 Go", 
+      color: "Rose",
+      price: 969,
+      brand: "Apple",
+      features: ["5G", "128 Go", "Puce A18", "Neuf"]
+    },
+    { 
+      id: 7, 
+      img: iphone16e, 
+      name: "iPhone 16e", 
+      storage: "256 Go", 
+      color: "Noir",
+      price: 949,
+      brand: "Apple",
+      features: ["5G", "256 Go", "Puce A18", "Neuf"]
     }
   ];
 
