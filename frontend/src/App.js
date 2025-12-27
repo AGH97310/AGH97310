@@ -28,7 +28,6 @@ const Home = () => {
         <PerfumeSection />
         <IndividualServices />
         <BusinessServices />
-        <ServicePosters />
         <WhyUs />
         <AboutSection />
         <Contact />
