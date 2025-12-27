@@ -49,10 +49,21 @@
 .footer-tagline {
   font-family: 'Space Mono', monospace;
   font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  opacity: 0.9;
+  margin-bottom: 0.25rem;
+  color: white;
+}
+
+.footer-slogan {
+  font-family: 'Space Mono', monospace;
+  font-size: 1.125rem;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  opacity: 0.9;
-  margin-bottom: 0.5rem;
+  color: var(--metallic-light);
+  margin-bottom: 0.75rem;
 }
 
 .footer-description {
@@ -138,29 +149,105 @@ a.contact-link:hover {
   transform: translateX(3px);
 }
 
+/* Legal Section */
+.footer-legal-section {
+  padding: 2.5rem 0;
+  margin: 2rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-legal-header {
+  margin-bottom: 1.5rem;
+}
+
+.footer-legal-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+}
+
+.footer-legal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.footer-legal-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-legal-company {
+  font-weight: 700;
+  color: white;
+  font-size: 1rem;
+}
+
+.footer-legal-text {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+}
+
+.footer-legal-address {
+  font-size: 0.75rem;
+  opacity: 0.7;
+  margin-top: 0.5rem;
+}
+
+.footer-legal-subtitle {
+  font-weight: 600;
+  color: white;
+  margin-bottom: 0.5rem;
+  font-size: 0.9375rem;
+}
+
+.footer-legal-small {
+  font-size: 0.8125rem;
+  line-height: 1.7;
+}
+
 .footer-bottom {
   padding-top: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer-bottom-content {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.copyright,
-.footer-credit {
+  gap: 0.75rem;
   font-size: 0.875rem;
   opacity: 0.7;
+}
+
+.footer-separator {
+  opacity: 0.5;
+}
+
+.footer-bottom-link {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.footer-bottom-link:hover {
+  color: white;
+  text-decoration: underline;
 }
 
 @media (max-width: 968px) {
   .footer-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
+  }
+
+  .footer-legal-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 }
 
@@ -177,9 +264,18 @@ a.contact-link:hover {
   .footer-bottom-content {
     flex-direction: column;
     text-align: center;
+    gap: 0.5rem;
+  }
+
+  .footer-separator {
+    display: none;
   }
 
   .footer-logo-image {
     height: 50px;
+  }
+
+  .footer-legal-section {
+    padding: 2rem 0;
   }
 }
