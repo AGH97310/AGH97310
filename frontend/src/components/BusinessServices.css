@@ -1,0 +1,246 @@
+.business-section {
+  padding: 5rem 1.5rem;
+  background: linear-gradient(180deg, var(--bg-page) 0%, rgba(184, 189, 198, 0.05) 100%);
+}
+
+.business-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.business-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.business-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(59, 130, 246, 0.1);
+  border-radius: 2rem;
+  color: var(--primary-navy);
+  font-weight: 600;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.business-title {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.business-subtitle {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+}
+
+.business-table-card {
+  background: var(--bg-card);
+  border: 2px solid var(--border-light);
+  box-shadow: 0 8px 32px rgba(30, 58, 95, 0.1);
+}
+
+.business-table-content {
+  padding: 2.5rem;
+}
+
+.business-table-wrapper {
+  overflow-x: auto;
+  margin-bottom: 2.5rem;
+}
+
+.business-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.business-table thead {
+  border-bottom: 2px solid var(--border-primary);
+}
+
+.business-table th {
+  text-align: left;
+  padding: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.9375rem;
+}
+
+.business-table tbody tr {
+  border-bottom: 1px solid var(--border-light);
+  transition: background 0.2s ease;
+}
+
+.business-table tbody tr:hover {
+  background: rgba(184, 189, 198, 0.05);
+}
+
+.business-table td {
+  padding: 1rem;
+  color: var(--text-secondary);
+}
+
+.price-cell {
+  font-weight: 600;
+  color: var(--primary-navy);
+  white-space: nowrap;
+}
+
+.details-cell {
+  font-size: 0.8125rem;
+}
+
+.forfait-row {
+  background: rgba(59, 130, 246, 0.05);
+  border-top: 2px solid var(--primary-navy);
+  border-bottom: 2px solid var(--primary-navy);
+}
+
+.forfait-name {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.forfait-subtitle {
+  font-weight: 400;
+  font-size: 0.875rem;
+}
+
+.forfait-price {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--primary-navy);
+}
+
+.additional-services {
+  padding: 2rem 0;
+  border-top: 1px solid var(--border-light);
+  margin-bottom: 2rem;
+}
+
+.additional-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+
+.additional-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.additional-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+}
+
+.additional-service-name {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.875rem;
+}
+
+.additional-service-price {
+  color: var(--primary-navy);
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.business-advantages {
+  background: rgba(59, 130, 246, 0.1);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid var(--primary-navy);
+  margin-bottom: 2rem;
+}
+
+.advantages-title {
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.advantages-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.advantages-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.advantage-icon {
+  width: 1rem;
+  height: 1rem;
+  color: var(--accent-success);
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
+.business-cta {
+  text-align: center;
+}
+
+.business-cta-btn {
+  background: var(--primary-navy);
+  color: white;
+}
+
+.business-cta-btn:hover {
+  background: var(--accent-blue);
+  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.3);
+}
+
+@media (max-width: 968px) {
+  .business-section {
+    padding: 3rem 1rem;
+  }
+
+  .business-table-content {
+    padding: 1.5rem;
+  }
+
+  .business-table {
+    font-size: 0.8125rem;
+  }
+
+  .business-table th,
+  .business-table td {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .additional-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .business-cta-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .business-table-wrapper {
+    overflow-x: scroll;
+  }
+
+  .business-table {
+    min-width: 600px;
+  }
+}
