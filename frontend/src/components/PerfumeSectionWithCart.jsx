@@ -16,14 +16,86 @@ export const PerfumeSectionWithCart = () => {
   const { toast } = useToast();
   const [cart, setCart] = useState({});
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const paypalButtonRef = useRef(null);
+  const paypalButtonsRendered = useRef(false);
 
   const perfumes = [
-    { id: 1, img: perfumeEclaire, name: "Lattafa Eclaire", brand: "Lattafa", price: 25 },
-    { id: 2, img: perfumeBois, name: "1 Bois", brand: "Collection Privée Paris", price: 30 },
-    { id: 3, img: perfumeAqua, name: "Aqua Pura", brand: "Fragrance World", price: 22 },
-    { id: 4, img: perfumeYara, name: "Yara Candy", brand: "Lattafa", price: 25 },
-    { id: 5, img: perfumeAzure, name: "Jean Lowe Azure", brand: "Maison Alhambra", price: 28 }
+    { id: 1, img: perfumeEclaire, name: "Lattafa Eclaire", brand: "Lattafa", volume: "100ml", price: 69 },
+    { id: 2, img: perfumeBois, name: "1 Bois", brand: "Collection Privée Paris", volume: "50ml", price: 35 },
+    { id: 3, img: perfumeAqua, name: "Aqua Pura", brand: "Fragrance World", volume: "100ml", price: 55 },
+    { id: 4, img: perfumeYara, name: "Yara Candy", brand: "Lattafa", volume: "100ml", price: 59 },
+    { id: 5, img: perfumeAzure, name: "Jean Lowe Azure", brand: "Maison Alhambra", volume: "100ml", price: 55 }
   ];
+
+  // PayPal Integration
+  useEffect(() => {
+    if (!isCartOpen || cartTotal < 100 || !paypalButtonRef.current) {
+      return;
+    }
+
+    const loadPayPalButtons = () => {
+      const paypal = window.PayPalSDK || window.paypal;
+      
+      if (!paypal || paypalButtonsRendered.current) {
+        if (!paypal) {
+          setTimeout(loadPayPalButtons, 500);
+        }
+        return;
+      }
+
+      paypalButtonsRendered.current = true;
+      paypalButtonRef.current.innerHTML = '';
+
+      // Create description with cart items
+      const itemsDescription = Object.entries(cart).map(([id, quantity]) => {
+        const perfume = perfumes.find(p => p.id === parseInt(id));
+        return `${quantity}x ${perfume.name}`;
+      }).join(', ');
+
+      paypal.Buttons({
+        style: {
+          layout: 'vertical',
+          color: 'blue',
+          shape: 'rect',
+          label: 'pay'
+        },
+        createOrder: (data, actions) => {
+          return actions.order.create({
+            purchase_units: [{
+              description: `Parfums: ${itemsDescription}`,
+              amount: {
+                currency_code: "EUR",
+                value: cartTotal.toFixed(2)
+              }
+            }]
+          });
+        },
+        onApprove: async (data, actions) => {
+          const order = await actions.order.capture();
+          toast({
+            title: "Paiement réussi !",
+            description: `Merci pour votre commande. ID: ${order.id}`,
+          });
+          setCart({});
+          setIsCartOpen(false);
+        },
+        onError: (err) => {
+          console.error('Erreur PayPal:', err);
+          toast({
+            title: "Erreur de paiement",
+            description: "Une erreur est survenue. Veuillez réessayer.",
+            variant: "destructive"
+          });
+        }
+      }).render(paypalButtonRef.current);
+    };
+
+    loadPayPalButtons();
+
+    return () => {
+      paypalButtonsRendered.current = false;
+    };
+  }, [isCartOpen, cart, cartTotal]);
 
   const addToCart = (perfumeId) => {
     setCart(prev => ({
