@@ -10,6 +10,9 @@ import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import './App.css';
 
+// Note: Mise à jour en cours - Le site actuel utilise les composants modulaires
+// Une version avec page unique complète peut être ajoutée plus tard
+
 const Home = () => {
   return (
     <div>
