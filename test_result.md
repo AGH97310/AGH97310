@@ -71,6 +71,103 @@
 #
 # 2. Incorporate User Feedback:
 #    - When a user provides feedback that something is or isn't working, add this information to the relevant task's status_history
+
+
+user_problem_statement: "Site professionnel pour NEOTECH T+LEWUYU - services IT et vente de produits (consoles, parfums) avec intégration PayPal"
+
+frontend:
+  - task: "PayPal integration for perfume cart"
+    implemented: true
+    working: true
+    file: "frontend/src/components/PerfumeSectionWithCart.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Fixed cartTotal initialization error - moved variable declarations before useEffect. PayPal buttons now render correctly when cart total >= 100€"
+
+  - task: "Shopping cart functionality"
+    implemented: true
+    working: true
+    file: "frontend/src/components/PerfumeSectionWithCart.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Cart add/remove, quantity management, total calculation all working. Minimum 100€ validation in place."
+
+  - task: "CGV legal page"
+    implemented: true
+    working: true
+    file: "frontend/src/pages/CGV.jsx"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: true
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Created CGV page with full legal content. Route /cgv configured."
+
+  - task: "Mentions Légales page"
+    implemented: true
+    working: true
+    file: "frontend/src/pages/MentionsLegales.jsx"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: true
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Created Mentions Légales page with RGPD content. Route /mentions-legales configured."
+
+  - task: "Footer legal links"
+    implemented: true
+    working: true
+    file: "frontend/src/components/Footer.jsx"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: true
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Links to /cgv and /mentions-legales now functional (no longer 404)"
+
+backend:
+  - task: "Contact form API"
+    implemented: true
+    working: true
+    file: "backend/routes/contact.py"
+    stuck_count: 0
+    priority: "low"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Already working from previous session"
+
+metadata:
+  created_by: "main_agent"
+  version: "1.0"
+  test_sequence: 1
+  run_ui: true
+
+test_plan:
+  current_focus:
+    - "PayPal integration for perfume cart"
+    - "Shopping cart functionality"
+    - "Footer legal links"
+  stuck_tasks: []
+  test_all: false
+  test_priority: "high_first"
+
+agent_communication:
+  - agent: "main"
+    message: "Fixed critical bug - cartTotal was being used before initialization in useEffect. Moved all cart calculations (getCartTotal, getCartItemCount, cartTotal, cartItemCount, isCartValid) BEFORE the useEffect hook. Also created CGV and Mentions Légales pages to fix broken footer links. Please test: 1) Add perfumes to cart until total >= 100€, 2) Open cart sidebar, 3) Verify PayPal buttons appear, 4) Test footer links to /cgv and /mentions-legales"
+
 #    - Update the working status based on user feedback
 #    - If a user reports an issue with a task that was marked as working, increment the stuck_count
 #    - Whenever user reports issue in the app, if we have testing agent and task_result.md file so find the appropriate task for that and append in status_history of that task to contain the user concern and problem as well 
