@@ -207,6 +207,31 @@ frontend:
         agent: "testing"
         comment: "VERIFIED ✅ New perfumes section working perfectly. Total of 8 perfumes displayed correctly. All 3 new 69€ perfumes verified: Emeer (Lattafa, 100ml, 69€), Brioche Vanille (Lattafa Pride, 100ml, 69€), Teriaq (Lattafa, 100ml, 69€). Cart functionality with new perfumes working - added 2 new perfumes (138€ total), cart calculation correct, PayPal buttons appear when total >= 100€."
 
+frontend:
+  - task: "Smartphone Section - 7 phones with Samsung & Apple title"
+    implemented: true
+    working: true
+    file: "frontend/src/components/SmartphoneSection.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "VERIFIED ✅ Smartphone section fully updated with 7 phones total. Title correctly shows 'Samsung & Apple'. All phones verified: Samsung Galaxy A56 5G (128 Go Gris 529€), A36 5G (256 Go Blanc 479€), A26 5G (256 Go Noir 359€), A17 5G (128 Go Gris 279€), iPhone SE 5G 2022 (64 Go Noir 699€), iPhone 16 (128 Go Rose 969€), iPhone 16e (256 Go Noir 949€). All specifications and prices match requirements exactly."
+
+  - task: "Perfume Order Process - Remove Validation des commandes"
+    implemented: true
+    working: true
+    file: "frontend/src/components/PerfumeSectionWithCart.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "VERIFIED ✅ Perfume order process section correctly updated. 'Validation des commandes' field with Friday 19h text has been completely removed. Only 'Délai de livraison' remains in the info grid as requested. Order process card shows proper 4-step process with only delivery information displayed below."
+
 agent_communication:
   - agent: "main"
     message: "Fixed critical bug - cartTotal was being used before initialization in useEffect. Moved all cart calculations (getCartTotal, getCartItemCount, cartTotal, cartItemCount, isCartValid) BEFORE the useEffect hook. Also created CGV and Mentions Légales pages to fix broken footer links. Please test: 1) Add perfumes to cart until total >= 100€, 2) Open cart sidebar, 3) Verify PayPal buttons appear, 4) Test footer links to /cgv and /mentions-legales"
@@ -216,6 +241,8 @@ agent_communication:
     message: "Added new features: 1) 3 new perfumes at 69€ (Emeer, Brioche Vanille, Teriaq) to perfume section, 2) New SmartphoneSection with 3 Samsung Galaxy phones (A56 529€, A36 479€, A26 359€) with PayPal modal integration. Please test smartphone PayPal modal and new perfumes display."
   - agent: "testing"
     message: "NEW FEATURES TESTING COMPLETED ✅ All requested features working perfectly: 1) NEW SMARTPHONE SECTION: All 3 Samsung Galaxy phones displayed with exact specifications (A56 5G 128Go Gris 529€, A36 5G 256Go Blanc 479€, A26 5G 256Go Noir 359€). PayPal modal integration working - opens correctly on 'Acheter' click, shows product details, displays PayPal buttons. 2) NEW PERFUMES: 8 total perfumes displayed (5 existing + 3 new). All 3 new 69€ perfumes verified (Emeer, Brioche Vanille, Teriaq). 3) CART FUNCTIONALITY: New perfumes add to cart correctly, total calculation accurate (tested 138€), PayPal buttons appear when >= 100€. NO CRITICAL ISSUES FOUND."
+  - agent: "testing"
+    message: "LATEST FEATURES TESTING COMPLETED ✅ All requested updates verified successfully: 1) SMARTPHONE SECTION: Now displays 7 phones total with correct 'Samsung & Apple' title. All 4 new phones added (Samsung A17 5G 279€, iPhone SE 5G 2022 699€, iPhone 16 969€, iPhone 16e 949€) with exact specifications. 2) PERFUME ORDER PROCESS: 'Validation des commandes' field successfully removed. Only 'Délai de livraison' remains in info grid as requested. Both sections working perfectly with no critical issues found."
 
 #    - Update the working status based on user feedback
 #    - If a user reports an issue with a task that was marked as working, increment the stuck_count
