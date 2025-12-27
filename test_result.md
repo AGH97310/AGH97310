@@ -171,10 +171,7 @@ metadata:
   run_ui: true
 
 test_plan:
-  current_focus:
-    - "PayPal integration for perfume cart"
-    - "Shopping cart functionality"
-    - "Footer legal links"
+  current_focus: []
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
