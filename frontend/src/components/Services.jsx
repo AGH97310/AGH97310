@@ -19,8 +19,17 @@ export const Services = () => {
       title: 'Dépannage IT',
       price: 'Sur devis',
       description: 'Intervention à distance • Support technique',
-      features: ['PC lent, virus & malwares', 'Comptes bloqués', 'Récupération Facebook/Gmail'],
+      features: ['PC lent, virus & malwares', 'Comptes bloqués', 'Maintenance poste informatique'],
       color: 'gray'
+    },
+    {
+      id: 3,
+      icon: ShoppingBag,
+      title: 'Ventes Privées',
+      price: 'Sur devis',
+      description: 'B2B & B2C',
+      features: ['Smartphones dernière génération', 'Parfums orientaux premium', 'Livraison gratuite Kourou'],
+      color: 'blue'
     }
   ];
 
