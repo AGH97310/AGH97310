@@ -27,6 +27,22 @@ export const PerfumeSectionWithCart = () => {
     { id: 5, img: perfumeAzure, name: "Jean Lowe Azure", brand: "Maison Alhambra", volume: "100ml", price: 55 }
   ];
 
+  // Calculate cart values BEFORE useEffect
+  const getCartTotal = () => {
+    return Object.entries(cart).reduce((total, [id, quantity]) => {
+      const perfume = perfumes.find(p => p.id === parseInt(id));
+      return total + (perfume ? perfume.price * quantity : 0);
+    }, 0);
+  };
+
+  const getCartItemCount = () => {
+    return Object.values(cart).reduce((sum, qty) => sum + qty, 0);
+  };
+
+  const cartTotal = getCartTotal();
+  const cartItemCount = getCartItemCount();
+  const isCartValid = cartTotal >= 100;
+
   // PayPal Integration
   useEffect(() => {
     if (!isCartOpen || cartTotal < 100 || !paypalButtonRef.current) {
@@ -95,7 +111,7 @@ export const PerfumeSectionWithCart = () => {
     return () => {
       paypalButtonsRendered.current = false;
     };
-  }, [isCartOpen, cart, cartTotal]);
+  }, [isCartOpen, cart, cartTotal, toast]);
 
   const addToCart = (perfumeId) => {
     setCart(prev => ({
