@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Card, CardContent } from './ui/card';
 import { Button } from './ui/button';
-import { Sparkles, ShoppingBag, Truck, MessageCircle, Plus, Minus, ShoppingCart, X } from 'lucide-react';
+import { Sparkles, ShoppingBag, MessageCircle, Plus, Minus, ShoppingCart, X } from 'lucide-react';
 import { useToast } from '../hooks/use-toast';
 import './PerfumeSectionWithCart.css';
 
