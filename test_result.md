@@ -127,11 +127,14 @@ frontend:
     file: "frontend/src/pages/MentionsLegales.jsx"
     stuck_count: 0
     priority: "medium"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: true
         agent: "main"
         comment: "Created Mentions Légales page with RGPD content. Route /mentions-legales configured."
+      - working: true
+        agent: "testing"
+        comment: "VERIFIED ✅ Mentions Légales page working perfectly. Footer link navigation successful, direct URL access (/mentions-legales) working, page displays 'Mentions Légales' title correctly, 'Retour à l'accueil' link functional."
 
   - task: "Footer legal links"
     implemented: true
