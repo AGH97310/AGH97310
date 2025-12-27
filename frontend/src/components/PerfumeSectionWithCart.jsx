@@ -135,8 +135,6 @@ export const PerfumeSectionWithCart = () => {
       return newCart;
     });
   };
-  const cartItemCount = getCartItemCount();
-  const isCartValid = cartTotal >= 100;
 
   const handleCheckout = () => {
     if (!isCartValid) {
