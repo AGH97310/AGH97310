@@ -19,13 +19,17 @@ export const Hero = () => {
             <span className="mono-text">Luxe. Digital. Local.</span>
           </div>
 
-          <h1 className="heading-hero fade-in-up" style={{ animationDelay: '0.1s' }}>
+          <h2 className="heading-hero fade-in-up" style={{ animationDelay: '0.1s' }}>
             La Tech Vient <span className="gradient-text">à Vous</span>
-          </h1>
+          </h2>
 
-          <p className="body-large hero-subtitle fade-in-up" style={{ animationDelay: '0.2s' }}>
-            Assistance IT & digitale à distance • Kourou & Guyane entière
-          </p>
+          <div className="scrolling-title-wrapper">
+            <div className="scrolling-title">
+              <span className="scrolling-text">Assistance IT & Digitale à Distance</span>
+              <span className="scrolling-text">Assistance IT & Digitale à Distance</span>
+              <span className="scrolling-text">Assistance IT & Digitale à Distance</span>
+            </div>
+          </div>
 
           <div className="hero-features fade-in-up" style={{ animationDelay: '0.3s' }}>
             <div className="feature-item">
