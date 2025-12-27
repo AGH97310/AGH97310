@@ -97,11 +97,14 @@ frontend:
     file: "frontend/src/components/PerfumeSectionWithCart.jsx"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: true
         agent: "main"
         comment: "Cart add/remove, quantity management, total calculation all working. Minimum 100€ validation in place."
+      - working: true
+        agent: "testing"
+        comment: "VERIFIED ✅ Cart functionality excellent. Successfully added 3 perfumes (Lattafa Eclaire 69€, 1 Bois 35€, Aqua Pura 55€), cart button shows correct count and total (3 items, 159€), cart sidebar opens/displays items correctly, quantity controls working."
 
   - task: "CGV legal page"
     implemented: true
