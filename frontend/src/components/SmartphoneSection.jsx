@@ -180,9 +180,9 @@ export const SmartphoneSection = () => {
         <div className="smartphone-header">
           <div className="smartphone-badge">
             <Smartphone className="h-5 w-5" />
-            SMARTPHONES SAMSUNG
+            SMARTPHONES
           </div>
-          <h2 className="smartphone-title">Samsung Galaxy 5G</h2>
+          <h2 className="smartphone-title">Samsung & Apple</h2>
           <p className="smartphone-subtitle">
             Smartphones neufs • Garantie constructeur • Livraison Guyane
           </p>
