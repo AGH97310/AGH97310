@@ -207,6 +207,40 @@
   cursor: not-allowed;
 }
 
+/* Cart PayPal Section */
+.cart-paypal-section {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: rgba(59, 130, 246, 0.05);
+  border-radius: 0.75rem;
+  border: 1px solid var(--border-light);
+}
+
+.cart-payment-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+
+.cart-paypal-buttons {
+  min-height: 50px;
+}
+
+.cart-whatsapp-btn {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  border-color: var(--primary-navy);
+  color: var(--primary-navy);
+}
+
+.cart-whatsapp-btn:hover {
+  background: var(--primary-navy);
+  color: white;
+}
+
 /* Perfume Card Additions */
 .perfume-price-display {
   font-size: 1.5rem;
