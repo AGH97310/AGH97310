@@ -374,17 +374,6 @@ export const PerfumeSectionWithCart = () => {
                 </div>
               ))}
             </div>
-
-            <div className="order-info-grid">
-              <div className="order-info-item">
-                <Truck className="order-info-icon" />
-                <div>
-                  <p className="order-info-title">Délai de livraison</p>
-                  <p className="order-info-text">Livraison à partir du mardi ou mercredi au plus tard</p>
-                  <p className="order-info-sub">Livraison gratuite à Kourou</p>
-                </div>
-              </div>
-            </div>
           </CardContent>
         </Card>
 
