@@ -1,5 +1,6 @@
 import React from 'react';
-import { Phone, Mail, MapPin, Facebook, Linkedin, Instagram } from 'lucide-react';
+import { Phone, Mail, MapPin, Facebook, Linkedin, Instagram, Music2, Zap } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import './Footer.css';
 
 export const Footer = () => {
@@ -12,12 +13,12 @@ export const Footer = () => {
   ];
 
   const services = [
-    'Récupération Compte',
-    'Réinstallation Windows',
-    'Nettoyage PC',
-    'Suppression Virus',
-    'Site Vitrine',
-    'Abonnement PME'
+    'Site Vitrine Pro',
+    'Dépannage IT',
+    'Parfums Orientaux',
+    'Console Gaming',
+    'Services Particuliers',
+    'Services Professionnels'
   ];
 
   return (
@@ -34,20 +35,24 @@ export const Footer = () => {
               />
             </div>
             <p className="footer-tagline">
+              <Zap className="inline h-4 w-4 mr-2" />
+              Votre tech, livrée chez vous
+            </p>
+            <p className="footer-slogan">
               Luxe. Digital. Local.
             </p>
             <p className="footer-description">
-              Votre partenaire tech de confiance pour l'assistance IT et digitale à distance à Kourou et dans toute la Guyane.
+              Assistance IT & digitale à distance pour particuliers et professionnels à Kourou et toute la Guyane.
             </p>
             <div className="footer-social">
-              <a href="#" className="social-link" aria-label="Facebook">
+              <a href="https://www.facebook.com/share/16D7VxUKWL/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Facebook">
                 <Facebook size={20} />
               </a>
-              <a href="#" className="social-link" aria-label="LinkedIn">
-                <Linkedin size={20} />
-              </a>
-              <a href="#" className="social-link" aria-label="Instagram">
+              <a href="https://www.instagram.com/neotech_tilewuyu?igsh=b3Fwa2ZoZGt5c3hy&utm_source=qr" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Instagram">
                 <Instagram size={20} />
+              </a>
+              <a href="https://www.tiktok.com/@neotech.tilewuyu?_t=ZN-90vbGNeNm3q&_r=1" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="TikTok">
+                <Music2 size={20} />
               </a>
             </div>
           </div>
@@ -96,14 +101,56 @@ export const Footer = () => {
           </div>
         </div>
 
+        {/* Legal Information */}
+        <div className="footer-legal-section">
+          <div className="footer-legal-header">
+            <h4 className="footer-legal-title">Informations légales</h4>
+          </div>
+          <div className="footer-legal-grid">
+            <div className="footer-legal-block">
+              <p className="footer-legal-company"><strong>NEOTECH TILEWUYU</strong></p>
+              <p className="footer-legal-text">Micro-entreprise</p>
+              <p className="footer-legal-text"><strong>SIRET:</strong> 940 487 747 00013</p>
+              <p className="footer-legal-text"><strong>Code APE:</strong> 4619B</p>
+              <p className="footer-legal-text footer-legal-address">
+                <strong>Domiciliation:</strong> LegalPlace, 60 rue François 1er, 75008 Paris
+              </p>
+            </div>
+
+            <div className="footer-legal-block">
+              <h5 className="footer-legal-subtitle">Propriété intellectuelle</h5>
+              <p className="footer-legal-text footer-legal-small">
+                Le contenu du site (textes, images, logo, éléments graphiques, etc.) est la propriété exclusive 
+                de NEOTECH TILEWUYU, sauf mention contraire. Toute reproduction ou utilisation non autorisée 
+                est strictement interdite.
+              </p>
+            </div>
+
+            <div className="footer-legal-block">
+              <h5 className="footer-legal-subtitle">Protection des données (RGPD)</h5>
+              <p className="footer-legal-text footer-legal-small">
+                Les informations collectées via le site sont utilisées uniquement pour répondre aux demandes 
+                de contact et ne sont jamais partagées avec des tiers. Vous disposez d'un droit d'accès, de 
+                rectification et de suppression de vos données (article 34 de la loi Informatique et Libertés).
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Copyright */}
         <div className="footer-bottom">
           <div className="footer-bottom-content">
-            <p className="copyright">
-              © {currentYear} NEOTECH T+LEWUYU. Tous droits réservés.
-            </p>
-            <p className="footer-credit">
-              Fait avec ❤️ à Kourou
-            </p>
+            <span>© {currentYear} NEOTECH T+LEWUYU</span>
+            <span className="footer-separator">•</span>
+            <span>Tous droits réservés</span>
+            <span className="footer-separator">•</span>
+            <Link to="/cgv" className="footer-bottom-link">
+              CGV
+            </Link>
+            <span className="footer-separator">•</span>
+            <Link to="/mentions-legales" className="footer-bottom-link">
+              Mentions Légales
+            </Link>
           </div>
         </div>
       </div>
