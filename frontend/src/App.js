@@ -5,8 +5,10 @@ import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { Services } from './components/Services';
 import { ConsoleSection } from './components/ConsoleSection';
+import { PerfumeSection } from './components/PerfumeSection';
 import { ServicePosters } from './components/ServicePosters';
 import { WhyUs } from './components/WhyUs';
+import { AboutSection } from './components/AboutSection';
 import { Contact } from './components/Contact';
 import { FAQ } from './components/FAQ';
 import { Footer } from './components/Footer';
@@ -21,8 +23,10 @@ const Home = () => {
         <Hero />
         <Services />
         <ConsoleSection />
+        <PerfumeSection />
         <ServicePosters />
         <WhyUs />
+        <AboutSection />
         <Contact />
         <FAQ />
       </main>
