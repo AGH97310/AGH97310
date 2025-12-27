@@ -5,7 +5,7 @@ import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { Services } from './components/Services';
 import { ConsoleSection } from './components/ConsoleSection';
-import { PerfumeSection } from './components/PerfumeSection';
+import { PerfumeSectionWithCart } from './components/PerfumeSectionWithCart';
 import { IndividualServices } from './components/IndividualServices';
 import { BusinessServices } from './components/BusinessServices';
 import { WhyUs } from './components/WhyUs';
@@ -24,7 +24,7 @@ const Home = () => {
         <Hero />
         <Services />
         <ConsoleSection />
-        <PerfumeSection />
+        <PerfumeSectionWithCart />
         <IndividualServices />
         <BusinessServices />
         <WhyUs />
