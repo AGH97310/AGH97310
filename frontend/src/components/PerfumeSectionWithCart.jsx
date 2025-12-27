@@ -270,10 +270,23 @@ export const PerfumeSectionWithCart = () => {
                     Minimum 100€ requis (manque {(100 - cartTotal).toFixed(2)}€)
                   </p>
                 )}
+                
+                {/* PayPal Buttons */}
+                {isCartValid && (
+                  <div className="cart-paypal-section">
+                    <p className="cart-payment-label">Payer avec PayPal :</p>
+                    <div 
+                      ref={paypalButtonRef} 
+                      className="cart-paypal-buttons"
+                    ></div>
+                  </div>
+                )}
+                
+                {/* WhatsApp Button */}
                 <Button 
-                  className="cart-checkout-btn"
-                  disabled={!isCartValid}
+                  className="cart-whatsapp-btn"
                   onClick={handleCheckout}
+                  variant="outline"
                 >
                   <MessageCircle className="mr-2 h-4 w-4" />
                   Commander via WhatsApp
