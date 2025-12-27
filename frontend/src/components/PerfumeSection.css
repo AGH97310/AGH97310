@@ -103,6 +103,15 @@
   color: var(--text-primary);
 }
 
+.perfume-volume {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+  text-align: center;
+}
+
 .perfume-collections {
   text-align: center;
   margin-bottom: 3rem;
