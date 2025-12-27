@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Toaster } from './components/ui/sonner';
 import { Header } from './components/Header';
+import { ScrollingLogo } from './components/ScrollingLogo';
 import { Hero } from './components/Hero';
 import { Services } from './components/Services';
 import { ConsoleSection } from './components/ConsoleSection';
@@ -23,6 +24,7 @@ const Home = () => {
   return (
     <div>
       <Header />
+      <ScrollingLogo />
       <main>
         <Hero />
         <Services />
