@@ -156,17 +156,6 @@ export const PerfumeSection = () => {
             size="lg"
             className="perfume-cta-primary"
           >
-            <Link to="/paiement">
-              <CreditCard className="mr-2 h-5 w-5" />
-              Commander en ligne
-            </Link>
-          </Button>
-          <Button 
-            asChild
-            size="lg"
-            variant="outline"
-            className="perfume-cta-secondary"
-          >
             <a 
               href="https://wa.me/594694458584" 
               target="_blank" 
