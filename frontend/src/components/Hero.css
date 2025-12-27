@@ -49,6 +49,43 @@
   background-clip: text;
 }
 
+/* Scrolling title animation */
+.scrolling-title-wrapper {
+  overflow: hidden;
+  width: 100%;
+  background: linear-gradient(90deg, transparent 0%, rgba(30, 58, 95, 0.05) 50%, transparent 100%);
+  padding: 1rem 0;
+  margin: 1.5rem 0 2.5rem;
+  border-top: 2px solid var(--border-light);
+  border-bottom: 2px solid var(--border-light);
+}
+
+.scrolling-title {
+  display: flex;
+  animation: scroll-left 20s linear infinite;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+.scrolling-text {
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  font-weight: 600;
+  color: var(--primary-navy);
+  padding: 0 3rem;
+  font-family: 'Space Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
 .hero-subtitle {
   margin: 1.5rem auto 2.5rem;
   max-width: 600px;
