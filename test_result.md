@@ -246,6 +246,31 @@ agent_communication:
   - agent: "testing"
     message: "FINAL TESTING COMPLETED ✅ All latest changes verified successfully: 1) SMARTPHONE SECTION: Now displays 8 phones total (4 Samsung + 4 Apple) with NEW iPhone 17 - 256 Go - Sauge - 1069€ added. All Samsung phones correctly show 'NEUF' badge (not 'Neuf EU'). All phone specifications and prices match requirements exactly. 2) PERFUME ORDER PROCESS: 'Délai de livraison' block successfully REMOVED from Processus de Commande card. Only 4 steps (01-04) remain as requested. No critical issues found - all functionality working perfectly."
 
+frontend:
+  - task: "Smartphone Section - 8 phones with Samsung & Apple title"
+    implemented: true
+    working: true
+    file: "frontend/src/components/SmartphoneSection.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "VERIFIED ✅ Smartphone section fully updated with 8 phones total (4 Samsung + 4 Apple). NEW iPhone 17 - 256 Go - Sauge - 1069€ successfully added. All Samsung phones correctly show 'NEUF' badge (not 'Neuf EU'). All phone specifications and prices match requirements exactly: Samsung Galaxy A56 5G (529€), A36 5G (479€), A26 5G (359€), A17 5G (279€), iPhone SE 5G 2022 (699€), iPhone 16 (969€), iPhone 16e (949€), iPhone 17 (1069€)."
+
+  - task: "Perfume Order Process - Remove Délai de livraison block"
+    implemented: true
+    working: true
+    file: "frontend/src/components/PerfumeSectionWithCart.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "VERIFIED ✅ Perfume order process section correctly updated. 'Délai de livraison' block has been completely REMOVED from the Processus de Commande card. Only the 4 steps (01-04) remain as requested: Sélection des articles, Confirmation & Devis, Paiement sécurisé, Livraison & Suivi. No delivery info grid present."
+
 #    - Update the working status based on user feedback
 #    - If a user reports an issue with a task that was marked as working, increment the stuck_count
 #    - Whenever user reports issue in the app, if we have testing agent and task_result.md file so find the appropriate task for that and append in status_history of that task to contain the user concern and problem as well 
