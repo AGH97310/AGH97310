@@ -11,7 +11,7 @@
   transform: translateX(-50%);
   width: 300px;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
+  background: linear-gradient(90deg, transparent, var(--neon-pink), transparent);
 }
 
 .contact-container {
@@ -28,12 +28,12 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(0, 212, 255, 0.1);
-  border: 1px solid rgba(0, 212, 255, 0.3);
+  background: rgba(255, 0, 128, 0.1);
+  border: 1px solid rgba(255, 0, 128, 0.3);
   border-radius: 50px;
   padding: 0.5rem 1.25rem;
   margin-bottom: 1.5rem;
-  color: var(--neon-cyan);
+  color: #ff6b9d;
   font-family: 'Space Mono', monospace;
   font-size: 0.8rem;
   text-transform: uppercase;
@@ -46,7 +46,7 @@
   font-weight: 700;
   color: #ffffff;
   margin-bottom: 1rem;
-  text-shadow: 0 0 30px rgba(0, 212, 255, 0.4);
+  text-shadow: 0 0 30px rgba(255, 0, 128, 0.4);
 }
 
 .contact-subtitle {
@@ -55,11 +55,10 @@
 }
 
 .contact-card {
-  background: linear-gradient(145deg, rgba(20, 35, 60, 0.8) 0%, rgba(10, 20, 40, 0.9) 100%);
-  border: 1px solid rgba(0, 212, 255, 0.2);
-  border-radius: 20px;
-  padding: 3rem;
-  backdrop-filter: blur(20px);
+  background: linear-gradient(145deg, rgba(20, 35, 60, 0.8) 0%, rgba(10, 20, 40, 0.9) 100%) !important;
+  border: 1px solid rgba(255, 0, 128, 0.2) !important;
+  border-radius: 20px !important;
+  padding: 3rem !important;
   position: relative;
   overflow: hidden;
 }
@@ -71,7 +70,7 @@
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, transparent, var(--neon-cyan), var(--neon-violet), transparent);
+  background: linear-gradient(90deg, transparent, var(--neon-pink), var(--neon-cyan), transparent);
 }
 
 .contact-form {
@@ -103,11 +102,11 @@
 .form-group textarea,
 .form-group select {
   width: 100%;
-  background: rgba(10, 15, 30, 0.8);
-  border: 1px solid rgba(0, 212, 255, 0.2);
-  border-radius: 10px;
+  background: rgba(10, 15, 30, 0.8) !important;
+  border: 1px solid rgba(255, 0, 128, 0.2) !important;
+  border-radius: 10px !important;
   padding: 1rem 1.25rem;
-  color: #ffffff;
+  color: #ffffff !important;
   font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   transition: all 0.3s ease;
@@ -122,9 +121,9 @@
 .form-group textarea:focus,
 .form-group select:focus {
   outline: none;
-  border-color: var(--neon-cyan);
-  box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
-  background: rgba(10, 15, 30, 0.9);
+  border-color: var(--neon-pink) !important;
+  box-shadow: 0 0 20px rgba(255, 0, 128, 0.2);
+  background: rgba(10, 15, 30, 0.9) !important;
 }
 
 .form-group textarea {
@@ -135,10 +134,10 @@
 .form-group select {
   cursor: pointer;
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2300d4ff' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 1rem center;
-  background-size: 20px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23ff6b9d' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 1rem center !important;
+  background-size: 20px !important;
 }
 
 .form-group select option {
@@ -148,9 +147,24 @@
 
 .submit-btn {
   width: 100%;
-  padding: 1.25rem 2rem;
+  background: linear-gradient(135deg, rgba(255, 0, 128, 0.2) 0%, rgba(157, 0, 255, 0.2) 100%) !important;
+  border: 2px solid #ff6b9d !important;
+  color: #ffffff !important;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
   font-size: 1rem;
+  padding: 1.25rem 2rem !important;
+  border-radius: 10px !important;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(255, 0, 128, 0.3);
   margin-top: 1rem;
+}
+
+.submit-btn:hover {
+  background: rgba(255, 0, 128, 0.3) !important;
+  box-shadow: 0 0 40px rgba(255, 0, 128, 0.5);
+  transform: translateY(-3px);
 }
 
 .submit-btn:disabled {
@@ -195,7 +209,7 @@
   }
 
   .contact-card {
-    padding: 2rem 1.5rem;
+    padding: 2rem 1.5rem !important;
   }
 
   .form-row {

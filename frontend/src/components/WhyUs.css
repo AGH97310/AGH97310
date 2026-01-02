@@ -1,9 +1,9 @@
-.why-us-section {
+.whyus-section {
   padding: 6rem 1.5rem;
   position: relative;
 }
 
-.why-us-section::before {
+.whyus-section::before {
   content: '';
   position: absolute;
   top: 0;
@@ -14,17 +14,17 @@
   background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
 }
 
-.why-us-container {
+.whyus-container {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.why-us-header {
+.section-header {
   text-align: center;
   margin-bottom: 4rem;
 }
 
-.why-us-badge {
+.section-badge {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -40,21 +40,21 @@
   letter-spacing: 0.1em;
 }
 
-.why-us-title {
-  font-family: 'Montserrat', sans-serif;
-  font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 700;
-  color: #ffffff;
-  text-shadow: 0 0 30px rgba(0, 212, 255, 0.4);
+.section-subtitle {
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-.why-us-grid {
+/* Reasons Grid */
+.reasons-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
+  margin-bottom: 4rem;
 }
 
-.why-us-card {
+.reason-card {
   background: linear-gradient(145deg, rgba(20, 35, 60, 0.8) 0%, rgba(10, 20, 40, 0.9) 100%);
   border: 1px solid rgba(0, 212, 255, 0.2);
   border-radius: 16px;
@@ -65,7 +65,7 @@
   overflow: hidden;
 }
 
-.why-us-card::before {
+.reason-card::before {
   content: '';
   position: absolute;
   top: 0;
@@ -77,17 +77,17 @@
   transition: opacity 0.3s ease;
 }
 
-.why-us-card:hover {
+.reason-card:hover {
   transform: translateY(-8px);
   border-color: rgba(0, 212, 255, 0.5);
   box-shadow: 0 0 40px rgba(0, 212, 255, 0.2), 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
-.why-us-card:hover::before {
+.reason-card:hover::before {
   opacity: 1;
 }
 
-.why-us-icon {
+.reason-icon-wrapper {
   width: 70px;
   height: 70px;
   margin: 0 auto 1.5rem;
@@ -97,21 +97,36 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--neon-cyan);
   transition: all 0.3s ease;
 }
 
-.why-us-card:hover .why-us-icon {
+.reason-icon-wrapper.gray {
+  background: rgba(157, 0, 255, 0.1);
+  border-color: rgba(157, 0, 255, 0.3);
+}
+
+.reason-card:hover .reason-icon-wrapper {
   background: rgba(0, 212, 255, 0.15);
   box-shadow: 0 0 25px rgba(0, 212, 255, 0.3);
   transform: scale(1.1);
 }
 
-.why-us-icon svg {
+.reason-card:hover .reason-icon-wrapper.gray {
+  background: rgba(157, 0, 255, 0.15);
+  box-shadow: 0 0 25px rgba(157, 0, 255, 0.3);
+}
+
+.reason-icon {
+  color: var(--neon-cyan);
   filter: drop-shadow(0 0 8px var(--neon-cyan));
 }
 
-.why-us-card h3 {
+.reason-icon-wrapper.gray .reason-icon {
+  color: #c77dff;
+  filter: drop-shadow(0 0 8px #c77dff);
+}
+
+.reason-card .heading-3 {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.1rem;
   font-weight: 600;
@@ -119,30 +134,76 @@
   margin-bottom: 0.75rem;
 }
 
-.why-us-card p {
+.reason-description {
   color: rgba(255, 255, 255, 0.7);
   font-size: 0.9rem;
   line-height: 1.6;
 }
 
+/* Trusted Section */
+.trusted-section {
+  text-align: center;
+  padding: 2.5rem;
+  background: linear-gradient(145deg, rgba(20, 35, 60, 0.6) 0%, rgba(10, 20, 40, 0.7) 100%);
+  border: 1px solid rgba(0, 212, 255, 0.15);
+  border-radius: 16px;
+}
+
+.trusted-title {
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+}
+
+.trusted-tags {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.trusted-tag {
+  background: rgba(0, 212, 255, 0.1);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  color: var(--neon-cyan);
+  padding: 0.5rem 1.25rem;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.trusted-tag:hover {
+  background: rgba(0, 212, 255, 0.2);
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
-  .why-us-grid {
+  .reasons-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 640px) {
-  .why-us-section {
+  .whyus-section {
     padding: 4rem 1rem;
   }
 
-  .why-us-grid {
+  .reasons-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
 
-  .why-us-card {
+  .reason-card {
     padding: 1.5rem;
+  }
+
+  .trusted-tags {
+    gap: 0.75rem;
+  }
+
+  .trusted-tag {
+    font-size: 0.85rem;
+    padding: 0.4rem 1rem;
   }
 }
