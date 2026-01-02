@@ -358,6 +358,13 @@ export const PerfumeSectionWithCart = () => {
               <p className="order-process-description">
                 Commande minimum 100€ via <span className="highlight">PayPal</span> sur le site
               </p>
+              <div className="paypal-4x-badge">
+                <img 
+                  src="https://customer-assets.emergentagent.com/job_082652f8-6982-4266-bdd7-1ba9de34a6c9/artifacts/xfv8f9if_4foissansfrais-641db5399afe3.png" 
+                  alt="PayPal 4x sans frais" 
+                  className="paypal-4x-image"
+                />
+              </div>
             </div>
 
             <div className="order-steps-grid">
