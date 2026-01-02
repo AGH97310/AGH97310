@@ -1,9 +1,9 @@
-.individual-services-section {
+.individual-section {
   padding: 6rem 1.5rem;
   position: relative;
 }
 
-.individual-services-section::before {
+.individual-section::before {
   content: '';
   position: absolute;
   top: 0;
@@ -14,17 +14,17 @@
   background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
 }
 
-.individual-services-container {
-  max-width: 1200px;
+.individual-container {
+  max-width: 1400px;
   margin: 0 auto;
 }
 
-.individual-services-header {
+.individual-header {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 }
 
-.individual-services-badge {
+.individual-badge {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -34,13 +34,16 @@
   padding: 0.5rem 1.25rem;
   margin-bottom: 1.5rem;
   color: var(--neon-cyan);
+}
+
+.individual-badge .mono-text {
   font-family: 'Space Mono', monospace;
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
 
-.individual-services-title {
+.individual-title {
   font-family: 'Montserrat', sans-serif;
   font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 700;
@@ -49,22 +52,29 @@
   text-shadow: 0 0 30px rgba(0, 212, 255, 0.4);
 }
 
-.individual-services-subtitle {
+.individual-subtitle {
   color: rgba(255, 255, 255, 0.7);
   font-size: 1.1rem;
-  max-width: 600px;
-  margin: 0 auto;
 }
 
-.services-table-wrapper {
-  background: linear-gradient(145deg, rgba(20, 35, 60, 0.8) 0%, rgba(10, 20, 40, 0.9) 100%);
-  border: 1px solid rgba(0, 212, 255, 0.2);
-  border-radius: 20px;
+/* Grid */
+.individual-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+/* Card Styles */
+.individual-card {
+  background: linear-gradient(145deg, rgba(20, 35, 60, 0.8) 0%, rgba(10, 20, 40, 0.9) 100%) !important;
+  border: 1px solid rgba(0, 212, 255, 0.2) !important;
+  border-radius: 16px !important;
   overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
   position: relative;
 }
 
-.services-table-wrapper::before {
+.individual-card::before {
   content: '';
   position: absolute;
   top: 0;
@@ -72,123 +82,205 @@
   right: 0;
   height: 2px;
   background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 10;
 }
 
-.services-table {
-  width: 100%;
-  border-collapse: collapse;
+.individual-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(0, 212, 255, 0.5) !important;
+  box-shadow: 0 0 40px rgba(0, 212, 255, 0.2), 0 20px 40px rgba(0, 0, 0, 0.3) !important;
 }
 
-.services-table thead {
-  background: rgba(0, 10, 20, 0.5);
+.individual-card:hover::before {
+  opacity: 1;
 }
 
-.services-table th {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--neon-cyan);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 1.25rem 1.5rem;
-  text-align: left;
-  border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+/* Special Card */
+.individual-card.special-card {
+  border-color: rgba(157, 0, 255, 0.3) !important;
+  background: linear-gradient(145deg, rgba(30, 20, 60, 0.8) 0%, rgba(20, 10, 40, 0.9) 100%) !important;
 }
 
-.services-table td {
-  padding: 1rem 1.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  color: rgba(255, 255, 255, 0.9);
-  transition: all 0.3s ease;
+.individual-card.special-card::before {
+  background: linear-gradient(90deg, transparent, var(--neon-violet), var(--neon-pink), transparent);
 }
 
-.services-table tbody tr {
-  transition: all 0.3s ease;
+.individual-card.special-card:hover {
+  border-color: rgba(157, 0, 255, 0.5) !important;
+  box-shadow: 0 0 40px rgba(157, 0, 255, 0.2), 0 20px 40px rgba(0, 0, 0, 0.3) !important;
 }
 
-.services-table tbody tr:hover {
-  background: rgba(0, 212, 255, 0.05);
+/* Card Header */
+.individual-card [class*="CardHeader"] {
+  padding: 1.5rem 1.5rem 1rem !important;
+  background: transparent !important;
 }
 
-.services-table tbody tr:hover td {
-  color: #ffffff;
-}
-
-.service-name-cell {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.service-icon {
-  width: 40px;
-  height: 40px;
+.service-icon-wrapper {
+  width: 60px;
+  height: 60px;
   background: rgba(0, 212, 255, 0.1);
   border: 1px solid rgba(0, 212, 255, 0.3);
-  border-radius: 10px;
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.service-icon-wrapper.special {
+  background: rgba(157, 0, 255, 0.1);
+  border-color: rgba(157, 0, 255, 0.3);
+}
+
+.individual-card:hover .service-icon-wrapper {
+  background: rgba(0, 212, 255, 0.15);
+  box-shadow: 0 0 25px rgba(0, 212, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.individual-card.special-card:hover .service-icon-wrapper {
+  background: rgba(157, 0, 255, 0.15);
+  box-shadow: 0 0 25px rgba(157, 0, 255, 0.3);
+}
+
+.service-icon {
+  width: 28px;
+  height: 28px;
   color: var(--neon-cyan);
-  flex-shrink: 0;
+  filter: drop-shadow(0 0 8px var(--neon-cyan));
 }
 
-.service-icon svg {
-  filter: drop-shadow(0 0 5px var(--neon-cyan));
+.special-card .service-icon {
+  color: #c77dff;
+  filter: drop-shadow(0 0 8px #c77dff);
 }
 
-.service-name {
+.service-title {
   font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  margin-bottom: 0.5rem !important;
 }
 
 .service-price {
   font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
   color: var(--neon-cyan) !important;
-  text-shadow: 0 0 10px rgba(0, 212, 255, 0.4);
+  text-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
 }
 
-.table-cta {
-  padding: 2rem;
-  text-align: center;
-  background: rgba(0, 10, 20, 0.3);
-  border-top: 1px solid rgba(0, 212, 255, 0.1);
+.special-card .service-price {
+  color: #c77dff !important;
+  text-shadow: 0 0 15px rgba(157, 0, 255, 0.5);
 }
 
-.table-cta p {
+/* Card Content */
+.individual-card [class*="CardContent"] {
+  padding: 0 1.5rem 1.5rem !important;
+  background: transparent !important;
+}
+
+.service-quote {
   color: rgba(255, 255, 255, 0.6);
+  font-style: italic;
+  font-size: 0.9rem;
   margin-bottom: 1rem;
+  padding-left: 1rem;
+  border-left: 2px solid rgba(0, 212, 255, 0.3);
+}
+
+.special-card .service-quote {
+  border-left-color: rgba(157, 0, 255, 0.3);
+}
+
+.service-features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+}
+
+.service-features-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+
+.service-features-list li.highlighted-feature {
+  color: var(--neon-cyan);
+  font-weight: 500;
+}
+
+.feature-check-icon {
+  width: 16px;
+  height: 16px;
+  color: var(--neon-cyan);
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+  filter: drop-shadow(0 0 3px var(--neon-cyan));
+}
+
+.special-card .feature-check-icon {
+  color: #c77dff;
+  filter: drop-shadow(0 0 3px #c77dff);
+}
+
+/* Button */
+.service-btn {
+  width: 100%;
+  background: transparent !important;
+  border: 1px solid var(--neon-cyan) !important;
+  color: #ffffff !important;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px !important;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.2);
+}
+
+.service-btn:hover {
+  background: rgba(0, 212, 255, 0.15) !important;
+  box-shadow: 0 0 25px rgba(0, 212, 255, 0.4);
+  text-shadow: 0 0 10px var(--neon-cyan);
+}
+
+.service-btn.special {
+  border-color: rgba(157, 0, 255, 0.5) !important;
+  box-shadow: 0 0 15px rgba(157, 0, 255, 0.2);
+}
+
+.service-btn.special:hover {
+  background: rgba(157, 0, 255, 0.15) !important;
+  box-shadow: 0 0 25px rgba(157, 0, 255, 0.4);
+  text-shadow: 0 0 10px #c77dff;
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-  .individual-services-section {
-    padding: 4rem 1rem;
-  }
-
-  .services-table th,
-  .services-table td {
-    padding: 0.75rem 1rem;
-    font-size: 0.9rem;
-  }
-
-  .service-icon {
-    width: 32px;
-    height: 32px;
-  }
-
-  .service-name-cell {
-    gap: 0.75rem;
+@media (max-width: 1200px) {
+  .individual-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 480px) {
-  .services-table-wrapper {
-    overflow-x: auto;
+@media (max-width: 768px) {
+  .individual-section {
+    padding: 4rem 1rem;
   }
 
-  .services-table {
-    min-width: 500px;
+  .individual-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 }
