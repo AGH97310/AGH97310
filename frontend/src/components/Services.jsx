@@ -10,7 +10,7 @@ export const Services = () => {
       title: 'Site Vitrine Pro',
       price: '390€',
       description: 'Site complet livré en 10 jours pour TPE/PME',
-      features: ['Réservation en ligne', 'Optimisé Google', 'Hébergement 1 an inclus'],
+      features: ['Réservation en ligne', 'Optimisé Google', 'Hébergement 1 an inclus (hors nom de domaine)', 'Option : domaine + maintenance → 30€/mois'],
       color: 'blue',
       ctaText: 'Faire votre demande en ligne',
       ctaLink: 'https://docs.google.com/forms/d/e/1FAIpQLSfhHhDEHFpv3REZQ7ncnxTlhJLPy04RjrYydSf9dvC_dvRMEg/viewform?usp=header',
