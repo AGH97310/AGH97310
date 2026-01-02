@@ -177,7 +177,7 @@ export const PerfumeSectionWithCart = () => {
     {
       step: '03',
       title: 'Paiement sécurisé',
-      description: '100% sécurisé avant validation finale : Virement / CB / Espèces (RDV)',
+      description: '100% sécurisé avant validation finale : paiement Paypal x 4 possible.',
       important: true
     },
     {
