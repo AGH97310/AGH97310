@@ -457,10 +457,27 @@
   text-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
 }
 
-.order-steps {
+.order-process-description {
+  color: #ffffff !important;
+  font-size: 1rem;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+.order-process-description .highlight {
+  color: #00ffff !important;
+  font-weight: 600;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.order-steps-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
+}
+
+.order-process-header {
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .order-step {
