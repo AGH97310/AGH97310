@@ -79,9 +79,15 @@ export const Services = () => {
                 </ul>
               </div>
               
-              <button className="btn-primary service-cta">
-                Demander un devis
-              </button>
+              <a 
+                href={service.ctaLink} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className={`btn-primary service-cta ${service.isExternal ? 'external-link' : ''}`}
+              >
+                {service.ctaText}
+                {service.isExternal && <ExternalLink size={16} className="ml-2" />}
+              </a>
             </div>
           ))}
         </div>
