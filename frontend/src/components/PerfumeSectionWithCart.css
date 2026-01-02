@@ -469,6 +469,28 @@
   text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
 }
 
+/* PayPal 4x Badge */
+.paypal-4x-badge {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.paypal-4x-image {
+  max-width: 200px;
+  height: auto;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 0.75rem;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.paypal-4x-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+}
+
 .order-steps-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
