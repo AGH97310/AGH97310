@@ -30,6 +30,7 @@ const Home = () => {
         <Hero />
         <IndividualServices />
         <BusinessServices />
+        <RemoteITServices />
         <Services />
         <ConsoleSection />
         <SmartphoneSection />
