@@ -9,6 +9,7 @@ import { ConsoleSection } from './components/ConsoleSection';
 import { PerfumeSectionWithCart } from './components/PerfumeSectionWithCart';
 import { IndividualServices } from './components/IndividualServices';
 import { BusinessServices } from './components/BusinessServices';
+import { RemoteITServices } from './components/RemoteITServices';
 import { WhyUs } from './components/WhyUs';
 import { AboutSection } from './components/AboutSection';
 import { Contact } from './components/Contact';
