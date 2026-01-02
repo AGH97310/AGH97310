@@ -14,7 +14,6 @@ export const RemoteITServices = () => {
       icon: '🧠',
       number: '1️⃣',
       title: 'PROBLÈMES DE PERFORMANCE & LENTEUR',
-      highlight: 'Très demandé / forte satisfaction client',
       features: [
         'PC lent / qui rame',
         'Démarrage très long',
