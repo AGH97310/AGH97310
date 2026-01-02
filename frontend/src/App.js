@@ -27,12 +27,12 @@ const Home = () => {
       <ScrollingLogo />
       <main>
         <Hero />
+        <IndividualServices />
+        <BusinessServices />
         <Services />
         <ConsoleSection />
         <SmartphoneSection />
         <PerfumeSectionWithCart />
-        <IndividualServices />
-        <BusinessServices />
         <WhyUs />
         <AboutSection />
         <Contact />
