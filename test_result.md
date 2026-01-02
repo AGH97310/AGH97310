@@ -285,6 +285,18 @@ frontend:
         agent: "testing"
         comment: "VERIFIED ✅ Cyberpunk design theme successfully implemented and tested. WORKING ELEMENTS: Deep navy background (#0a0f1e), white text (#ffffff), cyan accents (#00ffff, #00d4ff), logo glow effect with drop-shadow, APPELER button with neon cyan border and glow, hero gradient text 'à Vous' with cyan-to-violet gradient, scrolling logo banner with videos, footer dark background. CSS variables properly loaded. 39 service cards and 61 product cards found with appropriate styling. Minor: Some automated glow detection limitations and price elements showing purple instead of cyan, but overall cyberpunk theme is fully functional and visually correct."
 
+  - task: "Text visibility fix - Perfume prices and Order Process"
+    implemented: true
+    working: true
+    file: "frontend/src/components/PerfumeSectionWithCart.css"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Fixed text visibility issues reported by user: 1) Perfume prices now displayed in bright cyan (#00ffff) with glow effect, 2) Order process descriptions now white with better contrast. Updated .perfume-price-display and .order-step-description CSS classes."
+
 #    - Update the working status based on user feedback
 #    - If a user reports an issue with a task that was marked as working, increment the stuck_count
 #    - Whenever user reports issue in the app, if we have testing agent and task_result.md file so find the appropriate task for that and append in status_history of that task to contain the user concern and problem as well 
