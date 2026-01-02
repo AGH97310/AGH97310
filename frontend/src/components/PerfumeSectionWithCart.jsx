@@ -356,7 +356,7 @@ export const PerfumeSectionWithCart = () => {
               <ShoppingBag className="h-8 w-8 text-accent" />
               <h3 className="order-process-title">Processus de Commande</h3>
               <p className="order-process-description">
-                Commande minimum 100€ via <span className="highlight">WhatsApp</span>
+                Commande minimum 100€ via <span className="highlight">PayPal</span> sur le site
               </p>
             </div>
 
