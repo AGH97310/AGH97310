@@ -1,9 +1,9 @@
-.business-services-section {
+.business-section {
   padding: 6rem 1.5rem;
   position: relative;
 }
 
-.business-services-section::before {
+.business-section::before {
   content: '';
   position: absolute;
   top: 0;
@@ -14,17 +14,17 @@
   background: linear-gradient(90deg, transparent, var(--neon-violet), transparent);
 }
 
-.business-services-container {
+.business-container {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.business-services-header {
+.business-header {
   text-align: center;
   margin-bottom: 3rem;
 }
 
-.business-services-badge {
+.business-badge {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -40,7 +40,7 @@
   letter-spacing: 0.1em;
 }
 
-.business-services-title {
+.business-title {
   font-family: 'Montserrat', sans-serif;
   font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 700;
@@ -49,41 +49,49 @@
   text-shadow: 0 0 30px rgba(157, 0, 255, 0.4);
 }
 
-.business-services-subtitle {
+.business-subtitle {
   color: rgba(255, 255, 255, 0.7);
   font-size: 1.1rem;
-  max-width: 600px;
-  margin: 0 auto;
 }
 
-.services-table-wrapper {
-  background: linear-gradient(145deg, rgba(20, 35, 60, 0.8) 0%, rgba(10, 20, 40, 0.9) 100%);
-  border: 1px solid rgba(157, 0, 255, 0.2);
-  border-radius: 20px;
+/* Table Card */
+.business-table-card {
+  background: linear-gradient(145deg, rgba(20, 35, 60, 0.8) 0%, rgba(10, 20, 40, 0.9) 100%) !important;
+  border: 1px solid rgba(157, 0, 255, 0.2) !important;
+  border-radius: 20px !important;
   overflow: hidden;
   position: relative;
 }
 
-.services-table-wrapper::before {
+.business-table-card::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, transparent, var(--neon-violet), transparent);
+  background: linear-gradient(90deg, transparent, var(--neon-violet), var(--neon-cyan), transparent);
 }
 
-.services-table {
+.business-table-content {
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+.business-table-wrapper {
+  overflow-x: auto;
+}
+
+.business-table {
   width: 100%;
   border-collapse: collapse;
 }
 
-.services-table thead {
+.business-table thead {
   background: rgba(0, 10, 20, 0.5);
 }
 
-.services-table th {
+.business-table th {
   font-family: 'Montserrat', sans-serif;
   font-size: 0.9rem;
   font-weight: 600;
@@ -95,100 +103,200 @@
   border-bottom: 1px solid rgba(157, 0, 255, 0.2);
 }
 
-.services-table td {
+.business-table td {
   padding: 1rem 1.5rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   color: rgba(255, 255, 255, 0.9);
   transition: all 0.3s ease;
+  font-size: 0.95rem;
 }
 
-.services-table tbody tr {
+.business-table tbody tr {
   transition: all 0.3s ease;
 }
 
-.services-table tbody tr:hover {
+.business-table tbody tr:hover {
   background: rgba(157, 0, 255, 0.05);
 }
 
-.services-table tbody tr:hover td {
+.price-cell {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: #c77dff !important;
+  text-shadow: 0 0 10px rgba(157, 0, 255, 0.4);
+  white-space: nowrap;
+}
+
+.details-cell {
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-size: 0.9rem;
+}
+
+/* Forfait Row */
+.forfait-row {
+  background: rgba(157, 0, 255, 0.1);
+  border-top: 1px solid rgba(157, 0, 255, 0.3);
+  border-bottom: 1px solid rgba(157, 0, 255, 0.3);
+}
+
+.forfait-row:hover {
+  background: rgba(157, 0, 255, 0.15) !important;
+}
+
+.forfait-name {
+  font-weight: 600;
   color: #ffffff;
 }
 
-.service-name-cell {
-  display: flex;
-  align-items: center;
+.forfait-subtitle {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+}
+
+.forfait-price {
+  font-size: 1.1rem !important;
+  color: var(--neon-cyan) !important;
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.5) !important;
+}
+
+/* Additional Services */
+.additional-services {
+  padding: 2rem;
+  background: rgba(0, 10, 20, 0.3);
+  border-top: 1px solid rgba(157, 0, 255, 0.1);
+}
+
+.additional-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+}
+
+.additional-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
 }
 
-.service-icon {
-  width: 40px;
-  height: 40px;
-  background: rgba(157, 0, 255, 0.1);
-  border: 1px solid rgba(157, 0, 255, 0.3);
-  border-radius: 10px;
+.additional-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background: rgba(0, 10, 20, 0.5);
+  border: 1px solid rgba(157, 0, 255, 0.15);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.additional-item:hover {
+  border-color: rgba(157, 0, 255, 0.4);
+  background: rgba(157, 0, 255, 0.05);
+}
+
+.additional-service-name {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.9rem;
+}
+
+.additional-service-price {
+  color: #c77dff;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Advantages */
+.business-advantages {
+  padding: 2rem;
+  background: rgba(0, 212, 255, 0.05);
+  border-top: 1px solid rgba(0, 212, 255, 0.1);
+}
+
+.advantages-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--neon-cyan);
+  margin-bottom: 1rem;
+}
+
+.advantages-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.advantages-list li {
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: #c77dff;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.9rem;
+}
+
+.advantage-icon {
+  width: 16px;
+  height: 16px;
+  color: var(--neon-cyan);
   flex-shrink: 0;
+  filter: drop-shadow(0 0 3px var(--neon-cyan));
 }
 
-.service-icon svg {
-  filter: drop-shadow(0 0 5px #c77dff);
-}
-
-.service-name {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
-}
-
-.service-price {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  color: #c77dff !important;
-  text-shadow: 0 0 10px rgba(157, 0, 255, 0.4);
-}
-
-.table-cta {
+/* CTA */
+.business-cta {
   padding: 2rem;
   text-align: center;
   background: rgba(0, 10, 20, 0.3);
   border-top: 1px solid rgba(157, 0, 255, 0.1);
 }
 
-.table-cta p {
-  color: rgba(255, 255, 255, 0.6);
-  margin-bottom: 1rem;
+.business-cta-btn {
+  background: linear-gradient(135deg, rgba(157, 0, 255, 0.2) 0%, rgba(0, 212, 255, 0.2) 100%) !important;
+  border: 2px solid #c77dff !important;
+  color: #ffffff !important;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  padding: 1rem 2rem !important;
+  border-radius: 8px !important;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(157, 0, 255, 0.3);
+}
+
+.business-cta-btn:hover {
+  background: rgba(157, 0, 255, 0.3) !important;
+  box-shadow: 0 0 40px rgba(157, 0, 255, 0.5);
+  transform: translateY(-3px);
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .business-services-section {
+  .business-section {
     padding: 4rem 1rem;
   }
 
-  .services-table th,
-  .services-table td {
+  .business-table th,
+  .business-table td {
     padding: 0.75rem 1rem;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
 
-  .service-icon {
-    width: 32px;
-    height: 32px;
-  }
-
-  .service-name-cell {
-    gap: 0.75rem;
+  .additional-grid,
+  .advantages-list {
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 480px) {
-  .services-table-wrapper {
+  .business-table-wrapper {
     overflow-x: auto;
   }
 
-  .services-table {
-    min-width: 500px;
+  .business-table {
+    min-width: 600px;
   }
 }
