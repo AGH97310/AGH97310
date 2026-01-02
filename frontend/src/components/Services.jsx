@@ -1,5 +1,5 @@
 import React from 'react';
-import { Laptop, Globe, ShoppingBag } from 'lucide-react';
+import { Laptop, Globe, ShoppingBag, ExternalLink } from 'lucide-react';
 import './Services.css';
 
 export const Services = () => {
@@ -11,7 +11,10 @@ export const Services = () => {
       price: '390€',
       description: 'Site complet livré en 10 jours pour TPE/PME',
       features: ['Réservation en ligne', 'Optimisé Google', 'Hébergement 1 an inclus'],
-      color: 'blue'
+      color: 'blue',
+      ctaText: 'Faire votre demande en ligne',
+      ctaLink: 'https://docs.google.com/forms/d/e/1FAIpQLSfhHhDEHFpv3REZQ7ncnxTlhJLPy04RjrYydSf9dvC_dvRMEg/viewform?usp=header',
+      isExternal: true
     },
     {
       id: 2,
@@ -20,7 +23,9 @@ export const Services = () => {
       price: 'Sur devis',
       description: 'Intervention à distance • Support technique',
       features: ['PC lent, virus & malwares', 'Comptes bloqués', 'Maintenance poste informatique'],
-      color: 'gray'
+      color: 'gray',
+      ctaText: 'Demander un devis',
+      ctaLink: 'https://wa.me/594694458584'
     },
     {
       id: 3,
@@ -29,7 +34,9 @@ export const Services = () => {
       price: 'Sur devis',
       description: 'B2B & B2C',
       features: ['Smartphones dernière génération', 'Parfums orientaux premium', 'Livraison gratuite Kourou'],
-      color: 'blue'
+      color: 'blue',
+      ctaText: 'Demander un devis',
+      ctaLink: 'https://wa.me/594694458584'
     }
   ];
 
