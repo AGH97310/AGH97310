@@ -143,14 +143,25 @@ export const Footer = () => {
             <span>© {currentYear} NEOTECH T+LEWUYU</span>
             <span className="footer-separator">•</span>
             <span>Tous droits réservés</span>
+          </div>
+          <div className="footer-legal-links">
+            <Link to="/cgv" className="footer-bottom-link">CGV</Link>
             <span className="footer-separator">•</span>
-            <Link to="/cgv" className="footer-bottom-link">
-              CGV
-            </Link>
+            <Link to="/cgu" className="footer-bottom-link">CGU</Link>
             <span className="footer-separator">•</span>
-            <Link to="/mentions-legales" className="footer-bottom-link">
-              Mentions Légales
-            </Link>
+            <Link to="/mentions-legales" className="footer-bottom-link">Mentions Légales</Link>
+            <span className="footer-separator">•</span>
+            <Link to="/politique-confidentialite" className="footer-bottom-link">Confidentialité</Link>
+            <span className="footer-separator">•</span>
+            <Link to="/politique-cookies" className="footer-bottom-link">Cookies</Link>
+          </div>
+          <div className="footer-payment-notice">
+            <img 
+              src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_37x23.jpg" 
+              alt="PayPal" 
+              className="paypal-footer-logo"
+            />
+            <span>Paiements sécurisés par PayPal • Conformité PCI-DSS</span>
           </div>
         </div>
       </div>
