@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Toaster } from './components/ui/sonner';
+import { CartProvider } from './context/CartContext';
 import { Header } from './components/Header';
 import { ScrollingLogo } from './components/ScrollingLogo';
 import { Hero } from './components/Hero';
@@ -18,6 +19,7 @@ import { SmartphoneSection } from './components/SmartphoneSection';
 import { MiniSmartphoneSection } from './components/MiniSmartphoneSection';
 import { TabletSection } from './components/TabletSection';
 import { CookieConsent } from './components/CookieConsent';
+import { UnifiedCart } from './components/UnifiedCart';
 
 // Legal Pages
 import { CGV } from './pages/CGV';
