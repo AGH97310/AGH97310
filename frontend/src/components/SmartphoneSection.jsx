@@ -1,7 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Card, CardContent } from './ui/card';
 import { Button } from './ui/button';
-import { Smartphone, CheckCircle, Truck, MessageCircle, Shield, Zap } from 'lucide-react';
+import { 
+  Smartphone, CheckCircle, Truck, MessageCircle, Shield, Zap,
+  ShoppingCart, Plus, Minus, X, Trash2
+} from 'lucide-react';
 import { useToast } from '../hooks/use-toast';
 import './SmartphoneSection.css';
 
@@ -19,13 +22,15 @@ const iphone17 = "https://customer-assets.emergentagent.com/job_it-assistance/ar
 
 export const SmartphoneSection = () => {
   const { toast } = useToast();
-  const [selectedPhone, setSelectedPhone] = useState(null);
+  const [cart, setCart] = useState([]);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const [showPayPal, setShowPayPal] = useState(false);
   const paypalButtonRef = useRef(null);
   const paypalButtonsRendered = useRef(false);
 
   const smartphones = [
     { 
-      id: 1, 
+      id: 'samsung-a56', 
       img: samsungA56, 
       name: "Samsung Galaxy A56 5G", 
       storage: "128 Go", 
@@ -35,7 +40,7 @@ export const SmartphoneSection = () => {
       features: ["5G", "128 Go", "Écran AMOLED", "Neuf"]
     },
     { 
-      id: 2, 
+      id: 'samsung-a36', 
       img: samsungA36, 
       name: "Samsung Galaxy A36 5G", 
       storage: "256 Go", 
@@ -45,7 +50,7 @@ export const SmartphoneSection = () => {
       features: ["5G", "256 Go", "Super AMOLED", "Neuf"]
     },
     { 
-      id: 3, 
+      id: 'samsung-a26', 
       img: samsungA26, 
       name: "Samsung Galaxy A26 5G", 
       storage: "256 Go", 
@@ -55,7 +60,7 @@ export const SmartphoneSection = () => {
       features: ["5G", "256 Go", "Grand écran", "Neuf"]
     },
     { 
-      id: 4, 
+      id: 'samsung-a17', 
       img: samsungA17, 
       name: "Samsung Galaxy A17 5G", 
       storage: "128 Go", 
@@ -65,7 +70,7 @@ export const SmartphoneSection = () => {
       features: ["5G", "128 Go", "Neuf"]
     },
     { 
-      id: 5, 
+      id: 'iphone-se', 
       img: iphoneSE, 
       name: "iPhone SE 5G 2022", 
       storage: "64 Go", 
@@ -75,7 +80,7 @@ export const SmartphoneSection = () => {
       features: ["5G", "64 Go", "Puce A15", "Neuf"]
     },
     { 
-      id: 6, 
+      id: 'iphone-16', 
       img: iphone16, 
       name: "iPhone 16", 
       storage: "128 Go", 
@@ -85,7 +90,7 @@ export const SmartphoneSection = () => {
       features: ["5G", "128 Go", "Puce A18", "Neuf"]
     },
     { 
-      id: 7, 
+      id: 'iphone-16e', 
       img: iphone16e, 
       name: "iPhone 16e", 
       storage: "256 Go", 
@@ -95,7 +100,7 @@ export const SmartphoneSection = () => {
       features: ["5G", "256 Go", "Puce A18", "Neuf"]
     },
     { 
-      id: 8, 
+      id: 'iphone-17', 
       img: iphone17, 
       name: "iPhone 17", 
       storage: "256 Go", 
@@ -106,9 +111,26 @@ export const SmartphoneSection = () => {
     }
   ];
 
-  // PayPal Integration for selected phone
+  // Load cart from localStorage
   useEffect(() => {
-    if (!selectedPhone || !paypalButtonRef.current) {
+    const savedCart = localStorage.getItem('smartphone_cart');
+    if (savedCart) {
+      try {
+        setCart(JSON.parse(savedCart));
+      } catch (e) {
+        console.error('Error loading cart:', e);
+      }
+    }
+  }, []);
+
+  // Save cart to localStorage
+  useEffect(() => {
+    localStorage.setItem('smartphone_cart', JSON.stringify(cart));
+  }, [cart]);
+
+  // PayPal Integration for cart
+  useEffect(() => {
+    if (!showPayPal || !paypalButtonRef.current || cart.length === 0) {
       return;
     }
 
@@ -130,6 +152,11 @@ export const SmartphoneSection = () => {
 
       paypalButtonsRendered.current = true;
 
+      const cartTotal = getCartTotal();
+      const cartDescription = cart.map(item => 
+        `${item.name} x${item.quantity}`
+      ).join(', ');
+
       paypal.Buttons({
         style: {
           layout: 'vertical',
@@ -140,10 +167,10 @@ export const SmartphoneSection = () => {
         createOrder: (data, actions) => {
           return actions.order.create({
             purchase_units: [{
-              description: `${selectedPhone.name} - ${selectedPhone.storage} ${selectedPhone.color}`,
+              description: `Commande Smartphones: ${cartDescription}`,
               amount: {
                 currency_code: "EUR",
-                value: selectedPhone.price.toFixed(2)
+                value: cartTotal.toFixed(2)
               }
             }]
           });
@@ -154,7 +181,9 @@ export const SmartphoneSection = () => {
             title: "Paiement réussi !",
             description: `Merci pour votre commande. ID: ${order.id}`,
           });
-          setSelectedPhone(null);
+          clearCart();
+          setShowPayPal(false);
+          setIsCartOpen(false);
         },
         onError: (err) => {
           console.error('Erreur PayPal:', err);
@@ -172,14 +201,64 @@ export const SmartphoneSection = () => {
     return () => {
       paypalButtonsRendered.current = false;
     };
-  }, [selectedPhone, toast]);
+  }, [showPayPal, cart, toast]);
 
-  const handleBuyNow = (phone) => {
-    setSelectedPhone(phone);
+  const addToCart = (phone) => {
+    setCart(prevCart => {
+      const existingItem = prevCart.find(item => item.id === phone.id);
+      if (existingItem) {
+        return prevCart.map(item =>
+          item.id === phone.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        );
+      }
+      return [...prevCart, { ...phone, quantity: 1 }];
+    });
+    toast({
+      title: "Ajouté au panier",
+      description: `${phone.name} ajouté au panier`,
+    });
   };
 
-  const handleWhatsApp = (phone) => {
-    const message = `Bonjour, je suis intéressé par le ${phone.name} ${phone.storage} ${phone.color} à ${phone.price}€`;
+  const removeFromCart = (phoneId) => {
+    setCart(prevCart => prevCart.filter(item => item.id !== phoneId));
+  };
+
+  const updateQuantity = (phoneId, newQuantity) => {
+    if (newQuantity < 1) {
+      removeFromCart(phoneId);
+      return;
+    }
+    setCart(prevCart =>
+      prevCart.map(item =>
+        item.id === phoneId
+          ? { ...item, quantity: newQuantity }
+          : item
+      )
+    );
+  };
+
+  const getCartTotal = () => {
+    return cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+  };
+
+  const getCartItemCount = () => {
+    return cart.reduce((count, item) => count + item.quantity, 0);
+  };
+
+  const clearCart = () => {
+    setCart([]);
+    setShowPayPal(false);
+  };
+
+  const handleWhatsAppOrder = () => {
+    const cartItems = cart.map(item => 
+      `• ${item.name} (${item.storage} ${item.color}) x${item.quantity} = ${item.price * item.quantity}€`
+    ).join('\n');
+    
+    const message = `🛒 Commande Smartphones NEOTECH\n\n${cartItems}\n\n💰 Total: ${getCartTotal()}€\n\nMerci de confirmer ma commande.`;
+    
     const whatsappUrl = `https://wa.me/594694458584?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
@@ -204,7 +283,7 @@ export const SmartphoneSection = () => {
           {smartphones.map((phone, index) => (
             <Card 
               key={phone.id} 
-              className={`smartphone-card hover-lift fade-in-up ${selectedPhone?.id === phone.id ? 'selected' : ''}`}
+              className="smartphone-card hover-lift fade-in-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="smartphone-image-wrapper">
@@ -215,6 +294,7 @@ export const SmartphoneSection = () => {
                   loading="lazy"
                 />
                 <div className="smartphone-new-badge">NEUF</div>
+                <div className="smartphone-brand-badge">{phone.brand}</div>
               </div>
               <CardContent className="smartphone-info">
                 <h3 className="smartphone-name">{phone.name}</h3>
@@ -232,18 +312,11 @@ export const SmartphoneSection = () => {
 
                 <div className="smartphone-actions">
                   <Button 
-                    className="smartphone-buy-btn"
-                    onClick={() => handleBuyNow(phone)}
+                    className="smartphone-add-btn"
+                    onClick={() => addToCart(phone)}
                   >
-                    <Zap className="h-4 w-4 mr-2" />
-                    Acheter
-                  </Button>
-                  <Button 
-                    variant="outline"
-                    className="smartphone-whatsapp-btn"
-                    onClick={() => handleWhatsApp(phone)}
-                  >
-                    <MessageCircle className="h-4 w-4" />
+                    <Plus className="h-4 w-4 mr-1" />
+                    Ajouter au panier
                   </Button>
                 </div>
               </CardContent>
@@ -251,57 +324,110 @@ export const SmartphoneSection = () => {
           ))}
         </div>
 
-        {/* PayPal Modal */}
-        {selectedPhone && (
-          <div className="smartphone-modal-overlay" onClick={() => setSelectedPhone(null)}>
-            <div className="smartphone-modal" onClick={(e) => e.stopPropagation()}>
-              <div className="modal-header">
-                <h3 className="modal-title">Finaliser l'achat</h3>
-                <Button 
-                  variant="ghost" 
-                  size="sm"
-                  onClick={() => setSelectedPhone(null)}
-                  className="modal-close"
-                >
-                  ✕
-                </Button>
-              </div>
-              
-              <div className="modal-product">
-                <img src={selectedPhone.img} alt={selectedPhone.name} className="modal-image" />
-                <div className="modal-details">
-                  <p className="modal-product-name">{selectedPhone.name}</p>
-                  <p className="modal-product-specs">{selectedPhone.storage} • {selectedPhone.color}</p>
-                  <p className="modal-product-price">{selectedPhone.price}€</p>
-                </div>
+        {/* Floating Cart Button */}
+        {cart.length > 0 && (
+          <button 
+            className="smartphone-floating-cart-btn"
+            onClick={() => setIsCartOpen(true)}
+          >
+            <ShoppingCart size={24} />
+            <span className="smartphone-cart-count">{getCartItemCount()}</span>
+            <span className="smartphone-cart-total">{getCartTotal()}€</span>
+          </button>
+        )}
+
+        {/* Cart Sidebar */}
+        {isCartOpen && (
+          <>
+            <div className="smartphone-cart-overlay" onClick={() => { setIsCartOpen(false); setShowPayPal(false); }} />
+            <div className="smartphone-cart-sidebar">
+              <div className="smartphone-cart-header">
+                <h3>
+                  <ShoppingCart size={20} />
+                  Panier Smartphones
+                </h3>
+                <button className="smartphone-cart-close" onClick={() => { setIsCartOpen(false); setShowPayPal(false); }}>
+                  <X size={24} />
+                </button>
               </div>
 
-              <div className="modal-features">
-                <div className="modal-feature">
-                  <Shield className="h-4 w-4" />
-                  <span>Garantie constructeur</span>
-                </div>
-                <div className="modal-feature">
-                  <Truck className="h-4 w-4" />
-                  <span>Livraison Guyane</span>
-                </div>
+              <div className="smartphone-cart-items">
+                {cart.length === 0 ? (
+                  <p className="smartphone-cart-empty">Votre panier est vide</p>
+                ) : (
+                  cart.map((item) => (
+                    <div key={item.id} className="smartphone-cart-item">
+                      <img src={item.img} alt={item.name} className="smartphone-cart-item-image" />
+                      <div className="smartphone-cart-item-details">
+                        <h4>{item.name}</h4>
+                        <p>{item.storage} • {item.color}</p>
+                        <p className="smartphone-cart-item-price">{item.price}€</p>
+                      </div>
+                      <div className="smartphone-cart-item-quantity">
+                        <button onClick={() => updateQuantity(item.id, item.quantity - 1)}>
+                          <Minus size={16} />
+                        </button>
+                        <span>{item.quantity}</span>
+                        <button onClick={() => updateQuantity(item.id, item.quantity + 1)}>
+                          <Plus size={16} />
+                        </button>
+                      </div>
+                      <button 
+                        className="smartphone-cart-item-remove"
+                        onClick={() => removeFromCart(item.id)}
+                      >
+                        <Trash2 size={18} />
+                      </button>
+                    </div>
+                  ))
+                )}
               </div>
 
-              <div className="modal-paypal">
-                <p className="paypal-label">Payer avec PayPal :</p>
-                <div ref={paypalButtonRef} className="paypal-buttons"></div>
-              </div>
-
-              <Button 
-                variant="outline"
-                className="modal-whatsapp"
-                onClick={() => handleWhatsApp(selectedPhone)}
-              >
-                <MessageCircle className="h-4 w-4 mr-2" />
-                Contacter via WhatsApp
-              </Button>
+              {cart.length > 0 && (
+                <div className="smartphone-cart-footer">
+                  <div className="smartphone-cart-total-row">
+                    <span>Total</span>
+                    <span className="smartphone-cart-total-amount">{getCartTotal()}€</span>
+                  </div>
+                  
+                  {!showPayPal ? (
+                    <>
+                      <Button 
+                        className="smartphone-cart-paypal-btn"
+                        onClick={() => setShowPayPal(true)}
+                      >
+                        <Zap size={18} />
+                        Payer avec PayPal
+                      </Button>
+                      
+                      <Button 
+                        className="smartphone-cart-whatsapp-btn"
+                        onClick={handleWhatsAppOrder}
+                      >
+                        <MessageCircle size={18} />
+                        Commander via WhatsApp
+                      </Button>
+                    </>
+                  ) : (
+                    <div className="smartphone-paypal-container">
+                      <p className="smartphone-paypal-label">Finaliser le paiement :</p>
+                      <div ref={paypalButtonRef} className="smartphone-paypal-buttons"></div>
+                      <button 
+                        className="smartphone-paypal-cancel"
+                        onClick={() => setShowPayPal(false)}
+                      >
+                        Retour
+                      </button>
+                    </div>
+                  )}
+                  
+                  <button className="smartphone-cart-clear-btn" onClick={clearCart}>
+                    Vider le panier
+                  </button>
+                </div>
+              )}
             </div>
-          </div>
+          </>
         )}
 
         {/* Trust Badges */}
