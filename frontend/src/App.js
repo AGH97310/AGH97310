@@ -18,6 +18,7 @@ import { Footer } from './components/Footer';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 import { SmartphoneSection } from './components/SmartphoneSection';
 import { MiniSmartphoneSection } from './components/MiniSmartphoneSection';
+import { TabletSection } from './components/TabletSection';
 import { CookieConsent } from './components/CookieConsent';
 
 // Legal Pages
