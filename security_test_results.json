@@ -1,0 +1,117 @@
+{
+  "security_headers": {
+    "passed": true,
+    "details": {
+      "status_code": 200,
+      "passed_headers": {
+        "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.paypal.com https://*.paypal.com https://unpkg.com https://cdn.tailwindcss.com https://assets.emergent.sh https://d2adkz2s9zrlge.cloudfront.net https://us.i.posthog.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https: blob:; connect-src 'self' https://www.paypal.com https://*.paypal.com https://us.i.posthog.com https://*.emergentagent.com wss://*.emergentagent.com; frame-src 'self' https://www.paypal.com https://*.paypal.com; object-src 'none'; base-uri 'self'; form-action 'self' https://www.paypal.com; frame-ancestors 'self' https://*.emergentagent.com; upgrade-insecure-requests",
+        "X-Frame-Options": "SAMEORIGIN",
+        "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+        "X-Content-Type-Options": "nosniff",
+        "X-XSS-Protection": "1; mode=block",
+        "Referrer-Policy": "strict-origin-when-cross-origin"
+      },
+      "failed_headers": {},
+      "response_time": 0.077312
+    }
+  },
+  "rate_limiting": {
+    "passed": false,
+    "details": {
+      "responses": [
+        {
+          "request_num": 1,
+          "status_code": 201,
+          "response_time": 0.029349
+        },
+        {
+          "request_num": 2,
+          "status_code": 201,
+          "response_time": 0.01096
+        },
+        {
+          "request_num": 3,
+          "status_code": 201,
+          "response_time": 0.010778
+        },
+        {
+          "request_num": 4,
+          "status_code": 201,
+          "response_time": 0.010559
+        },
+        {
+          "request_num": 5,
+          "status_code": 201,
+          "response_time": 0.010881
+        },
+        {
+          "request_num": 6,
+          "status_code": 201,
+          "response_time": 0.009951
+        }
+      ],
+      "rate_limit_triggered": false
+    }
+  },
+  "xss_protection": {
+    "passed": false,
+    "details": {
+      "status_code": 201,
+      "original_name": "<script>alert('xss')</script>",
+      "returned_name": "alert'xss'",
+      "response_data": {
+        "success": true,
+        "message": "Demande de contact enregistr\u00e9e avec succ\u00e8s",
+        "data": {
+          "id": "695daed0296c0f00fbdba1ff",
+          "name": "alert'xss'",
+          "service": "autre",
+          "createdAt": "2026-01-07T00:54:40.250477+00:00"
+        }
+      }
+    }
+  },
+  "input_validation": {
+    "passed": true,
+    "details": {
+      "status_code": 422,
+      "invalid_service": "hacking_attempt",
+      "response_time": 0.008877,
+      "response_data": {
+        "detail": [
+          {
+            "type": "value_error",
+            "loc": [
+              "body",
+              "service"
+            ],
+            "msg": "Value error, Service invalide. Options: recuperation, reinstallation, nettoyage, virus, site, smartphone, abonnement, autre",
+            "input": "hacking_attempt",
+            "ctx": {
+              "error": {}
+            },
+            "url": "https://errors.pydantic.dev/2.12/v/value_error"
+          }
+        ]
+      }
+    }
+  },
+  "nosql_injection": {
+    "passed": true,
+    "details": {
+      "status_code": 201,
+      "original_name": "Test $where: 1==1",
+      "returned_name": "Test where 11",
+      "response_data": {
+        "success": true,
+        "message": "Demande de contact enregistr\u00e9e avec succ\u00e8s",
+        "data": {
+          "id": "695daed0296c0f00fbdba200",
+          "name": "Test where 11",
+          "service": "autre",
+          "createdAt": "2026-01-07T00:54:40.270704+00:00"
+        }
+      }
+    }
+  }
+}
