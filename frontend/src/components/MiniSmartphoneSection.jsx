@@ -19,7 +19,7 @@ export const MiniSmartphoneSection = () => {
       color: 'Noir',
       price: 119,
       image: 'https://customer-assets.emergentagent.com/job_082652f8-6982-4266-bdd7-1ba9de34a6c9/artifacts/3u4erfye_mini-smartphone-s25-3g-2-go16-go-ecran-30-noir-neuf.jpg',
-      badge: 'Compact',
+      badge: 'COMPACT',
       highlights: ['Double SIM', 'GPS', 'WhatsApp', 'Idéal enfants'],
       description: 'Le plus compact ! Parfait comme téléphone de secours ou cadeau pour enfants.'
     },
