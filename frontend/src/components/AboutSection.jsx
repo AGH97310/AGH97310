@@ -41,14 +41,14 @@ export const AboutSection = () => {
               <span className="mono-text">À PROPOS</span>
             </div>
             <h2 className="about-title">
-              🧭 À propos de NEOTECH T+LEWUYU
+              🧭 À propos de NEOTECH TILEWUYU
             </h2>
             
             <div className="about-sections">
               <div className="about-block">
                 <h3 className="about-subtitle">💡 La tech vient à vous</h3>
                 <p className="about-text">
-                  <span className="about-highlight">NEOTECH T+LEWUYU</span> est une micro-entreprise{' '}
+                  <span className="about-highlight">NEOTECH TILEWUYU</span> est une micro-entreprise{' '}
                   <span className="about-accent">100 % guyanaise</span> née d'une conviction simple :
                 </p>
                 <p className="about-quote">
@@ -76,7 +76,7 @@ export const AboutSection = () => {
                 </p>
                 <p className="about-text">
                   De la réparation informatique à distance à la création de sites web professionnels, en passant 
-                  par la maintenance smartphone et les ventes technologiques B2B/B2C, NEOTECH T+LEWUYU met 
+                  par la maintenance smartphone et les ventes technologiques B2B/B2C, NEOTECH TILEWUYU met 
                   l'efficacité et la confiance au cœur de chaque intervention.
                 </p>
               </div>
@@ -101,7 +101,7 @@ export const AboutSection = () => {
                   technologie au quotidien.
                 </p>
                 <p className="about-final">
-                  Avec NEOTECH T+LEWUYU, la technologie devient enfin simple, rapide et accessible.
+                  Avec NEOTECH TILEWUYU, la technologie devient enfin simple, rapide et accessible.
                 </p>
               </div>
 
