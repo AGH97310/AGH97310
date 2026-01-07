@@ -1,17 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Card, CardContent } from './ui/card';
 import { Button } from './ui/button';
 import { 
-  Tablet, ShoppingCart, Plus, Minus, X, Trash2, 
-  Check, Wifi, Battery, Monitor, Cpu, MessageCircle, Zap
+  Tablet, Plus, Check, Wifi, Battery, Monitor, Cpu
 } from 'lucide-react';
-import { useToast } from '../hooks/use-toast';
+import { useCart } from '../context/CartContext';
 import './TabletSection.css';
 
 export const TabletSection = () => {
-  const { toast } = useToast();
-  const [cart, setCart] = useState([]);
-  const [isCartOpen, setIsCartOpen] = useState(false);
+  const { addToCart } = useCart();
 
   const tablets = [
     {
@@ -64,80 +61,8 @@ export const TabletSection = () => {
     }
   ];
 
-  // Load cart from localStorage
-  useEffect(() => {
-    const savedCart = localStorage.getItem('tablet_cart');
-    if (savedCart) {
-      try {
-        setCart(JSON.parse(savedCart));
-      } catch (e) {
-        console.error('Error loading cart:', e);
-      }
-    }
-  }, []);
-
-  // Save cart to localStorage
-  useEffect(() => {
-    localStorage.setItem('tablet_cart', JSON.stringify(cart));
-  }, [cart]);
-
-  const addToCart = (tablet) => {
-    setCart(prevCart => {
-      const existingItem = prevCart.find(item => item.id === tablet.id);
-      if (existingItem) {
-        return prevCart.map(item =>
-          item.id === tablet.id
-            ? { ...item, quantity: item.quantity + 1 }
-            : item
-        );
-      }
-      return [...prevCart, { ...tablet, quantity: 1 }];
-    });
-    toast({
-      title: "Ajouté au panier",
-      description: `${tablet.name} ajouté au panier`,
-    });
-  };
-
-  const removeFromCart = (tabletId) => {
-    setCart(prevCart => prevCart.filter(item => item.id !== tabletId));
-  };
-
-  const updateQuantity = (tabletId, newQuantity) => {
-    if (newQuantity < 1) {
-      removeFromCart(tabletId);
-      return;
-    }
-    setCart(prevCart =>
-      prevCart.map(item =>
-        item.id === tabletId
-          ? { ...item, quantity: newQuantity }
-          : item
-      )
-    );
-  };
-
-  const getCartTotal = () => {
-    return cart.reduce((total, item) => total + (item.price * item.quantity), 0);
-  };
-
-  const getCartItemCount = () => {
-    return cart.reduce((count, item) => count + item.quantity, 0);
-  };
-
-  const clearCart = () => {
-    setCart([]);
-  };
-
-  const handleWhatsAppOrder = () => {
-    const cartItems = cart.map(item => 
-      `• ${item.name} (${item.color}) x${item.quantity} = ${item.price * item.quantity}€`
-    ).join('\n');
-    
-    const message = `🛒 Commande Tablettes NEOTECH\n\n${cartItems}\n\n💰 Total: ${getCartTotal()}€\n\nMerci de confirmer ma commande.`;
-    
-    const whatsappUrl = `https://wa.me/594694458584?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
+  const handleAddToCart = (tablet) => {
+    addToCart(tablet, 'tablet');
   };
 
   return (
@@ -208,7 +133,7 @@ export const TabletSection = () => {
                   <div className="tablet-price">{tablet.price}€</div>
                   <Button 
                     className="tablet-add-btn"
-                    onClick={() => addToCart(tablet)}
+                    onClick={() => handleAddToCart(tablet)}
                   >
                     <Plus size={18} />
                     Ajouter
@@ -218,89 +143,6 @@ export const TabletSection = () => {
             </Card>
           ))}
         </div>
-
-        {/* Floating Cart Button */}
-        {cart.length > 0 && (
-          <button 
-            className="tablet-floating-cart-btn"
-            onClick={() => setIsCartOpen(true)}
-          >
-            <ShoppingCart size={24} />
-            <span className="tablet-cart-count">{getCartItemCount()}</span>
-            <span className="tablet-cart-total">{getCartTotal()}€</span>
-          </button>
-        )}
-
-        {/* Cart Sidebar */}
-        {isCartOpen && (
-          <>
-            <div className="tablet-cart-overlay" onClick={() => setIsCartOpen(false)} />
-            <div className="tablet-cart-sidebar">
-              <div className="tablet-cart-header">
-                <h3>
-                  <ShoppingCart size={20} />
-                  Panier Tablettes
-                </h3>
-                <button className="tablet-cart-close" onClick={() => setIsCartOpen(false)}>
-                  <X size={24} />
-                </button>
-              </div>
-
-              <div className="tablet-cart-items">
-                {cart.length === 0 ? (
-                  <p className="tablet-cart-empty">Votre panier est vide</p>
-                ) : (
-                  cart.map((item) => (
-                    <div key={item.id} className="tablet-cart-item">
-                      <img src={item.image} alt={item.name} className="tablet-cart-item-image" />
-                      <div className="tablet-cart-item-details">
-                        <h4>{item.name}</h4>
-                        <p>{item.subtitle}</p>
-                        <p className="tablet-cart-item-price">{item.price}€</p>
-                      </div>
-                      <div className="tablet-cart-item-quantity">
-                        <button onClick={() => updateQuantity(item.id, item.quantity - 1)}>
-                          <Minus size={16} />
-                        </button>
-                        <span>{item.quantity}</span>
-                        <button onClick={() => updateQuantity(item.id, item.quantity + 1)}>
-                          <Plus size={16} />
-                        </button>
-                      </div>
-                      <button 
-                        className="tablet-cart-item-remove"
-                        onClick={() => removeFromCart(item.id)}
-                      >
-                        <Trash2 size={18} />
-                      </button>
-                    </div>
-                  ))
-                )}
-              </div>
-
-              {cart.length > 0 && (
-                <div className="tablet-cart-footer">
-                  <div className="tablet-cart-total-row">
-                    <span>Total</span>
-                    <span className="tablet-cart-total-amount">{getCartTotal()}€</span>
-                  </div>
-                  
-                  <Button 
-                    className="tablet-cart-whatsapp-btn"
-                    onClick={handleWhatsAppOrder}
-                  >
-                    <MessageCircle size={18} />
-                    Commander via WhatsApp
-                  </Button>
-                  
-                  <button className="tablet-cart-clear-btn" onClick={clearCart}>
-                    Vider le panier
-                  </button>
-                </div>
-              )}
-            </div>
-          </>
-        )}
 
         {/* Info Box */}
         <div className="tablet-info-box">
