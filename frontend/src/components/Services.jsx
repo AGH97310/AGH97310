@@ -33,7 +33,7 @@ export const Services = () => {
       title: 'Ventes Privées',
       price: 'Sur devis',
       description: 'B2B & B2C',
-      features: ['Smartphones dernière génération', 'Parfums orientaux premium', 'Livraison gratuite Kourou'],
+      features: ['Smartphones & Tablettes', 'Parfums orientaux premium', 'Consoles & High-Tech', 'Livraison gratuite Kourou'],
       color: 'blue',
       ctaText: 'Demander un devis',
       ctaLink: 'https://wa.me/594694458584'
