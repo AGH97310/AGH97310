@@ -59,16 +59,19 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          {/* Legal Pages */}
-          <Route path="/cgv" element={<CGV />} />
-          <Route path="/cgu" element={<CGU />} />
-          <Route path="/mentions-legales" element={<MentionsLegales />} />
-          <Route path="/politique-confidentialite" element={<PolitiqueConfidentialite />} />
-          <Route path="/politique-cookies" element={<PolitiqueCookies />} />
-        </Routes>
-        <CookieConsent />
+        <CartProvider>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            {/* Legal Pages */}
+            <Route path="/cgv" element={<CGV />} />
+            <Route path="/cgu" element={<CGU />} />
+            <Route path="/mentions-legales" element={<MentionsLegales />} />
+            <Route path="/politique-confidentialite" element={<PolitiqueConfidentialite />} />
+            <Route path="/politique-cookies" element={<PolitiqueCookies />} />
+          </Routes>
+          <UnifiedCart />
+          <CookieConsent />
+        </CartProvider>
       </BrowserRouter>
       <Toaster />
     </div>
