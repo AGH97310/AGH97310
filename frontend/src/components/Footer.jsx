@@ -110,10 +110,11 @@ export const Footer = () => {
             <div className="footer-legal-block">
               <p className="footer-legal-company"><strong>NEOTECH TILEWUYU</strong></p>
               <p className="footer-legal-text">Micro-entreprise</p>
-              <p className="footer-legal-text"><strong>SIRET:</strong> 940 487 747 00013</p>
-              <p className="footer-legal-text"><strong>Code APE:</strong> 4619B</p>
+              <p className="footer-legal-text"><strong>SIRET:</strong> 994 048 774 700 013</p>
+              <p className="footer-legal-text"><strong>TVA:</strong> FR03940487747</p>
+              <p className="footer-legal-text"><strong>RCS:</strong> Paris</p>
               <p className="footer-legal-text footer-legal-address">
-                <strong>Domiciliation:</strong> LegalPlace, 60 rue François 1er, 75008 Paris
+                <strong>Domiciliation:</strong> 60 rue François 1er, 75008 Paris
               </p>
             </div>
 
