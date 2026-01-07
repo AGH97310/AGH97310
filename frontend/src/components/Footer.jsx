@@ -29,7 +29,7 @@ export const Footer = () => {
           <div className="footer-column">
             <div className="footer-logo">
               <img 
-                src="https://customer-assets.emergentagent.com/job_guyane-it-service/artifacts/bpvlgzxo_3.png" 
+                src="https://customer-assets.emergentagent.com/job_cyberpunk-store-2/artifacts/8l81voq2_3.png" 
                 alt="NEOTECH T+LEWUYU" 
                 className="footer-logo-image"
               />
