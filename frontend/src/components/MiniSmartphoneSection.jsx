@@ -1,15 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Card, CardContent } from './ui/card';
 import { Button } from './ui/button';
 import { 
-  Smartphone, ShoppingCart, Plus, Minus, X, Trash2, 
-  Check, Zap, Shield, Gift, Briefcase
+  Smartphone, Plus, Check, Zap, Shield, Gift, Briefcase
 } from 'lucide-react';
+import { useCart } from '../context/CartContext';
 import './MiniSmartphoneSection.css';
 
 export const MiniSmartphoneSection = () => {
-  const [cart, setCart] = useState([]);
-  const [isCartOpen, setIsCartOpen] = useState(false);
+  const { addToCart } = useCart();
 
   const miniPhones = [
     {
@@ -58,76 +57,8 @@ export const MiniSmartphoneSection = () => {
     }
   ];
 
-  // Load cart from localStorage
-  useEffect(() => {
-    const savedCart = localStorage.getItem('miniphone_cart');
-    if (savedCart) {
-      try {
-        setCart(JSON.parse(savedCart));
-      } catch (e) {
-        console.error('Error loading cart:', e);
-      }
-    }
-  }, []);
-
-  // Save cart to localStorage
-  useEffect(() => {
-    localStorage.setItem('miniphone_cart', JSON.stringify(cart));
-  }, [cart]);
-
-  const addToCart = (phone) => {
-    setCart(prevCart => {
-      const existingItem = prevCart.find(item => item.id === phone.id);
-      if (existingItem) {
-        return prevCart.map(item =>
-          item.id === phone.id
-            ? { ...item, quantity: item.quantity + 1 }
-            : item
-        );
-      }
-      return [...prevCart, { ...phone, quantity: 1 }];
-    });
-  };
-
-  const removeFromCart = (phoneId) => {
-    setCart(prevCart => prevCart.filter(item => item.id !== phoneId));
-  };
-
-  const updateQuantity = (phoneId, newQuantity) => {
-    if (newQuantity < 1) {
-      removeFromCart(phoneId);
-      return;
-    }
-    setCart(prevCart =>
-      prevCart.map(item =>
-        item.id === phoneId
-          ? { ...item, quantity: newQuantity }
-          : item
-      )
-    );
-  };
-
-  const getCartTotal = () => {
-    return cart.reduce((total, item) => total + (item.price * item.quantity), 0);
-  };
-
-  const getCartItemCount = () => {
-    return cart.reduce((count, item) => count + item.quantity, 0);
-  };
-
-  const clearCart = () => {
-    setCart([]);
-  };
-
-  const handleWhatsAppOrder = () => {
-    const cartItems = cart.map(item => 
-      `• ${item.name} (${item.color}) x${item.quantity} = ${item.price * item.quantity}€`
-    ).join('\n');
-    
-    const message = `🛒 Commande Mini Smartphones NEOTECH\n\n${cartItems}\n\n💰 Total: ${getCartTotal()}€\n\nMerci de confirmer ma commande.`;
-    
-    const whatsappUrl = `https://wa.me/594694458584?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
+  const handleAddToCart = (phone) => {
+    addToCart(phone, 'mini-smartphone');
   };
 
   return (
@@ -197,7 +128,7 @@ export const MiniSmartphoneSection = () => {
                   <div className="mini-phone-price">{phone.price}€</div>
                   <Button 
                     className="mini-add-btn"
-                    onClick={() => addToCart(phone)}
+                    onClick={() => handleAddToCart(phone)}
                   >
                     <Plus size={18} />
                     Ajouter
@@ -207,88 +138,6 @@ export const MiniSmartphoneSection = () => {
             </Card>
           ))}
         </div>
-
-        {/* Floating Cart Button */}
-        {cart.length > 0 && (
-          <button 
-            className="floating-cart-btn"
-            onClick={() => setIsCartOpen(true)}
-          >
-            <ShoppingCart size={24} />
-            <span className="cart-count">{getCartItemCount()}</span>
-            <span className="cart-total">{getCartTotal()}€</span>
-          </button>
-        )}
-
-        {/* Cart Sidebar */}
-        {isCartOpen && (
-          <>
-            <div className="cart-overlay" onClick={() => setIsCartOpen(false)} />
-            <div className="cart-sidebar">
-              <div className="cart-header">
-                <h3>
-                  <ShoppingCart size={20} />
-                  Votre Panier
-                </h3>
-                <button className="cart-close" onClick={() => setIsCartOpen(false)}>
-                  <X size={24} />
-                </button>
-              </div>
-
-              <div className="cart-items">
-                {cart.length === 0 ? (
-                  <p className="cart-empty">Votre panier est vide</p>
-                ) : (
-                  cart.map((item) => (
-                    <div key={item.id} className="cart-item">
-                      <img src={item.image} alt={item.name} className="cart-item-image" />
-                      <div className="cart-item-details">
-                        <h4>{item.name}</h4>
-                        <p>{item.color}</p>
-                        <p className="cart-item-price">{item.price}€</p>
-                      </div>
-                      <div className="cart-item-quantity">
-                        <button onClick={() => updateQuantity(item.id, item.quantity - 1)}>
-                          <Minus size={16} />
-                        </button>
-                        <span>{item.quantity}</span>
-                        <button onClick={() => updateQuantity(item.id, item.quantity + 1)}>
-                          <Plus size={16} />
-                        </button>
-                      </div>
-                      <button 
-                        className="cart-item-remove"
-                        onClick={() => removeFromCart(item.id)}
-                      >
-                        <Trash2 size={18} />
-                      </button>
-                    </div>
-                  ))
-                )}
-              </div>
-
-              {cart.length > 0 && (
-                <div className="cart-footer">
-                  <div className="cart-total-row">
-                    <span>Total</span>
-                    <span className="cart-total-amount">{getCartTotal()}€</span>
-                  </div>
-                  
-                  <Button 
-                    className="cart-checkout-btn"
-                    onClick={handleWhatsAppOrder}
-                  >
-                    Commander via WhatsApp
-                  </Button>
-                  
-                  <button className="cart-clear-btn" onClick={clearCart}>
-                    Vider le panier
-                  </button>
-                </div>
-              )}
-            </div>
-          </>
-        )}
 
         {/* Info Box */}
         <div className="mini-info-box">
