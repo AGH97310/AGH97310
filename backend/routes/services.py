@@ -13,8 +13,8 @@ async def get_services(active_only: bool = True):
     try:
         query = {'active': True} if active_only else {}
         
-        # Fetch from MongoDB
-        cursor = db.services.find(query).sort('createdAt', -1)
+        # Fetch from MongoDB with explicit limit for optimization
+        cursor = db.services.find(query).sort('createdAt', -1).limit(100)
         services = await cursor.to_list(length=100)
         
         # Transform data
