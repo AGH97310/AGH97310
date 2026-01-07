@@ -183,12 +183,25 @@ metadata:
   run_ui: true
 
 test_plan:
-  current_focus: []
+  current_focus:
+    - "Unified Cart across all product sections"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
 
 frontend:
+  - task: "Unified Cart - All products in single cart"
+    implemented: true
+    working: "NA"
+    file: "frontend/src/components/UnifiedCart.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Created unified cart system with CartContext and UnifiedCart component. All 5 product sections (Console, Smartphone, Mini Smartphone, Tablet, Perfume) now use the shared cart context. Single floating cart button, single sidebar showing all items grouped by category with icons. PayPal and WhatsApp order buttons available. Visual verification done: added items from all 5 categories, total showed 1045.90€ correctly, categories labeled with emojis."
+
   - task: "Console Section - 3 consoles with shopping cart"
     implemented: true
     working: true
