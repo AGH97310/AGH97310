@@ -37,8 +37,6 @@ const Home = () => {
       <ScrollingLogo />
       <main>
         <Hero />
-        <IndividualServices />
-        <BusinessServices />
         <RemoteITServices />
         <Services />
         <ConsoleSection />
