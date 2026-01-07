@@ -30,7 +30,7 @@ export const MiniSmartphoneSection = () => {
       color: 'Bleu',
       price: 125,
       image: 'https://customer-assets.emergentagent.com/job_082652f8-6982-4266-bdd7-1ba9de34a6c9/artifacts/25f8u19y_zte-blade-l9-32-go-double-sim-bleu-neuf.jpg',
-      badge: 'Meilleur rapport',
+      badge: 'MEILLEUR RAPPORT',
       highlights: ['Double SIM', '32Go', 'Android', 'Caméra 5MP'],
       description: 'Élégant et fonctionnel. Idéal pour usage quotidien ou professionnel.'
     },
