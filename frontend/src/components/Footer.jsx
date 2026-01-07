@@ -141,7 +141,7 @@ export const Footer = () => {
         {/* Copyright */}
         <div className="footer-bottom">
           <div className="footer-bottom-content">
-            <span>© {currentYear} NEOTECH T+LEWUYU</span>
+            <span>© {currentYear} NEOTECH TILEWUYU</span>
             <span className="footer-separator">•</span>
             <span>Tous droits réservés</span>
           </div>
