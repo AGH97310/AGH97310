@@ -1,4 +1,4 @@
-// Mock data for NEOTECH T+LEWUYU website
+// Mock data for NEOTECH TILEWUYU website
 // This file contains static data used for the frontend-only version
 // Backend integration will replace this data with real API calls
 
