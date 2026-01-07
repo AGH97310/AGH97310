@@ -44,6 +44,7 @@ const Home = () => {
         <ConsoleSection />
         <SmartphoneSection />
         <MiniSmartphoneSection />
+        <TabletSection />
         <PerfumeSectionWithCart />
         <WhyUs />
         <AboutSection />
