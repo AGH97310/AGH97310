@@ -24,12 +24,15 @@ export const PolitiqueConfidentialite = () => {
           <h2><Shield className="section-icon" /> 1. Responsable du traitement</h2>
           <div className="info-card">
             <p><strong>NEOTECH TILEWUYU</strong></p>
-            <p>Adresse : [À compléter], Kourou, 97310 Guyane française</p>
+            <p>Micro-entreprise</p>
+            <p>Adresse de domiciliation : 60 rue François 1er, 75008 Paris</p>
+            <p>Lieu d'activité : Kourou, 97310 Guyane française</p>
+            <p>SIRET : 994 048 774 700 013</p>
             <p>Email : neotech.tilewuyu@gmail.com</p>
             <p>Téléphone : +594 694 45 85 84</p>
           </div>
           <p>
-            <strong>Délégué à la Protection des Données (DPO) :</strong> [Si applicable, à compléter]
+            <strong>Délégué à la Protection des Données (DPO) :</strong> Non applicable (micro-entreprise)
           </p>
         </section>
 
