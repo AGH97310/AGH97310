@@ -77,7 +77,7 @@ export const mockContactInfo = {
 };
 
 export const mockCompanyInfo = {
-  name: 'NEOTECH T+LEWUYU',
+  name: 'NEOTECH TILEWUYU',
   tagline: 'Luxe. Digital. Local.',
   description: 'Assistance IT & digitale à distance',
   owner: 'Guirao AWATJALE',
