@@ -177,13 +177,19 @@ class SecurityTester:
                     response_data = response.json()
                     returned_name = response_data.get("data", {}).get("name", "")
                     
-                    if "<script>" not in returned_name and "alert" not in returned_name:
-                        print(f"  ✅ XSS protection working - script tags stripped")
-                        print(f"  📝 Sanitized name: '{returned_name}'")
+                    # Check if dangerous script tags and content are removed/sanitized
+                    if ("<script>" not in returned_name and 
+                        "</script>" not in returned_name and 
+                        "alert(" not in returned_name and
+                        len(returned_name) < len(xss_payload["name"])):
+                        print(f"  ✅ XSS protection working - dangerous content stripped/sanitized")
+                        print(f"  📝 Original: '{xss_payload['name']}'")
+                        print(f"  📝 Sanitized: '{returned_name}'")
                         self.results["xss_protection"]["passed"] = True
                     else:
-                        print(f"  ❌ XSS protection failed - script tags not stripped")
-                        print(f"  📝 Returned name: '{returned_name}'")
+                        print(f"  ❌ XSS protection insufficient - dangerous content not fully removed")
+                        print(f"  📝 Original: '{xss_payload['name']}'")
+                        print(f"  📝 Returned: '{returned_name}'")
                         self.results["xss_protection"]["passed"] = False
                     
                     self.results["xss_protection"]["details"] = {
