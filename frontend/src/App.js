@@ -17,8 +17,15 @@ import { FAQ } from './components/FAQ';
 import { Footer } from './components/Footer';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 import { SmartphoneSection } from './components/SmartphoneSection';
+import { CookieConsent } from './components/CookieConsent';
+
+// Legal Pages
 import { CGV } from './pages/CGV';
 import { MentionsLegales } from './pages/MentionsLegales';
+import { CGU } from './pages/CGU';
+import { PolitiqueConfidentialite } from './pages/PolitiqueConfidentialite';
+import { PolitiqueCookies } from './pages/PolitiqueCookies';
+
 import './App.css';
 
 const Home = () => {
@@ -52,9 +59,14 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
+          {/* Legal Pages */}
           <Route path="/cgv" element={<CGV />} />
+          <Route path="/cgu" element={<CGU />} />
           <Route path="/mentions-legales" element={<MentionsLegales />} />
+          <Route path="/politique-confidentialite" element={<PolitiqueConfidentialite />} />
+          <Route path="/politique-cookies" element={<PolitiqueCookies />} />
         </Routes>
+        <CookieConsent />
       </BrowserRouter>
       <Toaster />
     </div>
