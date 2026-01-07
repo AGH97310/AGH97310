@@ -21,14 +21,16 @@ export const MentionsLegales = () => {
           <h2><Building2 className="section-icon" /> 1. Éditeur du site</h2>
           <div className="info-card">
             <p><strong>Raison sociale :</strong> NEOTECH TILEWUYU</p>
-            <p><strong>Forme juridique :</strong> [À compléter : Auto-entrepreneur / SARL / SAS]</p>
-            <p><strong>Adresse du siège social :</strong> [À compléter], Kourou, 97310 Guyane française</p>
-            <p><strong>SIRET :</strong> [À compléter - 14 chiffres]</p>
-            <p><strong>SIREN :</strong> [À compléter - 9 chiffres]</p>
-            <p><strong>RCS :</strong> Cayenne [À compléter]</p>
-            <p><strong>N° TVA Intracommunautaire :</strong> FR [À compléter] (si applicable)</p>
-            <p><strong>Capital social :</strong> [À compléter] € (si applicable)</p>
+            <p><strong>Forme juridique :</strong> Micro-entreprise</p>
+            <p><strong>Adresse de domiciliation :</strong> 60 rue François 1er, 75008 Paris</p>
+            <p><strong>SIRET :</strong> 994 048 774 700 013</p>
+            <p><strong>SIREN :</strong> 994 048 774</p>
+            <p><strong>RCS :</strong> Paris</p>
+            <p><strong>N° TVA Intracommunautaire :</strong> FR03940487747</p>
             <p><strong>Directeur de la publication :</strong> [Nom du responsable légal]</p>
+          </div>
+          <div className="info-card">
+            <p><strong>Lieu d'activité principal :</strong> Kourou, 97310 Guyane française</p>
           </div>
         </section>
 
