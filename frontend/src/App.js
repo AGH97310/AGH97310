@@ -42,6 +42,7 @@ const Home = () => {
         <Services />
         <ConsoleSection />
         <SmartphoneSection />
+        <MiniSmartphoneSection />
         <PerfumeSectionWithCart />
         <WhyUs />
         <AboutSection />
