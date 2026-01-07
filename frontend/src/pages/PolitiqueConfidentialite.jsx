@@ -27,7 +27,7 @@ export const PolitiqueConfidentialite = () => {
             <p>Micro-entreprise</p>
             <p>Adresse de domiciliation : 60 rue François 1er, 75008 Paris</p>
             <p>Lieu d'activité : Kourou, 97310 Guyane française</p>
-            <p>SIRET : 994 048 774 700 013</p>
+            <p>SIRET : 940 487 747 00013</p>
             <p>Email : neotech.tilewuyu@gmail.com</p>
             <p>Téléphone : +594 694 45 85 84</p>
           </div>

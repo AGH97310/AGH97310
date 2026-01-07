@@ -23,8 +23,8 @@ export const MentionsLegales = () => {
             <p><strong>Raison sociale :</strong> NEOTECH TILEWUYU</p>
             <p><strong>Forme juridique :</strong> Micro-entreprise</p>
             <p><strong>Adresse de domiciliation :</strong> 60 rue François 1er, 75008 Paris</p>
-            <p><strong>SIRET :</strong> 994 048 774 700 013</p>
-            <p><strong>SIREN :</strong> 994 048 774</p>
+            <p><strong>SIRET :</strong> 940 487 747 00013</p>
+            <p><strong>SIREN :</strong> 940 487 747</p>
             <p><strong>RCS :</strong> Paris</p>
             <p><strong>N° TVA Intracommunautaire :</strong> FR03940487747</p>
             <p><strong>Directeur de la publication :</strong> [Nom du responsable légal]</p>
