@@ -41,7 +41,7 @@ export const MiniSmartphoneSection = () => {
       color: 'Noir',
       price: 129,
       image: 'https://customer-assets.emergentagent.com/job_082652f8-6982-4266-bdd7-1ba9de34a6c9/artifacts/cfghqm1z_mini-smartphone-android-m16-pro-3g-2-go16-go-ecran-40-noir-neuf.jpg',
-      badge: 'Pro',
+      badge: 'PRO',
       highlights: ['Design premium', 'Multi-app', 'Léger', 'GPS'],
       description: 'Design élégant, performances pro. Compact sans compromis.'
     },
