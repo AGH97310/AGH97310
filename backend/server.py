@@ -131,6 +131,12 @@ api_router.include_router(services_router)
 # Include the router in the main app
 app.include_router(api_router)
 
+# Root-level health check endpoint for Kubernetes probes (no /api prefix)
+@app.get("/health")
+async def root_health_check():
+    """Root health check endpoint for Kubernetes liveness/readiness probes"""
+    return {"status": "healthy", "timestamp": datetime.now(timezone.utc).isoformat()}
+
 # Add Security Headers Middleware (must be added before CORS)
 app.add_middleware(SecurityHeadersMiddleware)
 
