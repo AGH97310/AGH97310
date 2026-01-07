@@ -30,7 +30,7 @@ export const Footer = () => {
             <div className="footer-logo">
               <img 
                 src="https://customer-assets.emergentagent.com/job_cyberpunk-store-2/artifacts/8l81voq2_3.png" 
-                alt="NEOTECH T+LEWUYU" 
+                alt="NEOTECH TILEWUYU" 
                 className="footer-logo-image"
               />
             </div>

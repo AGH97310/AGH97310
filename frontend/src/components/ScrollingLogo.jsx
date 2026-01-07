@@ -2,7 +2,7 @@ import React from 'react';
 import './ScrollingLogo.css';
 
 export const ScrollingLogo = () => {
-  const welcomeMessage = "Bienvenue chez NEOTECH T+LEWUYU • Services IT • Produits High-Tech & Parfums orientaux";
+  const welcomeMessage = "Bienvenue chez NEOTECH TILEWUYU • Services IT • Produits High-Tech & Parfums orientaux";
   
   return (
     <div className="scrolling-logo-banner">

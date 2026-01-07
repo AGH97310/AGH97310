@@ -129,7 +129,7 @@ export const UnifiedCart = () => {
       return acc;
     }, {});
 
-    let message = `🛒 Commande NEOTECH T+LEWUYU\n\n`;
+    let message = `🛒 Commande NEOTECH TILEWUYU\n\n`;
     
     Object.entries(groupedItems).forEach(([category, items]) => {
       message += `📦 ${category}:\n`;

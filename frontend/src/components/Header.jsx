@@ -28,7 +28,7 @@ export const Header = () => {
         <div className="header-logo">
           <img 
             src="https://customer-assets.emergentagent.com/job_cyberpunk-store-2/artifacts/8l81voq2_3.png" 
-            alt="NEOTECH T+LEWUYU Logo" 
+            alt="NEOTECH TILEWUYU Logo" 
             className="logo-image"
           />
         </div>
