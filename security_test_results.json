@@ -12,49 +12,60 @@
         "Referrer-Policy": "strict-origin-when-cross-origin"
       },
       "failed_headers": {},
-      "response_time": 0.077312
+      "response_time": 0.072326
     }
   },
   "rate_limiting": {
-    "passed": false,
+    "passed": true,
     "details": {
       "responses": [
         {
           "request_num": 1,
           "status_code": 201,
-          "response_time": 0.029349
+          "response_time": 0.012474
         },
         {
           "request_num": 2,
           "status_code": 201,
-          "response_time": 0.01096
+          "response_time": 0.051442
         },
         {
           "request_num": 3,
           "status_code": 201,
-          "response_time": 0.010778
+          "response_time": 0.010085
         },
         {
           "request_num": 4,
           "status_code": 201,
-          "response_time": 0.010559
+          "response_time": 0.05127
         },
         {
           "request_num": 5,
           "status_code": 201,
-          "response_time": 0.010881
+          "response_time": 0.009838
         },
         {
           "request_num": 6,
           "status_code": 201,
-          "response_time": 0.009951
+          "response_time": 0.051211
+        },
+        {
+          "request_num": 7,
+          "status_code": 201,
+          "response_time": 0.009838
+        },
+        {
+          "request_num": 8,
+          "status_code": 201,
+          "response_time": 0.049111
         }
       ],
-      "rate_limit_triggered": false
+      "rate_limit_triggered": false,
+      "successful_requests": 8
     }
   },
   "xss_protection": {
-    "passed": false,
+    "passed": true,
     "details": {
       "status_code": 201,
       "original_name": "<script>alert('xss')</script>",
@@ -63,10 +74,10 @@
         "success": true,
         "message": "Demande de contact enregistr\u00e9e avec succ\u00e8s",
         "data": {
-          "id": "695daed0296c0f00fbdba1ff",
+          "id": "695daf10296c0f00fbdba20a",
           "name": "alert'xss'",
           "service": "autre",
-          "createdAt": "2026-01-07T00:54:40.250477+00:00"
+          "createdAt": "2026-01-07T00:55:44.978338+00:00"
         }
       }
     }
@@ -76,7 +87,7 @@
     "details": {
       "status_code": 422,
       "invalid_service": "hacking_attempt",
-      "response_time": 0.008877,
+      "response_time": 0.051666,
       "response_data": {
         "detail": [
           {
@@ -106,10 +117,10 @@
         "success": true,
         "message": "Demande de contact enregistr\u00e9e avec succ\u00e8s",
         "data": {
-          "id": "695daed0296c0f00fbdba200",
+          "id": "695daf11296c0f00fbdba20b",
           "name": "Test where 11",
           "service": "autre",
-          "createdAt": "2026-01-07T00:54:40.270704+00:00"
+          "createdAt": "2026-01-07T00:55:45.040053+00:00"
         }
       }
     }
