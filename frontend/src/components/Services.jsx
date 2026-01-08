@@ -80,9 +80,6 @@ export const Services = () => {
               <p className="vitrine-pro-target-text">
                 Indépendants · Artisans · Restaurants · Commerces de proximité
               </p>
-              <p className="vitrine-pro-target-ideal">
-                👉 Idéale pour : réseaux sociaux, flyers, entrepreneurs pressés
-              </p>
             </div>
 
             <a 
