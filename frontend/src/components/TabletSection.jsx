@@ -74,7 +74,7 @@ export const TabletSection = () => {
             <Tablet className="h-4 w-4" />
             TABLETTES
           </div>
-          <h2 className="tablet-title">Tablettes Tactiles</h2>
+          <h2 className="tablet-title">Tablettes Premium</h2>
           <p className="tablet-subtitle">
             Samsung • Apple • Blackview • Neuves avec garantie
           </p>
