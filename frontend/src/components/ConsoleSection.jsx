@@ -103,7 +103,7 @@ export const ConsoleSection = () => {
                     onClick={() => handleAddToCart(consoleItem)}
                   >
                     <Plus size={18} />
-                    Ajouter
+                    Ajouter au panier
                   </Button>
                 </div>
               </CardContent>

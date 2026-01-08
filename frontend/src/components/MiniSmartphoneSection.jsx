@@ -131,7 +131,7 @@ export const MiniSmartphoneSection = () => {
                     onClick={() => handleAddToCart(phone)}
                   >
                     <Plus size={18} />
-                    Ajouter
+                    Ajouter au panier
                   </Button>
                 </div>
               </CardContent>
