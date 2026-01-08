@@ -148,7 +148,7 @@ export const TabletSection = () => {
         <div className="tablet-info-box">
           <p>
             <strong>📱 Toutes nos tablettes sont neuves</strong> avec garantie constructeur. 
-            Livraison gratuite à Kourou • Paiement sécurisé PayPal ou WhatsApp.
+            Livraison gratuite à Kourou • Paiement sécurisé PayPal.
           </p>
         </div>
       </div>
