@@ -1,21 +1,9 @@
 import React from 'react';
-import { Laptop, Globe, ShoppingBag, ExternalLink } from 'lucide-react';
+import { Laptop, Globe, ShoppingBag, ExternalLink, CheckCircle, Users, Smartphone, Zap } from 'lucide-react';
 import './Services.css';
 
 export const Services = () => {
   const services = [
-    {
-      id: 1,
-      icon: Globe,
-      title: 'Site Vitrine Pro',
-      price: '390€',
-      description: 'Site complet livré en 10 jours pour TPE/PME',
-      features: ['Réservation en ligne', 'Optimisé Google', 'Hébergement 1 an inclus (hors nom de domaine)', 'Option : domaine + maintenance → 30€/mois'],
-      color: 'blue',
-      ctaText: 'Faire votre demande en ligne',
-      ctaLink: 'https://docs.google.com/forms/d/e/1FAIpQLSfhHhDEHFpv3REZQ7ncnxTlhJLPy04RjrYydSf9dvC_dvRMEg/viewform?usp=header',
-      isExternal: true
-    },
     {
       id: 2,
       icon: Laptop,
@@ -51,7 +39,66 @@ export const Services = () => {
           </p>
         </div>
 
-        <div className="services-grid">
+        {/* Site Vitrine Pro - Section Spéciale */}
+        <div className="vitrine-pro-section">
+          <div className="vitrine-pro-card">
+            <div className="vitrine-pro-header">
+              <div className="vitrine-pro-icon">
+                <Globe size={40} />
+              </div>
+              <div className="vitrine-pro-badge">OFFRE SPÉCIALE</div>
+            </div>
+            
+            <h3 className="vitrine-pro-title">
+              Attirez plus de clients avec un site web professionnel
+            </h3>
+            <p className="vitrine-pro-subtitle">
+              Soyez visible en ligne dès maintenant
+            </p>
+            
+            <div className="vitrine-pro-price-box">
+              <span className="vitrine-pro-price-label">Seulement</span>
+              <span className="vitrine-pro-price">790 € HT</span>
+            </div>
+
+            <div className="vitrine-pro-features">
+              <h4 className="vitrine-pro-features-title">Ce qui est inclus :</h4>
+              <ul className="vitrine-pro-features-list">
+                <li><CheckCircle size={18} /> Présentation claire de votre activité</li>
+                <li><CheckCircle size={18} /> Image professionnelle pour vos clients</li>
+                <li><Smartphone size={18} /> Site adapté mobile (indispensable aujourd'hui)</li>
+                <li><Zap size={18} /> Contact simple et rapide</li>
+                <li><CheckCircle size={18} /> Conforme aux règles en vigueur</li>
+              </ul>
+            </div>
+
+            <div className="vitrine-pro-target">
+              <div className="vitrine-pro-target-header">
+                <Users size={20} />
+                <span>POUR QUI ?</span>
+              </div>
+              <p className="vitrine-pro-target-text">
+                Indépendants · Artisans · Restaurants · Commerces de proximité
+              </p>
+              <p className="vitrine-pro-target-ideal">
+                👉 Idéale pour : réseaux sociaux, flyers, entrepreneurs pressés
+              </p>
+            </div>
+
+            <a 
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfhHhDEHFpv3REZQ7ncnxTlhJLPy04RjrYydSf9dvC_dvRMEg/viewform?usp=header" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="vitrine-pro-cta"
+            >
+              Faire votre demande en ligne
+              <ExternalLink size={18} />
+            </a>
+          </div>
+        </div>
+
+        {/* Autres services */}
+        <div className="services-grid services-grid-2">
           {services.map((service, index) => (
             <div 
               key={service.id} 
@@ -66,7 +113,7 @@ export const Services = () => {
               
               <div className="service-content">
                 <h3 className="heading-3">{service.title}</h3>
-                <div className="service-price">{service.price} TTC</div>
+                <div className="service-price">{service.price}</div>
                 <p className="service-description">{service.description}</p>
                 
                 <ul className="service-features">
