@@ -56,8 +56,8 @@ export const ConsoleSection = () => {
       price: 89,
       image: manetteXbox,
       badge: 'ACCESSOIRE',
-      highlights: ['Xbox X/S', 'PC', 'Filaire', 'NEON'],
-      description: 'Manette filaire PDP NEON 049-012-GG, compatible Xbox et PC.'
+      highlights: ['Xbox X/S', 'PC', 'Câble 2.5m', 'Audio intégré'],
+      description: 'Design NEON, prise en main ergonomique, zéro latence. Dominez chaque partie.'
     }
   ];
 
