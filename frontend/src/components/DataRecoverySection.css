@@ -63,12 +63,46 @@
   margin: 0 auto;
 }
 
-/* Main Card */
+/* Section Titles */
+.section-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.section-title svg {
+  color: var(--neon-cyan);
+}
+
+.section-title-centered {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  text-align: center;
+}
+
+.section-title-centered svg {
+  color: var(--neon-cyan);
+}
+
+/* Main Card - Comprendre la perte */
 .data-recovery-main-card {
   background: linear-gradient(145deg, rgba(20, 35, 60, 0.9) 0%, rgba(10, 20, 40, 0.95) 100%) !important;
   border: 1px solid rgba(0, 212, 255, 0.25) !important;
   border-radius: 20px !important;
   overflow: hidden;
+  margin-bottom: 2rem;
 }
 
 .data-recovery-main-card::before {
@@ -89,9 +123,6 @@
 .data-recovery-explanation {
   display: flex;
   gap: 1.5rem;
-  margin-bottom: 2.5rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .explanation-icon {
@@ -111,6 +142,14 @@
   flex: 1;
 }
 
+.explanation-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
 .explanation-text p {
   color: rgba(255, 255, 255, 0.85);
   font-size: 1rem;
@@ -118,92 +157,365 @@
   margin-bottom: 1rem;
 }
 
-.explanation-text p:last-child {
-  margin-bottom: 0;
-}
-
 .explanation-text strong {
   color: #ffffff;
 }
 
-.explanation-disclaimer {
-  color: rgba(255, 255, 255, 0.7) !important;
-  font-size: 0.95rem !important;
-  font-style: italic;
-  background: rgba(0, 212, 255, 0.05);
+/* Loss Reasons List */
+.loss-reasons-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+.loss-reasons-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.9rem;
+  padding: 0.5rem;
+  background: rgba(255, 193, 7, 0.05);
+  border-radius: 8px;
+}
+
+.loss-reasons-list li svg {
+  color: #ffc107;
+  flex-shrink: 0;
+}
+
+.explanation-note {
+  background: rgba(0, 212, 255, 0.08);
   padding: 1rem;
   border-radius: 8px;
   border-left: 3px solid rgba(0, 212, 255, 0.5);
+  margin-top: 1rem;
 }
 
-/* Supported Devices */
-.data-recovery-devices {
-  margin-bottom: 2.5rem;
+/* Do's and Don'ts Section */
+.do-dont-section {
+  margin-bottom: 2rem;
 }
 
-.devices-title {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 1.25rem;
+.do-dont-intro {
   text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
 }
 
-.devices-grid {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+.do-dont-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
-.device-item {
+/* DO Card */
+.do-card {
+  background: linear-gradient(145deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 200, 100, 0.05) 100%) !important;
+  border: 1px solid rgba(0, 255, 136, 0.3) !important;
+  border-radius: 16px !important;
+}
+
+.do-card-content {
+  padding: 1.5rem !important;
+}
+
+.do-header {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  background: rgba(0, 212, 255, 0.08);
-  border: 1px solid rgba(0, 212, 255, 0.2);
-  border-radius: 12px;
-  padding: 1rem 1.5rem;
-  transition: all 0.3s ease;
+  margin-bottom: 1rem;
+  color: #00ff88;
 }
 
-.device-item:hover {
-  border-color: rgba(0, 212, 255, 0.5);
-  box-shadow: 0 0 20px rgba(0, 212, 255, 0.15);
-}
-
-.device-icon {
-  color: var(--neon-cyan);
-  filter: drop-shadow(0 0 5px var(--neon-cyan));
-}
-
-.device-label {
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 0.95rem;
-  font-weight: 500;
-}
-
-/* Value Propositions */
-.data-recovery-values {
-  margin-bottom: 2.5rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.values-title {
+.do-header h3 {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.1rem;
   font-weight: 700;
+  color: #00ff88;
+  margin: 0;
+}
+
+.do-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.do-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+  padding: 0.5rem;
+  background: rgba(0, 255, 136, 0.05);
+  border-radius: 8px;
+}
+
+.do-list li svg {
+  color: #00ff88;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* DON'T Card */
+.dont-card {
+  background: linear-gradient(145deg, rgba(255, 68, 68, 0.08) 0%, rgba(200, 50, 50, 0.05) 100%) !important;
+  border: 1px solid rgba(255, 68, 68, 0.3) !important;
+  border-radius: 16px !important;
+}
+
+.dont-card-content {
+  padding: 1.5rem !important;
+}
+
+.dont-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  color: #ff4444;
+}
+
+.dont-header h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ff4444;
+  margin: 0;
+}
+
+.dont-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dont-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+  padding: 0.5rem;
+  background: rgba(255, 68, 68, 0.05);
+  border-radius: 8px;
+}
+
+.dont-list li svg {
+  color: #ff4444;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Urgency Note */
+.urgency-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(157, 0, 255, 0.1) 100%);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+
+.urgency-note svg {
+  color: var(--neon-cyan);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.urgency-note p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Devices Card */
+.devices-card {
+  background: linear-gradient(145deg, rgba(20, 35, 60, 0.9) 0%, rgba(10, 20, 40, 0.95) 100%) !important;
+  border: 1px solid rgba(0, 212, 255, 0.2) !important;
+  border-radius: 20px !important;
+  margin-bottom: 2rem;
+}
+
+.devices-card-content {
+  padding: 2rem !important;
+}
+
+.devices-intro {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.devices-grid-extended {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.device-item-extended {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(0, 212, 255, 0.05);
+  border: 1px solid rgba(0, 212, 255, 0.15);
+  border-radius: 12px;
+  padding: 1rem;
+  transition: all 0.3s ease;
+}
+
+.device-item-extended:hover {
+  border-color: rgba(0, 212, 255, 0.4);
+  background: rgba(0, 212, 255, 0.08);
+}
+
+.device-icon-wrapper {
+  width: 45px;
+  height: 45px;
+  background: rgba(0, 212, 255, 0.15);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--neon-cyan);
+  flex-shrink: 0;
+}
+
+.device-info h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
   color: #ffffff;
-  margin-bottom: 1.25rem;
+  margin: 0 0 0.25rem;
+}
+
+.device-info p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+/* Process Section */
+.process-section {
+  margin-bottom: 2rem;
+}
+
+.process-intro {
   text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.process-timeline {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.process-step {
+  flex: 1;
+  min-width: 180px;
+  text-align: center;
+  position: relative;
+}
+
+.step-number {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.2) 0%, rgba(157, 0, 255, 0.2) 100%);
+  border: 2px solid rgba(0, 212, 255, 0.5);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Space Mono', monospace;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--neon-cyan);
+  margin: 0 auto 1rem;
+}
+
+.step-content h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.step-content p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.step-arrow {
+  position: absolute;
+  right: -20px;
+  top: 25px;
+  color: rgba(0, 212, 255, 0.5);
+  display: none;
+}
+
+/* Process Disclaimer */
+.process-disclaimer {
+  display: flex;
+  gap: 1rem;
+  background: rgba(255, 193, 7, 0.08);
+  border: 1px solid rgba(255, 193, 7, 0.3);
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+
+.process-disclaimer svg {
+  color: #ffc107;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.process-disclaimer p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0 0 0.5rem;
+}
+
+.process-disclaimer p:last-child {
+  margin-bottom: 0;
+}
+
+/* Values Card */
+.values-card {
+  background: linear-gradient(145deg, rgba(20, 35, 60, 0.9) 0%, rgba(10, 20, 40, 0.95) 100%) !important;
+  border: 1px solid rgba(157, 0, 255, 0.2) !important;
+  border-radius: 20px !important;
+  margin-bottom: 2rem;
+}
+
+.values-card-content {
+  padding: 2rem !important;
 }
 
 .values-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.25rem;
+  gap: 1rem;
 }
 
 .value-item {
@@ -254,9 +566,100 @@
   margin: 0;
 }
 
-/* CTA */
-.data-recovery-cta-wrapper {
+/* Confidentiality Card */
+.confidentiality-card {
+  background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%) !important;
+  border: 1px solid rgba(0, 255, 136, 0.3) !important;
+  border-radius: 20px !important;
+  margin-bottom: 2rem;
+}
+
+.confidentiality-content {
+  padding: 2.5rem !important;
   text-align: center;
+}
+
+.confidentiality-icon {
+  width: 70px;
+  height: 70px;
+  background: rgba(0, 255, 136, 0.15);
+  border: 2px solid rgba(0, 255, 136, 0.4);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #00ff88;
+  margin: 0 auto 1.5rem;
+}
+
+.confidentiality-content h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.confidentiality-content > p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.confidentiality-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+  display: inline-block;
+  text-align: left;
+}
+
+.confidentiality-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+}
+
+.confidentiality-list li svg {
+  color: #00ff88;
+  flex-shrink: 0;
+}
+
+.confidentiality-note {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  font-style: italic;
+  margin: 0;
+}
+
+/* CTA Card */
+.cta-card {
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(157, 0, 255, 0.1) 100%) !important;
+  border: 2px solid rgba(0, 212, 255, 0.4) !important;
+  border-radius: 20px !important;
+  margin-bottom: 2rem;
+}
+
+.cta-card-content {
+  padding: 3rem !important;
+  text-align: center;
+}
+
+.cta-card-content h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+}
+
+.cta-subtitle {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .data-recovery-cta {
@@ -277,11 +680,41 @@
   box-shadow: 0 8px 30px rgba(0, 212, 255, 0.5);
 }
 
-.cta-disclaimer {
-  color: rgba(255, 255, 255, 0.5);
+.cta-reassurance {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.6);
   font-size: 0.85rem;
-  font-style: italic;
   margin-top: 1rem;
+}
+
+.cta-reassurance svg {
+  color: #00ff88;
+}
+
+/* Legal Mention */
+.legal-mention {
+  display: flex;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+
+.legal-mention svg {
+  color: rgba(255, 255, 255, 0.5);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.legal-mention p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  margin: 0;
 }
 
 /* Responsive */
@@ -301,25 +734,36 @@
   }
 
   .explanation-icon {
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
   }
 
-  .devices-grid {
+  .loss-reasons-list {
+    grid-template-columns: 1fr;
+  }
+
+  .do-dont-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .devices-grid-extended {
+    grid-template-columns: 1fr;
+  }
+
+  .process-timeline {
     flex-direction: column;
     align-items: center;
   }
 
-  .device-item {
+  .process-step {
     width: 100%;
-    max-width: 280px;
-    justify-content: center;
+    max-width: 300px;
   }
 
   .values-grid {
     grid-template-columns: 1fr;
   }
 
-  .value-item {
-    text-align: left;
+  .cta-card-content {
+    padding: 2rem !important;
   }
 }
