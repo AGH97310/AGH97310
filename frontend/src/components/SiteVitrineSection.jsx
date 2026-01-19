@@ -4,11 +4,57 @@ import { Button } from './ui/button';
 import { 
   Globe, CheckCircle, Shield, Clock, Users, Smartphone, 
   Lock, Server, Zap, FileText, MessageCircle, ArrowRight,
-  Palette, Search, HeadphonesIcon, Rocket
+  Palette, Search, HeadphonesIcon, Rocket, Key, Crown,
+  Settings, RefreshCcw, AlertCircle, XCircle, Wrench,
+  Star, PhoneCall, TrendingUp, Info
 } from 'lucide-react';
 import './SiteVitrineSection.css';
 
 export const SiteVitrineSection = () => {
+  // Offre 1 - Site Clé en Main
+  const offer1Inclus = [
+    "Site web professionnel",
+    "Design responsive (PC / mobile)",
+    "Pages définies au devis",
+    "Contenu intégré",
+    "Sécurité HTTPS (SSL)",
+    "Site livré prêt à l'emploi",
+    "Accès complet transmis au client"
+  ];
+  
+  const offer1NonInclus = [
+    "Maintenance après livraison",
+    "Mises à jour futures",
+    "Support technique continu"
+  ];
+
+  // Offre 2 - Site Géré + Maintenance
+  const offer2Inclus = [
+    "Tout ce qui est dans l'offre standard",
+    "Hébergement géré",
+    "Maintenance technique",
+    "Mises à jour mineures",
+    "Surveillance sécurité",
+    "Support prioritaire"
+  ];
+
+  // Maintenance options
+  const maintenanceEssentielle = [
+    "Mises à jour techniques",
+    "Sécurité de base",
+    "Sauvegardes régulières",
+    "Disponibilité du site",
+    "Corrections mineures"
+  ];
+
+  const maintenanceAvancee = [
+    "Tout l'essentiel inclus",
+    "Modifications de contenu (limité/mois)",
+    "Assistance prioritaire",
+    "Conseils d'évolution",
+    "Optimisation légère"
+  ];
+
   const inclusions = [
     { icon: FileText, text: "Jusqu'à 5 pages personnalisées (Accueil, Services, À propos, Contact, etc.)" },
     { icon: Palette, text: "Design professionnel adapté à votre image de marque" },
