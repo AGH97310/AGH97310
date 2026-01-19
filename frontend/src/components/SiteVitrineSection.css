@@ -1184,3 +1184,238 @@
 .sv-maintenance-disclaimer strong {
   color: #ffc107;
 }
+
+/* ==============================
+   ACCESS & RESPONSIBILITIES STYLES
+   ============================== */
+
+.sv-access-card {
+  background: linear-gradient(145deg, rgba(20, 35, 60, 0.95) 0%, rgba(10, 20, 40, 0.98) 100%) !important;
+  border: 1px solid rgba(0, 212, 255, 0.25) !important;
+  border-radius: 20px !important;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.sv-access-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #00d4ff, #00ff88, #00d4ff);
+}
+
+.sv-access-content {
+  padding: 2.5rem !important;
+}
+
+.sv-access-header {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.sv-access-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(0, 255, 136, 0.15) 100%);
+  border: 2px solid rgba(0, 212, 255, 0.4);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--neon-cyan);
+  flex-shrink: 0;
+}
+
+.sv-access-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.25rem;
+}
+
+.sv-access-subtitle {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.sv-access-intro {
+  background: rgba(0, 212, 255, 0.05);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border-left: 3px solid rgba(0, 212, 255, 0.5);
+}
+
+.sv-access-intro p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin: 0 0 0.75rem;
+}
+
+.sv-access-intro p:last-child {
+  margin-bottom: 0;
+}
+
+.sv-access-intro strong {
+  color: #ffffff;
+}
+
+.sv-access-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.sv-access-block {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
+.sv-access-block.provided {
+  border: 1px solid rgba(0, 255, 136, 0.25);
+}
+
+.sv-access-block.managed {
+  border: 1px solid rgba(157, 0, 255, 0.25);
+}
+
+.sv-access-block h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0 0 1.25rem;
+}
+
+.sv-access-block.provided h3 {
+  color: #00ff88;
+}
+
+.sv-access-block.managed h3 {
+  color: #bf5fff;
+}
+
+.sv-access-block ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sv-access-block ul li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sv-access-block ul li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.sv-access-block ul li > svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.sv-access-block.provided ul li > svg {
+  color: #00ff88;
+}
+
+.sv-access-block.managed ul li > svg {
+  color: #bf5fff;
+}
+
+.sv-access-block ul li div {
+  flex: 1;
+}
+
+.sv-access-block ul li div strong {
+  display: block;
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.15rem;
+}
+
+.sv-access-block ul li div span {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.sv-access-note {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.08) 0%, rgba(157, 0, 255, 0.08) 100%);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.sv-access-note > svg {
+  color: var(--neon-cyan);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.sv-access-note p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0 0 0.5rem;
+}
+
+.sv-access-note p:last-child {
+  margin-bottom: 0;
+}
+
+.sv-access-note strong {
+  color: #ffffff;
+}
+
+.sv-access-trust {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: rgba(0, 255, 136, 0.08);
+  border: 1px solid rgba(0, 255, 136, 0.2);
+  border-radius: 8px;
+  padding: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.sv-access-trust svg {
+  color: #00ff88;
+}
+
+/* Responsive for Access Section */
+@media (max-width: 768px) {
+  .sv-access-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .sv-access-header {
+    flex-direction: column;
+    text-align: center;
+  }
+}
