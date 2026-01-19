@@ -19,7 +19,7 @@ export const WhyUs = () => {
     {
       icon: Target,
       title: 'Paiement Sécurisé',
-      description: 'Virement, CB, espèces (sur RDV). Solutions de paiement flexibles et sécurisées.',
+      description: 'Virement, CB via PayPal. Solutions de paiement flexibles et sécurisées.',
       color: 'blue'
     },
     {
