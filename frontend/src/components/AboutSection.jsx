@@ -55,9 +55,8 @@ export const AboutSection = () => {
                   👉 la technologie doit être accessible à tous, sans déplacement et sans complication.
                 </p>
                 <p className="about-text">
-                  Fondée par un ancien attaché commercial chez Xerox, l'entreprise met à profit une solide 
-                  expérience dans la gestion de parcs informatiques pour accompagner PME, administrations et 
-                  particuliers dans leur transition numérique.
+                  Forte d'une solide expérience dans le secteur IT et la gestion de parcs informatiques, 
+                  l'entreprise accompagne PME, administrations et particuliers dans leur transition numérique.
                 </p>
                 <p className="about-mission">
                   Notre mission : rendre la technologie simple, rapide et efficace, partout en Guyane française.
