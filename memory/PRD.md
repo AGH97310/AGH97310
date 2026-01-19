@@ -113,4 +113,4 @@ All critical items completed.
 - Single language (French) only
 
 ## Last Updated
-January 19, 2026 - Added "Access & Responsibilities" section to Site Vitrine page for transparency
+January 19, 2026 - Added "Delivery and Administrative Access" contractual clause section
