@@ -9,6 +9,7 @@ import './ConsoleSection.css';
 const consoleBlancRose = "https://customer-assets.emergentagent.com/job_guyane-it-service/artifacts/9o1ff2kt_console-de-jeu-video-portable-jellymini5-e5-ecran-ips-5-64-go-blanc-rose.jpg";
 const consoleViolet = "https://customer-assets.emergentagent.com/job_guyane-it-service/artifacts/3im3u2pd_console-de-jeu-video-portable-jellymini5-e5-ecran-ips-5-64-go-violet.jpg";
 const consoleM21 = "https://customer-assets.emergentagent.com/job_082652f8-6982-4266-bdd7-1ba9de34a6c9/artifacts/4mmft7r1_mini-console-de-jeu-video-portable-r36-ecran-ips-35-64-go-blanc.jpg";
+const manetteXbox = "https://customer-assets.emergentagent.com/job_cyberpunk-store-2/artifacts/z58pg9hf_manette-filaire-xbox-serie-xs-pc-pdp-neon-049-012-gg-noir.jpg";
 
 export const ConsoleSection = () => {
   const { addToCart } = useCart();
@@ -46,6 +47,17 @@ export const ConsoleSection = () => {
       badge: 'COMPACT',
       highlights: ['Écran IPS 3.5"', '64 Go', 'Ultra portable', 'Léger'],
       description: 'Mini console ultra compacte, parfaite pour les déplacements.'
+    },
+    {
+      id: 'manette-xbox-pdp',
+      name: 'Manette Filaire Xbox PDP',
+      subtitle: 'Xbox Série X/S & PC',
+      color: 'Noir',
+      price: 89,
+      image: manetteXbox,
+      badge: 'ACCESSOIRE',
+      highlights: ['Xbox X/S', 'PC', 'Filaire', 'NEON'],
+      description: 'Manette filaire PDP NEON 049-012-GG, compatible Xbox et PC.'
     }
   ];
 
