@@ -1,8 +1,7 @@
 import React from 'react';
 import { Header } from '../components/Header';
 import { ScrollingLogo } from '../components/ScrollingLogo';
-import { Services } from '../components/Services';
-import { WhyUs } from '../components/WhyUs';
+import { SiteVitrineSection } from '../components/SiteVitrineSection';
 import { Contact } from '../components/Contact';
 import { FAQ } from '../components/FAQ';
 import { Footer } from '../components/Footer';
@@ -14,8 +13,7 @@ export const CreationSiteVitrinePage = () => {
       <Header />
       <ScrollingLogo />
       <main>
-        <Services />
-        <WhyUs />
+        <SiteVitrineSection />
         <Contact />
         <FAQ />
       </main>
