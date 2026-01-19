@@ -328,6 +328,107 @@ export const SiteVitrineSection = () => {
           </CardContent>
         </Card>
 
+        {/* Delivery and Administrative Access - Legal Section */}
+        <Card className="sv-delivery-card">
+          <CardContent className="sv-delivery-content">
+            <div className="sv-delivery-header">
+              <div className="sv-delivery-badge">
+                <Lock size={16} />
+                CLAUSE CONTRACTUELLE
+              </div>
+              <h2 className="sv-delivery-title">Livraison et Accès Administratif</h2>
+              <p className="sv-delivery-subtitle">
+                Conditions standard de l'industrie pour une relation de confiance
+              </p>
+            </div>
+
+            <div className="sv-delivery-main">
+              <div className="sv-delivery-principle">
+                <p>
+                  À la livraison du site web et après règlement intégral, le client reçoit un 
+                  <strong> accès administratif strictement limité à l'utilisation et à la gestion 
+                  du site web livré</strong>, tel que défini dans l'offre souscrite.
+                </p>
+              </div>
+
+              <div className="sv-delivery-section">
+                <h3>
+                  <CheckCircle size={18} />
+                  Accès administratif fourni
+                </h3>
+                <p className="sv-delivery-section-intro">
+                  Selon l'offre choisie, l'accès administratif peut inclure, le cas échéant :
+                </p>
+                <ul className="sv-delivery-list included">
+                  <li>
+                    <FileText size={16} />
+                    <span><strong>Accès au contenu du site</strong> — modification des textes, images et médias publiés</span>
+                  </li>
+                  <li>
+                    <MessageCircle size={16} />
+                    <span><strong>Accès aux formulaires de contact</strong> — réception des messages et notifications par email</span>
+                  </li>
+                  <li>
+                    <Globe size={16} />
+                    <span><strong>Accès au nom de domaine ou configuration DNS</strong> — lorsque celui-ci est géré pour le compte du client</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="sv-delivery-section exclusive">
+                <h3>
+                  <Shield size={18} />
+                  Outils et infrastructure exclusifs du prestataire
+                </h3>
+                <p className="sv-delivery-section-intro">
+                  Les éléments suivants restent la propriété exclusive du prestataire et ne sont 
+                  ni transférés, ni partagés avec le client :
+                </p>
+                <ul className="sv-delivery-list exclusive">
+                  <li>
+                    <Wrench size={16} />
+                    <span><strong>Outils de développement</strong> — logiciels, frameworks et environnements de création</span>
+                  </li>
+                  <li>
+                    <Server size={16} />
+                    <span><strong>Plateformes d'hébergement</strong> — infrastructure cloud et serveurs de production</span>
+                  </li>
+                  <li>
+                    <RefreshCcw size={16} />
+                    <span><strong>Systèmes de déploiement</strong> — processus de mise en ligne et d'actualisation</span>
+                  </li>
+                  <li>
+                    <Cpu size={16} />
+                    <span><strong>Infrastructure technique interne</strong> — architectures et configurations serveur</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="sv-delivery-additional">
+                <AlertCircle size={20} />
+                <div>
+                  <h4>Accès technique élargi ou code source</h4>
+                  <p>
+                    Toute demande d'accès technique plus étendu ou de livraison du code source 
+                    doit être <strong>explicitement formulée et convenue par écrit</strong> avant 
+                    le début du projet. Ces demandes peuvent faire l'objet de conditions 
+                    spécifiques et d'une tarification adaptée.
+                  </p>
+                </div>
+              </div>
+
+              <div className="sv-delivery-standard">
+                <Info size={16} />
+                <p>
+                  Ces conditions constituent une <strong>pratique standard de l'industrie</strong> et 
+                  visent à garantir la qualité, la sécurité et la pérennité de votre site web, 
+                  tout en assurant une relation transparente entre le client et le prestataire.
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
         {/* Maintenance Options */}
         <div className="sv-maintenance-section">
           <h2 className="sv-section-title centered">
