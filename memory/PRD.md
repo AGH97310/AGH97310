@@ -59,8 +59,13 @@ Site web professionnel multi-pages pour une entreprise d'assistance informatique
 - [x] **Création de Site Vitrine** - ENRICHED Jan 19, 2026
   - 2 offres commerciales claires (Clé en Main / Géré + Maintenance)
   - Clause de transfert de propriété et d'accès
+  - **Section "Livraison et Accès Administratif"** : clause contractuelle détaillée
+    - Accès administratif fourni (contenu, formulaires, domaine)
+    - Outils exclusifs du prestataire (non transférés)
+    - Note sur accès technique élargi/code source
+    - Référence aux pratiques standard de l'industrie
+  - Section "Accès et Responsabilités" : transparence sur livraison
   - Options de maintenance (Essentielle 49€/mois, Avancée 79€/mois)
-  - **Section "Accès et Responsabilités"** : transparence sur livraison, accès fournis vs gérés
   - Phrase d'accroche client
   - Disclaimer maintenance
 
