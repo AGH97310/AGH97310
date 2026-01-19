@@ -56,7 +56,12 @@ Site web professionnel multi-pages pour une entreprise d'assistance informatique
   - Confidentialité & Respect des données
   - CTA avec lien WhatsApp
   - Mention légale
-- [x] Création de Site Vitrine
+- [x] **Création de Site Vitrine** - ENRICHED Jan 19, 2026
+  - 2 offres commerciales claires (Clé en Main / Géré + Maintenance)
+  - Clause de transfert de propriété et d'accès
+  - Options de maintenance (Essentielle 49€/mois, Avancée 79€/mois)
+  - Phrase d'accroche client
+  - Disclaimer maintenance
 
 ### Product Pages
 - [x] Gaming & Accessoires (Consoles)
