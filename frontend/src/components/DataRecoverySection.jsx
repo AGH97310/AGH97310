@@ -39,7 +39,7 @@ export const DataRecoverySection = () => {
     { icon: HardDrive, label: 'Disques durs HDD', description: "Disques mécaniques internes et externes" },
     { icon: Cpu, label: 'SSD', description: "Disques à mémoire flash, SATA ou NVMe" },
     { icon: Usb, label: 'Clés USB', description: "Tous types et capacités" },
-    { icon: SdCard, label: 'Cartes mémoire', description: "SD, microSD, CF, Memory Stick" }
+    { icon: Disc, label: 'Cartes mémoire', description: "SD, microSD, CF, Memory Stick" }
   ];
 
   const processSteps = [
