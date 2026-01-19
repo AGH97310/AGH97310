@@ -9,6 +9,7 @@ import { Services } from './components/Services';
 import { ConsoleSection } from './components/ConsoleSection';
 import { PerfumeSectionWithCart } from './components/PerfumeSectionWithCart';
 import { RemoteITServices } from './components/RemoteITServices';
+import { DataRecoverySection } from './components/DataRecoverySection';
 import { WhyUs } from './components/WhyUs';
 import { AboutSection } from './components/AboutSection';
 import { Contact } from './components/Contact';
@@ -38,6 +39,7 @@ const Home = () => {
       <main>
         <Hero />
         <RemoteITServices />
+        <DataRecoverySection />
         <Services />
         <ConsoleSection />
         <SmartphoneSection />
