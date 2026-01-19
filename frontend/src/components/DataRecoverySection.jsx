@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, CardContent } from './ui/card';
 import { Button } from './ui/button';
 import { 
-  HardDrive, Monitor, Usb, SdCard, 
+  HardDrive, Monitor, Usb, Disc, 
   Search, ShieldCheck, Lock, MessageSquare,
   MessageCircle, AlertTriangle, Clock,
   CheckCircle, XCircle, Cpu, Database,
