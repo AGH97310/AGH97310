@@ -6,7 +6,7 @@ import {
   Lock, Server, Zap, FileText, MessageCircle, ArrowRight,
   Palette, Search, HeadphonesIcon, Rocket, Key, Crown,
   Settings, RefreshCcw, AlertCircle, XCircle, Wrench,
-  Star, PhoneCall, TrendingUp, Info
+  Star, PhoneCall, TrendingUp, Info, Cpu
 } from 'lucide-react';
 import './SiteVitrineSection.css';
 
