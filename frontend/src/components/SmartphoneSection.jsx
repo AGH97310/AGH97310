@@ -12,10 +12,8 @@ const samsungA26 = "https://customer-assets.emergentagent.com/job_it-assistance/
 const samsungA17 = "https://customer-assets.emergentagent.com/job_it-assistance/artifacts/wf2xc1qn_samsung-galaxy-a17-5g-128-go-gris-eu-neuf.jpg";
 
 // Images des iPhones
-const iphoneSE = "https://customer-assets.emergentagent.com/job_it-assistance/artifacts/vaj1h8xz_iphone-se-5g-2022-64-go-noir-neuf.jpg";
-const iphone16 = "https://customer-assets.emergentagent.com/job_it-assistance/artifacts/vbxqzgeu_iphone-16-128-go-myea3zda-rose-neuf.jpg";
 const iphone16e = "https://customer-assets.emergentagent.com/job_it-assistance/artifacts/tgiku6r5_iphone-16e-256-go-md1t4qla-noir-neuf.jpg";
-const iphone17 = "https://customer-assets.emergentagent.com/job_it-assistance/artifacts/qh4y431u_iphone-17-256-go-mg6n4fa-sauge-neuf.jpg";
+const iphone17ProMax = "https://customer-assets.emergentagent.com/job_cyberpunk-store-2/artifacts/08yk2wc7_iphone-17-pro-max-256-go-mfyn4fa-orange-cosmique-neuf.jpg";
 
 export const SmartphoneSection = () => {
   const { addToCart } = useCart();
@@ -62,26 +60,6 @@ export const SmartphoneSection = () => {
       features: ["5G", "128 Go", "Neuf"]
     },
     { 
-      id: 'iphone-se', 
-      image: iphoneSE, 
-      name: "iPhone SE 5G 2022", 
-      storage: "64 Go", 
-      color: "Noir",
-      price: 699,
-      brand: "Apple",
-      features: ["5G", "64 Go", "Puce A15", "Neuf"]
-    },
-    { 
-      id: 'iphone-16', 
-      image: iphone16, 
-      name: "iPhone 16", 
-      storage: "128 Go", 
-      color: "Rose",
-      price: 969,
-      brand: "Apple",
-      features: ["5G", "128 Go", "Puce A18", "Neuf"]
-    },
-    { 
       id: 'iphone-16e', 
       image: iphone16e, 
       name: "iPhone 16e", 
@@ -92,14 +70,14 @@ export const SmartphoneSection = () => {
       features: ["5G", "256 Go", "Puce A18", "Neuf"]
     },
     { 
-      id: 'iphone-17', 
-      image: iphone17, 
-      name: "iPhone 17", 
+      id: 'iphone-17-pro-max', 
+      image: iphone17ProMax, 
+      name: "iPhone 17 Pro Max", 
       storage: "256 Go", 
-      color: "Sauge",
-      price: 1069,
+      color: "Orange Cosmique",
+      price: 1829,
       brand: "Apple",
-      features: ["5G", "256 Go", "Puce A19", "Neuf"]
+      features: ["5G", "256 Go", "Puce A19 Pro", "Neuf"]
     }
   ];
 
