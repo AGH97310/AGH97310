@@ -5,22 +5,23 @@ import { CartProvider } from './context/CartContext';
 import { Header } from './components/Header';
 import { ScrollingLogo } from './components/ScrollingLogo';
 import { Hero } from './components/Hero';
-import { Services } from './components/Services';
-import { ConsoleSection } from './components/ConsoleSection';
-import { PerfumeSectionWithCart } from './components/PerfumeSectionWithCart';
-import { RemoteITServices } from './components/RemoteITServices';
-import { DataRecoverySection } from './components/DataRecoverySection';
+import { HomeOverview } from './components/HomeOverview';
 import { WhyUs } from './components/WhyUs';
 import { AboutSection } from './components/AboutSection';
 import { Contact } from './components/Contact';
 import { FAQ } from './components/FAQ';
 import { Footer } from './components/Footer';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
-import { SmartphoneSection } from './components/SmartphoneSection';
-import { MiniSmartphoneSection } from './components/MiniSmartphoneSection';
-import { TabletSection } from './components/TabletSection';
 import { CookieConsent } from './components/CookieConsent';
 import { UnifiedCart } from './components/UnifiedCart';
+
+// Category Pages
+import { DepannageDistancePage } from './pages/DepannageDistancePage';
+import { RecuperationDonneesPage } from './pages/RecuperationDonneesPage';
+import { CreationSiteVitrinePage } from './pages/CreationSiteVitrinePage';
+import { GamingAccessoiresPage } from './pages/GamingAccessoiresPage';
+import { SmartphonesTablettesPage } from './pages/SmartphonesTablettesPage';
+import { ParfumerieOrientalePage } from './pages/ParfumerieOrientalePage';
 
 // Legal Pages
 import { CGV } from './pages/CGV';
@@ -38,14 +39,7 @@ const Home = () => {
       <ScrollingLogo />
       <main>
         <Hero />
-        <RemoteITServices />
-        <DataRecoverySection />
-        <Services />
-        <ConsoleSection />
-        <SmartphoneSection />
-        <MiniSmartphoneSection />
-        <TabletSection />
-        <PerfumeSectionWithCart />
+        <HomeOverview />
         <WhyUs />
         <AboutSection />
         <Contact />
@@ -63,7 +57,19 @@ function App() {
       <BrowserRouter>
         <CartProvider>
           <Routes>
+            {/* Main Pages */}
             <Route path="/" element={<Home />} />
+            
+            {/* Service Pages */}
+            <Route path="/depannage-distance" element={<DepannageDistancePage />} />
+            <Route path="/recuperation-donnees" element={<RecuperationDonneesPage />} />
+            <Route path="/creation-site-vitrine" element={<CreationSiteVitrinePage />} />
+            
+            {/* Product Pages */}
+            <Route path="/gaming-accessoires" element={<GamingAccessoiresPage />} />
+            <Route path="/smartphones-tablettes" element={<SmartphonesTablettesPage />} />
+            <Route path="/parfumerie-orientale" element={<ParfumerieOrientalePage />} />
+            
             {/* Legal Pages */}
             <Route path="/cgv" element={<CGV />} />
             <Route path="/cgu" element={<CGU />} />
