@@ -387,6 +387,130 @@ export const SiteVitrineSection = () => {
           </div>
         </div>
 
+        {/* Access & Responsibilities Section */}
+        <Card className="sv-access-card">
+          <CardContent className="sv-access-content">
+            <div className="sv-access-header">
+              <div className="sv-access-icon">
+                <Shield size={28} />
+              </div>
+              <div>
+                <h2 className="sv-access-title">Accès et Responsabilités</h2>
+                <p className="sv-access-subtitle">Transparence totale sur ce qui vous est livré</p>
+              </div>
+            </div>
+
+            <div className="sv-access-intro">
+              <p>
+                En choisissant nos services, vous achetez un <strong>site web fini et une solution clé en main</strong>, 
+                et non les outils internes ou l'infrastructure technique utilisés pour le créer.
+              </p>
+              <p>
+                Votre site est livré <strong>100% fonctionnel et prêt à l'emploi</strong>, hébergé sur une 
+                infrastructure cloud moderne et sécurisée, gérée par nos soins.
+              </p>
+            </div>
+
+            <div className="sv-access-grid">
+              {/* What You Receive */}
+              <div className="sv-access-block provided">
+                <h3>
+                  <CheckCircle size={20} />
+                  Ce qui vous est fourni
+                </h3>
+                <ul>
+                  <li>
+                    <Globe size={16} />
+                    <div>
+                      <strong>URL publique de votre site</strong>
+                      <span>Votre adresse web accessible à tous vos visiteurs</span>
+                    </div>
+                  </li>
+                  <li>
+                    <Key size={16} />
+                    <div>
+                      <strong>Accès au nom de domaine</strong>
+                      <span>Gestion de votre adresse web (si applicable à votre offre)</span>
+                    </div>
+                  </li>
+                  <li>
+                    <FileText size={16} />
+                    <div>
+                      <strong>Accès au contenu du site</strong>
+                      <span>Modification des textes, images et formulaires (selon l'offre)</span>
+                    </div>
+                  </li>
+                  <li>
+                    <MessageCircle size={16} />
+                    <div>
+                      <strong>Données des formulaires</strong>
+                      <span>Réception des messages et demandes de vos visiteurs</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              {/* What We Manage */}
+              <div className="sv-access-block managed">
+                <h3>
+                  <Settings size={20} />
+                  Ce que nous gérons
+                </h3>
+                <ul>
+                  <li>
+                    <Server size={16} />
+                    <div>
+                      <strong>Infrastructure technique</strong>
+                      <span>Serveurs, hébergement et configuration cloud</span>
+                    </div>
+                  </li>
+                  <li>
+                    <RefreshCcw size={16} />
+                    <div>
+                      <strong>Systèmes de déploiement</strong>
+                      <span>Mise en ligne et mises à jour techniques</span>
+                    </div>
+                  </li>
+                  <li>
+                    <Lock size={16} />
+                    <div>
+                      <strong>Sécurité et certificats</strong>
+                      <span>Protection SSL/HTTPS et surveillance</span>
+                    </div>
+                  </li>
+                  <li>
+                    <Wrench size={16} />
+                    <div>
+                      <strong>Outils de développement</strong>
+                      <span>Technologies et processus internes de création</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="sv-access-note">
+              <Info size={18} />
+              <div>
+                <p>
+                  <strong>Besoin d'un accès technique supplémentaire ?</strong>
+                </p>
+                <p>
+                  Un accès administratif ou technique complet peut être fourni s'il est 
+                  <strong> explicitement inclus dans l'offre</strong> ou demandé par le client. 
+                  Toute demande d'accès supplémentaire ou de modifications futures pourra faire 
+                  l'objet d'un accord distinct.
+                </p>
+              </div>
+            </div>
+
+            <div className="sv-access-trust">
+              <Shield size={16} />
+              <span>Notre engagement : transparence, professionnalisme et confiance à chaque étape.</span>
+            </div>
+          </CardContent>
+        </Card>
+
         {/* Original Price Card - Now as Summary */}
         <Card className="sv-price-card">
           <CardContent className="sv-price-content">
