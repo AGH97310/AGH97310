@@ -60,6 +60,7 @@ Site web professionnel multi-pages pour une entreprise d'assistance informatique
   - 2 offres commerciales claires (Clé en Main / Géré + Maintenance)
   - Clause de transfert de propriété et d'accès
   - Options de maintenance (Essentielle 49€/mois, Avancée 79€/mois)
+  - **Section "Accès et Responsabilités"** : transparence sur livraison, accès fournis vs gérés
   - Phrase d'accroche client
   - Disclaimer maintenance
 
