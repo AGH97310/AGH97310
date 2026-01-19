@@ -108,4 +108,4 @@ All critical items completed.
 - Single language (French) only
 
 ## Last Updated
-January 19, 2026 - Enriched Site Vitrine page with commercial offers, transfer clause and maintenance options
+January 19, 2026 - Added "Access & Responsibilities" section to Site Vitrine page for transparency
