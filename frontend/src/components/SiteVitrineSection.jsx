@@ -179,7 +179,215 @@ export const SiteVitrineSection = () => {
           </div>
         </div>
 
-        {/* Price Offer */}
+        {/* Two Commercial Offers */}
+        <div className="sv-offers-intro">
+          <h2 className="sv-section-title centered">Nos Offres</h2>
+          <p className="sv-offers-tagline">
+            « Vous avez deux options : soit je vous livre le site avec accès complet, 
+            soit je m'occupe de tout pour que vous n'ayez jamais à vous soucier de la technique. »
+          </p>
+        </div>
+
+        <div className="sv-offers-grid">
+          {/* Offre 1 - Clé en Main */}
+          <Card className="sv-offer-card offer-standard">
+            <CardContent className="sv-offer-content">
+              <div className="sv-offer-header">
+                <div className="sv-offer-icon-wrapper standard">
+                  <Key size={28} />
+                </div>
+                <span className="sv-offer-badge standard">OFFRE 1</span>
+                <h3 className="sv-offer-title">Site Clé en Main</h3>
+                <p className="sv-offer-subtitle">Accès transféré</p>
+              </div>
+              
+              <div className="sv-offer-target">
+                <Users size={16} />
+                <span>Pour clients autonomes ou techniques</span>
+              </div>
+
+              <p className="sv-offer-description">
+                Site vitrine professionnel clé en main. Conception, mise en ligne et livraison 
+                complète du site avec <strong>accès administrateur</strong>.
+              </p>
+
+              <div className="sv-offer-price-box standard">
+                <span className="sv-offer-price">790 €</span>
+                <span className="sv-offer-price-detail">HT • Paiement unique</span>
+              </div>
+
+              <div className="sv-offer-section">
+                <h4 className="sv-offer-section-title included">
+                  <CheckCircle size={18} />
+                  Inclus
+                </h4>
+                <ul className="sv-offer-list included">
+                  {offer1Inclus.map((item, index) => (
+                    <li key={index}>
+                      <CheckCircle size={14} />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="sv-offer-section">
+                <h4 className="sv-offer-section-title excluded">
+                  <XCircle size={18} />
+                  Non inclus
+                </h4>
+                <ul className="sv-offer-list excluded">
+                  {offer1NonInclus.map((item, index) => (
+                    <li key={index}>
+                      <XCircle size={14} />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Offre 2 - Géré + Maintenance */}
+          <Card className="sv-offer-card offer-premium">
+            <CardContent className="sv-offer-content">
+              <div className="sv-offer-popular">
+                <Star size={14} />
+                RECOMMANDÉ
+              </div>
+              <div className="sv-offer-header">
+                <div className="sv-offer-icon-wrapper premium">
+                  <Crown size={28} />
+                </div>
+                <span className="sv-offer-badge premium">OFFRE 2</span>
+                <h3 className="sv-offer-title">Site Géré + Maintenance</h3>
+                <p className="sv-offer-subtitle">Premium • Tranquillité totale</p>
+              </div>
+              
+              <div className="sv-offer-target premium">
+                <Users size={16} />
+                <span>Pour clients non techniques</span>
+              </div>
+
+              <p className="sv-offer-description">
+                Site clé en main avec <strong>gestion complète</strong>. 
+                Nous gérons la technique, la sécurité et les mises à jour pour vous.
+              </p>
+
+              <div className="sv-offer-price-box premium">
+                <div className="sv-offer-price-row">
+                  <span className="sv-offer-price">790 €</span>
+                  <span className="sv-offer-price-label">Création</span>
+                </div>
+                <div className="sv-offer-price-plus">+</div>
+                <div className="sv-offer-price-row">
+                  <span className="sv-offer-price monthly">49 €</span>
+                  <span className="sv-offer-price-label">/mois maintenance</span>
+                </div>
+              </div>
+
+              <div className="sv-offer-section">
+                <h4 className="sv-offer-section-title included">
+                  <CheckCircle size={18} />
+                  Inclus
+                </h4>
+                <ul className="sv-offer-list included">
+                  {offer2Inclus.map((item, index) => (
+                    <li key={index}>
+                      <CheckCircle size={14} />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Transfer Clause */}
+        <Card className="sv-transfer-card">
+          <CardContent className="sv-transfer-content">
+            <div className="sv-transfer-header">
+              <div className="sv-transfer-icon">
+                <FileText size={24} />
+              </div>
+              <h3>Transfert de Propriété et d'Accès</h3>
+            </div>
+            <div className="sv-transfer-text">
+              <p>
+                À la livraison du site et après règlement complet, les <strong>accès administrateur sont transmis au client</strong>.
+              </p>
+              <p>
+                Le client devient responsable de l'hébergement, des mises à jour, des modifications 
+                et de la sécurité du site, <strong>sauf en cas de souscription à une offre de maintenance</strong>.
+              </p>
+              <p className="sv-transfer-note">
+                Toute intervention ultérieure fera l'objet d'un devis ou d'un abonnement distinct.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Maintenance Options */}
+        <div className="sv-maintenance-section">
+          <h2 className="sv-section-title centered">
+            <Wrench className="h-6 w-6" />
+            Options de Maintenance
+          </h2>
+          <p className="sv-maintenance-intro">
+            Des formules claires et transparentes pour garder votre site performant et sécurisé.
+          </p>
+
+          <div className="sv-maintenance-grid">
+            {/* Maintenance Essentielle */}
+            <Card className="sv-maintenance-card essentielle">
+              <CardContent className="sv-maintenance-content">
+                <div className="sv-maintenance-badge essentielle">ESSENTIELLE</div>
+                <div className="sv-maintenance-price">
+                  <span className="price">49 €</span>
+                  <span className="period">/mois</span>
+                </div>
+                <ul className="sv-maintenance-list">
+                  {maintenanceEssentielle.map((item, index) => (
+                    <li key={index}>
+                      <CheckCircle size={14} />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+
+            {/* Maintenance Avancée */}
+            <Card className="sv-maintenance-card avancee">
+              <CardContent className="sv-maintenance-content">
+                <div className="sv-maintenance-badge avancee">AVANCÉE</div>
+                <div className="sv-maintenance-price">
+                  <span className="price">79 €</span>
+                  <span className="period">/mois</span>
+                </div>
+                <ul className="sv-maintenance-list">
+                  {maintenanceAvancee.map((item, index) => (
+                    <li key={index}>
+                      <CheckCircle size={14} />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="sv-maintenance-disclaimer">
+            <Info size={18} />
+            <p>
+              <strong>À noter :</strong> La maintenance ne comprend pas la refonte graphique, 
+              les nouvelles fonctionnalités majeures ou le référencement avancé, sauf devis spécifique.
+            </p>
+          </div>
+        </div>
+
+        {/* Original Price Card - Now as Summary */}
         <Card className="sv-price-card">
           <CardContent className="sv-price-content">
             <div className="sv-price-header">
