@@ -659,4 +659,528 @@
   .sv-cta-secondary {
     width: 100%;
   }
+
+  .sv-offers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sv-maintenance-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==============================
+   COMMERCIAL OFFERS STYLES
+   ============================== */
+
+/* Offers Intro */
+.sv-offers-intro {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.sv-offers-tagline {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  font-style: italic;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.08) 0%, rgba(157, 0, 255, 0.08) 100%);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: 12px;
+  line-height: 1.7;
+}
+
+/* Offers Grid */
+.sv-offers-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Offer Card */
+.sv-offer-card {
+  background: linear-gradient(145deg, rgba(20, 35, 60, 0.95) 0%, rgba(10, 20, 40, 0.98) 100%) !important;
+  border-radius: 20px !important;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.sv-offer-card.offer-standard {
+  border: 1px solid rgba(0, 212, 255, 0.3) !important;
+}
+
+.sv-offer-card.offer-premium {
+  border: 2px solid rgba(255, 215, 0, 0.5) !important;
+}
+
+.sv-offer-card.offer-premium::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #ffd700, #ffaa00, #ffd700);
+}
+
+.sv-offer-card:hover {
+  transform: translateY(-5px);
+}
+
+.sv-offer-content {
+  padding: 2rem !important;
+}
+
+/* Popular Badge */
+.sv-offer-popular {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: linear-gradient(135deg, #ffd700 0%, #ffaa00 100%);
+  color: #1a1a2e;
+  padding: 0.35rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Offer Header */
+.sv-offer-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.sv-offer-icon-wrapper {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+}
+
+.sv-offer-icon-wrapper.standard {
+  background: rgba(0, 212, 255, 0.15);
+  border: 2px solid rgba(0, 212, 255, 0.4);
+  color: var(--neon-cyan);
+}
+
+.sv-offer-icon-wrapper.premium {
+  background: rgba(255, 215, 0, 0.15);
+  border: 2px solid rgba(255, 215, 0, 0.5);
+  color: #ffd700;
+}
+
+.sv-offer-badge {
+  display: inline-block;
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.75rem;
+}
+
+.sv-offer-badge.standard {
+  background: rgba(0, 212, 255, 0.1);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  color: var(--neon-cyan);
+}
+
+.sv-offer-badge.premium {
+  background: rgba(255, 215, 0, 0.1);
+  border: 1px solid rgba(255, 215, 0, 0.4);
+  color: #ffd700;
+}
+
+.sv-offer-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.35rem;
+}
+
+.sv-offer-subtitle {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Offer Target */
+.sv-offer-target {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: rgba(0, 212, 255, 0.08);
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.sv-offer-target svg {
+  color: var(--neon-cyan);
+}
+
+.sv-offer-target.premium {
+  background: rgba(255, 215, 0, 0.08);
+}
+
+.sv-offer-target.premium svg {
+  color: #ffd700;
+}
+
+/* Offer Description */
+.sv-offer-description {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.sv-offer-description strong {
+  color: #ffffff;
+}
+
+/* Offer Price Box */
+.sv-offer-price-box {
+  text-align: center;
+  padding: 1.25rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+}
+
+.sv-offer-price-box.standard {
+  background: rgba(0, 212, 255, 0.1);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+}
+
+.sv-offer-price-box.premium {
+  background: rgba(255, 215, 0, 0.08);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.sv-offer-price {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--neon-cyan);
+}
+
+.sv-offer-price-box.premium .sv-offer-price {
+  color: #ffd700;
+}
+
+.sv-offer-price.monthly {
+  font-size: 1.75rem;
+}
+
+.sv-offer-price-detail {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.85rem;
+}
+
+.sv-offer-price-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sv-offer-price-label {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+}
+
+.sv-offer-price-plus {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 1.25rem;
+  margin: 0.5rem 0;
+}
+
+/* Offer Section */
+.sv-offer-section {
+  margin-bottom: 1rem;
+}
+
+.sv-offer-section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.sv-offer-section-title.included {
+  color: #00ff88;
+}
+
+.sv-offer-section-title.excluded {
+  color: #ff6b6b;
+}
+
+/* Offer List */
+.sv-offer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sv-offer-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+  padding: 0.4rem 0;
+}
+
+.sv-offer-list.included li {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.sv-offer-list.included li svg {
+  color: #00ff88;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.sv-offer-list.excluded li {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.sv-offer-list.excluded li svg {
+  color: #ff6b6b;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ==============================
+   TRANSFER CLAUSE STYLES
+   ============================== */
+
+.sv-transfer-card {
+  background: linear-gradient(145deg, rgba(20, 35, 60, 0.9) 0%, rgba(10, 20, 40, 0.95) 100%) !important;
+  border: 1px solid rgba(157, 0, 255, 0.3) !important;
+  border-radius: 16px !important;
+  margin-bottom: 2rem;
+}
+
+.sv-transfer-content {
+  padding: 2rem !important;
+}
+
+.sv-transfer-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.sv-transfer-icon {
+  width: 50px;
+  height: 50px;
+  background: rgba(157, 0, 255, 0.15);
+  border: 1px solid rgba(157, 0, 255, 0.3);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #bf5fff;
+  flex-shrink: 0;
+}
+
+.sv-transfer-header h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.sv-transfer-text p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 0.75rem;
+}
+
+.sv-transfer-text strong {
+  color: #ffffff;
+}
+
+.sv-transfer-note {
+  background: rgba(157, 0, 255, 0.1);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border-left: 3px solid rgba(157, 0, 255, 0.5);
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.8) !important;
+  margin-top: 1rem !important;
+}
+
+/* ==============================
+   MAINTENANCE SECTION STYLES
+   ============================== */
+
+.sv-maintenance-section {
+  margin-bottom: 2rem;
+}
+
+.sv-maintenance-intro {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.sv-maintenance-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.sv-maintenance-card {
+  background: linear-gradient(145deg, rgba(20, 35, 60, 0.9) 0%, rgba(10, 20, 40, 0.95) 100%) !important;
+  border-radius: 16px !important;
+  transition: all 0.3s ease;
+}
+
+.sv-maintenance-card.essentielle {
+  border: 1px solid rgba(0, 255, 136, 0.3) !important;
+}
+
+.sv-maintenance-card.avancee {
+  border: 1px solid rgba(0, 212, 255, 0.3) !important;
+}
+
+.sv-maintenance-card:hover {
+  transform: translateY(-3px);
+}
+
+.sv-maintenance-content {
+  padding: 1.75rem !important;
+  text-align: center;
+}
+
+.sv-maintenance-badge {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+}
+
+.sv-maintenance-badge.essentielle {
+  background: rgba(0, 255, 136, 0.15);
+  border: 1px solid rgba(0, 255, 136, 0.3);
+  color: #00ff88;
+}
+
+.sv-maintenance-badge.avancee {
+  background: rgba(0, 212, 255, 0.15);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  color: var(--neon-cyan);
+}
+
+.sv-maintenance-price {
+  margin-bottom: 1.5rem;
+}
+
+.sv-maintenance-price .price {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.sv-maintenance-card.essentielle .sv-maintenance-price .price {
+  color: #00ff88;
+}
+
+.sv-maintenance-card.avancee .sv-maintenance-price .price {
+  color: var(--neon-cyan);
+}
+
+.sv-maintenance-price .period {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1rem;
+}
+
+.sv-maintenance-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.sv-maintenance-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.9rem;
+  margin-bottom: 0.6rem;
+  padding: 0.35rem 0;
+}
+
+.sv-maintenance-card.essentielle .sv-maintenance-list li svg {
+  color: #00ff88;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.sv-maintenance-card.avancee .sv-maintenance-list li svg {
+  color: var(--neon-cyan);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.sv-maintenance-disclaimer {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  background: rgba(255, 193, 7, 0.08);
+  border: 1px solid rgba(255, 193, 7, 0.2);
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+
+.sv-maintenance-disclaimer svg {
+  color: #ffc107;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.sv-maintenance-disclaimer p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.sv-maintenance-disclaimer strong {
+  color: #ffc107;
 }
