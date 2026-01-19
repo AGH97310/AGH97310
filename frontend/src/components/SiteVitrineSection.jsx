@@ -304,30 +304,6 @@ export const SiteVitrineSection = () => {
           </Card>
         </div>
 
-        {/* Transfer Clause */}
-        <Card className="sv-transfer-card">
-          <CardContent className="sv-transfer-content">
-            <div className="sv-transfer-header">
-              <div className="sv-transfer-icon">
-                <FileText size={24} />
-              </div>
-              <h3>Transfert de Propriété et d'Accès</h3>
-            </div>
-            <div className="sv-transfer-text">
-              <p>
-                À la livraison du site et après règlement complet, les <strong>accès administrateur sont transmis au client</strong>.
-              </p>
-              <p>
-                Le client devient responsable de l'hébergement, des mises à jour, des modifications 
-                et de la sécurité du site, <strong>sauf en cas de souscription à une offre de maintenance</strong>.
-              </p>
-              <p className="sv-transfer-note">
-                Toute intervention ultérieure fera l'objet d'un devis ou d'un abonnement distinct.
-              </p>
-            </div>
-          </CardContent>
-        </Card>
-
         {/* Delivery and Administrative Access - Legal Section */}
         <Card className="sv-delivery-card">
           <CardContent className="sv-delivery-content">
