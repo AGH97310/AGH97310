@@ -1,8 +1,12 @@
 import React from 'react';
 import { Card, CardContent } from './ui/card';
 import { Button } from './ui/button';
-import { CheckCircle, Zap, Truck, Gamepad2, Plus } from 'lucide-react';
+import { 
+  CheckCircle, Zap, Truck, Gamepad2, Plus, ShoppingBag,
+  MessageCircle, Phone, ArrowLeft, Package, CreditCard, Star
+} from 'lucide-react';
 import { useCart } from '../context/CartContext';
+import { Link } from 'react-router-dom';
 import './ConsoleSection.css';
 
 // Images réelles des consoles
@@ -57,7 +61,31 @@ export const ConsoleSection = () => {
       image: manetteXbox,
       badge: 'ACCESSOIRE',
       highlights: ['Xbox X/S', 'PC', 'Câble 2.5m', 'Audio intégré'],
-      description: 'Design NEON, prise en main ergonomique, zéro latence. Dominez chaque partie.'
+      description: 'Design NEON, prise en main ergonomique, zéro latence.'
+    }
+  ];
+
+  const orderProcess = [
+    {
+      step: '01',
+      title: 'Choix du produit',
+      description: 'Sélectionnez votre console ou accessoire'
+    },
+    {
+      step: '02',
+      title: 'Confirmation',
+      description: 'Vérification de disponibilité et devis'
+    },
+    {
+      step: '03',
+      title: 'Paiement sécurisé',
+      description: 'CB via PayPal, Virement ou Espèces (RDV)',
+      important: true
+    },
+    {
+      step: '04',
+      title: 'Livraison',
+      description: 'Retrait sur place ou livraison Kourou'
     }
   ];
 
@@ -65,17 +93,63 @@ export const ConsoleSection = () => {
     addToCart(consoleItem, 'console');
   };
 
+  // CTA Buttons Component
+  const CTAButtons = ({ variant = 'default' }) => (
+    <div className={`console-cta-buttons ${variant}`}>
+      <Button 
+        asChild
+        size="lg"
+        className="console-cta-whatsapp"
+      >
+        <a 
+          href="https://wa.me/594694458584?text=Bonjour,%20je%20suis%20intéressé%20par%20une%20console%20gaming" 
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+          <MessageCircle className="h-5 w-5" />
+          <span>WhatsApp</span>
+          <small>Commander / Se renseigner</small>
+        </a>
+      </Button>
+      <Button 
+        asChild
+        size="lg"
+        className="console-cta-phone"
+      >
+        <a href="tel:+594694458584">
+          <Phone className="h-5 w-5" />
+          <span>Appeler</span>
+          <small>Pour commander</small>
+        </a>
+      </Button>
+    </div>
+  );
+
   return (
     <section className="console-section">
       <div className="console-container">
+        {/* Back Navigation */}
+        <Link to="/" className="console-back-btn">
+          <ArrowLeft className="h-4 w-4" />
+          <span>Explorer d'autres catégories</span>
+        </Link>
+
+        {/* Header */}
         <div className="console-header">
           <div className="console-badge">
             <Gamepad2 className="h-5 w-5" />
-            🎮 VENTE FLASH 🎮
+            SÉLECTION GAMING
           </div>
-          <h2 className="console-title">Consoles Portables</h2>
-          <p className="console-subtitle">Rétro Gaming • Écrans IPS • Stockage 64 Go</p>
+          <h2 className="console-title">Gaming & Accessoires</h2>
+          <p className="console-subtitle">Consoles portables rétro • Accessoires premium</p>
+          <p className="console-description">
+            Une sélection soignée de consoles portables et accessoires gaming, 
+            testés et approuvés. Tous nos produits sont <strong>neufs et garantis</strong>.
+          </p>
         </div>
+
+        {/* CTA Top */}
+        <CTAButtons variant="top" />
 
         {/* Consoles Grid */}
         <div className="console-grid">
@@ -123,6 +197,55 @@ export const ConsoleSection = () => {
           ))}
         </div>
 
+        {/* Order Process */}
+        <Card className="console-order-card">
+          <CardContent className="console-order-content">
+            <div className="console-order-header">
+              <ShoppingBag className="h-7 w-7" />
+              <h3>Comment commander ?</h3>
+              <p>Un processus simple et rapide</p>
+            </div>
+
+            <div className="console-order-steps">
+              {orderProcess.map((step, index) => (
+                <div key={index} className="console-order-step">
+                  <div className="console-step-number">{step.step}</div>
+                  <div className="console-step-content">
+                    <h4>{step.title}</h4>
+                    <p>{step.description}</p>
+                    {step.important && (
+                      <span className="console-step-note">⚠️ Commande traitée après règlement</span>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="console-order-info">
+              <div className="console-info-item">
+                <Package className="h-5 w-5" />
+                <div>
+                  <strong>Retrait sur place</strong>
+                  <span>Disponible à Kourou sur RDV</span>
+                </div>
+              </div>
+              <div className="console-info-item">
+                <Truck className="h-5 w-5" />
+                <div>
+                  <strong>Livraison gratuite</strong>
+                  <span>Sur Kourou uniquement</span>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* CTA Middle */}
+        <div className="console-cta-section">
+          <p>Une question ? Besoin de conseils ?</p>
+          <CTAButtons variant="middle" />
+        </div>
+
         {/* Trust badges */}
         <div className="console-trust">
           <div className="trust-item">
@@ -130,14 +253,31 @@ export const ConsoleSection = () => {
             <span>Produits 100% neufs</span>
           </div>
           <div className="trust-item">
-            <Zap className="trust-icon" />
-            <span>Garantie satisfait ou remboursé</span>
+            <Star className="trust-icon" />
+            <span>Sélection qualité</span>
+          </div>
+          <div className="trust-item">
+            <CreditCard className="trust-icon" />
+            <span>Paiement sécurisé</span>
           </div>
           <div className="trust-item">
             <Truck className="trust-icon" />
             <span>Livraison gratuite Kourou</span>
           </div>
         </div>
+
+        {/* Final CTA */}
+        <div className="console-cta-final">
+          <h3>Prêt à jouer ?</h3>
+          <p>Contactez-nous pour passer commande</p>
+          <CTAButtons variant="final" />
+        </div>
+
+        {/* Back Navigation Bottom */}
+        <Link to="/" className="console-back-btn bottom">
+          <ArrowLeft className="h-4 w-4" />
+          <span>Retour à l'accueil</span>
+        </Link>
       </div>
     </section>
   );
