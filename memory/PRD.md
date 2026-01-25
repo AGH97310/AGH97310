@@ -80,9 +80,18 @@ Site web professionnel multi-pages pour une entreprise d'assistance informatique
   - Design 100% responsive : mobile → tablette → desktop
 
 ### Product Pages
-- [x] Gaming & Accessoires (Consoles)
-- [x] Smartphones & Tablettes
-- [x] Parfumerie Orientale
+- [x] **Gaming & Accessoires** - IMPROVED Jan 25, 2026
+  - Bouton "← Explorer d'autres catégories" en haut/bas
+  - Description rassurante + CTAs WhatsApp/Appeler répétés
+  - Section "Comment commander ?" en 4 étapes
+  - Trust badges (100% neufs, Sélection qualité, Paiement sécurisé, Livraison gratuite)
+  - CTA milieu + CTA final "Prêt à jouer ?"
+- [x] **Smartphones & Tablettes** - IMPROVED Jan 25, 2026
+  - Bouton "← Explorer d'autres catégories" en haut/bas
+  - Description premium + CTAs WhatsApp/Appeler répétés
+  - Section "Comment commander ?" en 4 étapes
+  - Trust badges + CTA final "Prêt à changer de smartphone ?"
+- [x] Parfumerie Orientale (référence pour le style)
 
 ### Legal & Compliance
 - [x] CGV, CGU, Politique de confidentialité
