@@ -62,6 +62,12 @@ export const PerfumeSectionWithCart = () => {
   return (
     <section className="perfume-section">
       <div className="perfume-container">
+        {/* Back Navigation */}
+        <Link to="/" className="perfume-back-btn">
+          <ArrowLeft className="h-4 w-4" />
+          <span>Explorer d'autres catégories</span>
+        </Link>
+
         {/* Header */}
         <div className="perfume-header">
           <div className="perfume-badge">
