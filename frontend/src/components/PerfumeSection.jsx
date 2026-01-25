@@ -171,6 +171,12 @@ export const PerfumeSection = () => {
             </a>
           </Button>
         </div>
+
+        {/* Back Navigation Bottom */}
+        <Link to="/" className="perfume-back-btn bottom">
+          <ArrowLeft className="h-4 w-4" />
+          <span>Retour à l'accueil</span>
+        </Link>
       </div>
     </section>
   );
