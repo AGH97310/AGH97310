@@ -7,6 +7,33 @@
   background: linear-gradient(180deg, rgba(10, 15, 30, 1) 0%, rgba(5, 10, 20, 1) 100%);
 }
 
+/* Back Button */
+.sv-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.6rem 1rem;
+  background: rgba(157, 0, 255, 0.1);
+  border: 1px solid rgba(157, 0, 255, 0.3);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: absolute;
+  top: 7rem;
+  left: 1.5rem;
+  z-index: 10;
+}
+
+.sv-back-btn:hover {
+  background: rgba(157, 0, 255, 0.2);
+  color: #ffffff;
+  border-color: rgba(157, 0, 255, 0.5);
+}
+
+
 /* ========== HERO SECTION ========== */
 .sv-hero {
   min-height: 85vh;
