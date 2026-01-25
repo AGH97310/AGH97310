@@ -1,7 +1,8 @@
 import React from 'react';
 import { Card, CardContent } from './ui/card';
 import { Button } from './ui/button';
-import { Sparkles, ShoppingBag, Clock, Truck, MessageCircle } from 'lucide-react';
+import { Sparkles, ShoppingBag, Clock, Truck, MessageCircle, ArrowLeft } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import './PerfumeSection.css';
 
 // Images réelles des parfums
@@ -47,6 +48,11 @@ export const PerfumeSection = () => {
   return (
     <section className="perfume-section">
       <div className="perfume-container">
+        {/* Back Navigation */}
+        <Link to="/" className="perfume-back-btn">
+          <ArrowLeft className="h-4 w-4" />
+          <span>Explorer d'autres catégories</span>
+        </Link>
         {/* Header */}
         <div className="perfume-header">
           <div className="perfume-badge">
