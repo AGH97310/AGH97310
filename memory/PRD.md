@@ -48,14 +48,15 @@ Site web professionnel multi-pages pour une entreprise d'assistance informatique
 ### Service Pages
 - [x] Home page with overview
 - [x] Dépannage à distance (Remote Troubleshooting)
-- [x] **Récupération de données** (Data Recovery) - ENRICHED Jan 19, 2026
-  - Comprendre la perte de données
-  - Ce qu'il faut faire / éviter (Do's and Don'ts)
-  - Supports pris en charge
-  - Méthode de travail en 4 étapes
-  - Confidentialité & Respect des données
-  - CTA avec lien WhatsApp
-  - Mention légale
+- [x] **Récupération de données** (Data Recovery) - REFACTORED Jan 25, 2026 (MOBILE-FIRST)
+  - Hero visible sans scroll avec CTAs WhatsApp + Appeler
+  - "Ce que nous récupérons" : 6 types de supports
+  - "Problèmes courants" : 5 problèmes avec checklist
+  - CTA milieu répété "Besoin d'aide maintenant ?"
+  - "Notre méthode" : 4 étapes (Diagnostic, Évaluation, Récupération, Restitution)
+  - "Pourquoi nous faire confiance" : 4 raisons (Confidentialité, Méthodes pro, Local, Humain)
+  - CTA final avec bouton "Demande de devis gratuit"
+  - Design 100% responsive : mobile → tablette → desktop
 - [x] **Création de Site Vitrine** - ENRICHED Jan 19, 2026
   - 2 offres commerciales claires (Clé en Main / Géré + Maintenance)
   - Clause de transfert de propriété et d'accès
