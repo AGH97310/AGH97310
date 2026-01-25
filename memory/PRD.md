@@ -57,18 +57,18 @@ Site web professionnel multi-pages pour une entreprise d'assistance informatique
   - "Pourquoi nous faire confiance" : 4 raisons (Confidentialité, Méthodes pro, Local, Humain)
   - CTA final avec bouton "Demande de devis gratuit"
   - Design 100% responsive : mobile → tablette → desktop
-- [x] **Création de Site Vitrine** - ENRICHED Jan 19, 2026
-  - 2 offres commerciales claires (Clé en Main / Géré + Maintenance)
-  - Clause de transfert de propriété et d'accès
-  - **Section "Livraison et Accès Administratif"** : clause contractuelle détaillée
-    - Accès administratif fourni (contenu, formulaires, domaine)
-    - Outils exclusifs du prestataire (non transférés)
-    - Note sur accès technique élargi/code source
-    - Référence aux pratiques standard de l'industrie
-  - Section "Accès et Responsabilités" : transparence sur livraison
-  - Options de maintenance (Essentielle 49€/mois, Avancée 79€/mois)
-  - Phrase d'accroche client
-  - Disclaimer maintenance
+- [x] **Création de Site Vitrine** - REFACTORED Jan 25, 2026 (MOBILE-FIRST)
+  - Hero avec CTAs "Demande de devis" + "WhatsApp"
+  - "À qui s'adresse cette offre ?" : 5 cibles (Entrepreneurs, Commerçants, Artisans, Indépendants, Associations)
+  - "Ce que vous obtenez" : 5 bénéfices orientés résultats
+  - CTA milieu "Prêt à booster votre visibilité ?"
+  - "Types de sites proposés" : Site vitrine, Site pro, Landing page, Refonte
+  - "Comment ça se passe ?" : 4 étapes simples
+  - "Pourquoi choisir NEOTECH ?" : 4 raisons différenciantes
+  - Réassurance : "Chaque site est pensé pour un vrai besoin métier"
+  - Tarif indicatif : 790€ HT
+  - CTA final + bouton "Appeler maintenant"
+  - Design 100% responsive : mobile → tablette → desktop
 
 ### Product Pages
 - [x] Gaming & Accessoires (Consoles)
