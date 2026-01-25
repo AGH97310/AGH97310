@@ -1,334 +1,212 @@
 import React from 'react';
-import { Card, CardContent } from './ui/card';
 import { Button } from './ui/button';
 import { 
-  HardDrive, Monitor, Usb, Disc, 
-  Search, ShieldCheck, Lock, MessageSquare,
-  MessageCircle, AlertTriangle, Clock,
-  CheckCircle, XCircle, Cpu, Database,
-  Eye, FileCheck, ArrowRight, Info
+  HardDrive, Monitor, Usb, Cpu, 
+  MessageCircle, Phone, FileText,
+  CheckCircle, Lock, MapPin, Users,
+  Zap, Search, Shield, RefreshCcw,
+  Image, FileVideo, File
 } from 'lucide-react';
 import './DataRecoverySection.css';
 
 export const DataRecoverySection = () => {
-  const lossReasons = [
-    "Suppression accidentelle de fichiers importants",
-    "Corbeille vidée par erreur",
-    "Panne ou crash du système d'exploitation",
-    "Disque dur ou SSD défaillant",
-    "Clé USB ou carte mémoire endommagée",
-    "Formatage involontaire d'un support"
-  ];
-
-  const doList = [
-    "Arrêter immédiatement d'utiliser l'appareil",
-    "Éviter toute installation de logiciel",
-    "Ne pas écrire de nouvelles données sur le support",
-    "Contacter un professionnel pour un diagnostic rapide"
-  ];
-
-  const dontList = [
-    "Continuer à utiliser l'appareil normalement",
-    "Tenter des solutions trouvées au hasard sur internet",
-    "Multiplier les manipulations et tentatives",
-    "Ouvrir ou démonter le disque dur vous-même"
-  ];
-
+  // Ce que nous récupérons
   const supportedDevices = [
-    { icon: Monitor, label: 'PC et Mac', description: "Ordinateurs de bureau et portables, toutes marques" },
-    { icon: HardDrive, label: 'Disques durs HDD', description: "Disques mécaniques internes et externes" },
-    { icon: Cpu, label: 'SSD', description: "Disques à mémoire flash, SATA ou NVMe" },
-    { icon: Usb, label: 'Clés USB', description: "Tous types et capacités" },
-    { icon: Disc, label: 'Cartes mémoire', description: "SD, microSD, CF, Memory Stick" }
+    { icon: HardDrive, label: 'Disques durs internes & externes' },
+    { icon: Zap, label: 'SSD' },
+    { icon: Usb, label: 'Clés USB' },
+    { icon: Shield, label: 'Cartes SD / microSD' },
+    { icon: Monitor, label: 'PC & Mac' },
+    { icon: Image, label: 'Photos, vidéos, documents' }
   ];
 
-  const processSteps = [
-    { 
-      number: "1", 
-      title: "Diagnostic initial", 
-      description: "Analyse de votre support pour évaluer l'état et identifier les causes de la perte."
-    },
-    { 
-      number: "2", 
-      title: "Évaluation des possibilités", 
-      description: "Estimation du taux de récupération possible et transparence sur les chances de succès."
-    },
-    { 
-      number: "3", 
-      title: "Tentative de récupération", 
-      description: "Utilisation d'outils professionnels adaptés à votre situation spécifique."
-    },
-    { 
-      number: "4", 
-      title: "Restitution des données", 
-      description: "Transfert des fichiers récupérés sur un support externe sain de votre choix."
-    }
+  // Problèmes courants
+  const commonProblems = [
+    'Suppression accidentelle',
+    'Disque dur non reconnu',
+    'Ordinateur qui ne démarre plus',
+    'Formatage par erreur',
+    'Fichiers corrompus ou virus'
   ];
 
-  const valueProps = [
-    { icon: Search, title: 'Diagnostic rapide', description: 'Évaluation immédiate de la situation et des possibilités' },
-    { icon: ShieldCheck, title: 'Méthode professionnelle', description: 'Outils et protocoles adaptés à chaque cas' },
-    { icon: Lock, title: 'Confidentialité totale', description: 'Vos données personnelles restent strictement privées' },
-    { icon: MessageSquare, title: 'Transparence', description: 'Explication claire avant toute intervention' }
+  // Notre méthode
+  const methodSteps = [
+    { number: '1', title: 'Diagnostic', desc: 'Analyse du support et des dégâts' },
+    { number: '2', title: 'Évaluation', desc: 'Vérification des possibilités' },
+    { number: '3', title: 'Récupération', desc: 'Processus sécurisé sans risque' },
+    { number: '4', title: 'Restitution', desc: 'Données sur support sain' }
   ];
+
+  // Pourquoi nous faire confiance
+  const trustReasons = [
+    { icon: Lock, title: 'Confidentialité totale', desc: 'Vos données restent privées' },
+    { icon: Cpu, title: 'Méthodes professionnelles', desc: 'Outils adaptés à chaque cas' },
+    { icon: MapPin, title: 'Intervention locale', desc: 'Basés en Guyane' },
+    { icon: Users, title: 'Accompagnement humain', desc: 'Conseils clairs et honnêtes' }
+  ];
+
+  // Composant CTA réutilisable
+  const CTAButtons = ({ variant = 'default' }) => (
+    <div className={`dr-cta-buttons ${variant}`} data-testid="dr-cta-buttons">
+      <Button 
+        asChild
+        size="lg"
+        className="dr-cta-whatsapp"
+        data-testid="dr-whatsapp-btn"
+      >
+        <a 
+          href="https://wa.me/594694458584" 
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+          <MessageCircle className="h-5 w-5" />
+          <span>WhatsApp</span>
+          <small>Réponse rapide</small>
+        </a>
+      </Button>
+      <Button 
+        asChild
+        size="lg"
+        className="dr-cta-phone"
+        data-testid="dr-phone-btn"
+      >
+        <a href="tel:+594694458584">
+          <Phone className="h-5 w-5" />
+          <span>Appeler</span>
+          <small>Maintenant</small>
+        </a>
+      </Button>
+    </div>
+  );
 
   return (
-    <section className="data-recovery-section">
-      <div className="data-recovery-container">
-        {/* Header */}
-        <div className="data-recovery-header">
-          <div className="data-recovery-badge">
-            <HardDrive className="h-4 w-4" />
-            RÉCUPÉRATION DE DONNÉES
-          </div>
-          <h1 className="data-recovery-title">Récupération de données</h1>
-          <p className="data-recovery-subtitle">
-            Vos fichiers sont précieux. Nous faisons tout pour les retrouver.
+    <section className="dr-section" data-testid="data-recovery-section">
+      
+      {/* ========== HERO - VISIBLE SANS SCROLL ========== */}
+      <div className="dr-hero" data-testid="dr-hero">
+        <div className="dr-hero-content">
+          <h1 className="dr-hero-title" data-testid="dr-hero-title">
+            Récupération de données
+            <span>Disques, clés USB, SSD</span>
+          </h1>
+          <p className="dr-hero-subtitle">
+            Fichiers supprimés, disque en panne ou non reconnu ?
+            <strong> Nous analysons et récupérons vos données.</strong>
           </p>
-        </div>
-
-        {/* 1️⃣ Bloc Comprendre la perte de données */}
-        <Card className="data-recovery-main-card">
-          <CardContent className="data-recovery-main-content">
-            <div className="data-recovery-explanation">
-              <div className="explanation-icon">
-                <AlertTriangle className="h-8 w-8" />
-              </div>
-              <div className="explanation-text">
-                <h2 className="explanation-title">Comprendre la perte de données</h2>
-                <p>
-                  La perte de données est une situation <strong>plus fréquente qu'on ne le pense</strong> et peut 
-                  toucher n'importe quel utilisateur, qu'il soit particulier ou professionnel.
-                </p>
-                <p>
-                  <strong>Les causes les plus courantes :</strong>
-                </p>
-                <ul className="loss-reasons-list">
-                  {lossReasons.map((reason, index) => (
-                    <li key={index}>
-                      <Database className="h-4 w-4" />
-                      <span>{reason}</span>
-                    </li>
-                  ))}
-                </ul>
-                <p className="explanation-note">
-                  Ces situations sont stressantes, mais dans de nombreux cas, <strong>une récupération 
-                  partielle ou totale est possible</strong> si l'on réagit correctement.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* 2️⃣ Bloc Réagir correctement - Do's and Don'ts */}
-        <div className="do-dont-section">
-          <h2 className="section-title-centered">
-            <AlertTriangle className="h-6 w-6" />
-            Comment réagir face à une perte de données ?
-          </h2>
-          <p className="do-dont-intro">
-            Votre réaction immédiate peut faire toute la différence entre une récupération réussie et une perte définitive.
-          </p>
-          
-          <div className="do-dont-grid">
-            {/* DO */}
-            <Card className="do-card">
-              <CardContent className="do-card-content">
-                <div className="do-header">
-                  <CheckCircle className="h-6 w-6" />
-                  <h3>Ce qu'il faut faire</h3>
-                </div>
-                <ul className="do-list">
-                  {doList.map((item, index) => (
-                    <li key={index}>
-                      <CheckCircle className="h-4 w-4" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-
-            {/* DON'T */}
-            <Card className="dont-card">
-              <CardContent className="dont-card-content">
-                <div className="dont-header">
-                  <XCircle className="h-6 w-6" />
-                  <h3>Ce qu'il faut éviter</h3>
-                </div>
-                <ul className="dont-list">
-                  {dontList.map((item, index) => (
-                    <li key={index}>
-                      <XCircle className="h-4 w-4" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
-
-          <div className="urgency-note">
-            <Clock className="h-5 w-5" />
-            <p>
-              <strong>Plus l'intervention est rapide, plus les chances de récupération sont élevées.</strong> 
-              Chaque manipulation supplémentaire sur un support endommagé réduit les possibilités de récupération.
-            </p>
-          </div>
-        </div>
-
-        {/* 3️⃣ Bloc Supports pris en charge - Version enrichie */}
-        <Card className="devices-card">
-          <CardContent className="devices-card-content">
-            <h2 className="section-title">
-              <HardDrive className="h-6 w-6" />
-              Supports pris en charge
-            </h2>
-            <p className="devices-intro">
-              Nous intervenons sur la plupart des supports de stockage courants :
-            </p>
-            <div className="devices-grid-extended">
-              {supportedDevices.map((device, index) => (
-                <div key={index} className="device-item-extended">
-                  <div className="device-icon-wrapper">
-                    <device.icon className="h-6 w-6" />
-                  </div>
-                  <div className="device-info">
-                    <h4>{device.label}</h4>
-                    <p>{device.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* 4️⃣ Bloc Méthode de travail */}
-        <div className="process-section">
-          <h2 className="section-title-centered">
-            <FileCheck className="h-6 w-6" />
-            Notre méthode de travail
-          </h2>
-          <p className="process-intro">
-            Un processus rigoureux et transparent pour maximiser vos chances de récupération.
-          </p>
-
-          <div className="process-timeline">
-            {processSteps.map((step, index) => (
-              <div key={index} className="process-step">
-                <div className="step-number">{step.number}</div>
-                <div className="step-content">
-                  <h3>{step.title}</h3>
-                  <p>{step.description}</p>
-                </div>
-                {index < processSteps.length - 1 && (
-                  <ArrowRight className="step-arrow" />
-                )}
-              </div>
-            ))}
-          </div>
-
-          <div className="process-disclaimer">
-            <Info className="h-5 w-5" />
-            <div>
-              <p><strong>Important :</strong> La récupération de données n'est jamais garantie à 100%. 
-              Le taux de succès dépend de nombreux facteurs : type de panne, état du support, 
-              manipulations effectuées avant le diagnostic.</p>
-              <p>Nous nous engageons à une <strong>transparence totale</strong> : vous serez informé 
-              des possibilités réelles avant toute intervention.</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Notre approche - Valeurs */}
-        <Card className="values-card">
-          <CardContent className="values-card-content">
-            <h2 className="section-title">Notre approche</h2>
-            <div className="values-grid">
-              {valueProps.map((prop, index) => (
-                <div key={index} className="value-item">
-                  <div className="value-icon">
-                    <prop.icon className="h-5 w-5" />
-                  </div>
-                  <div className="value-content">
-                    <h4 className="value-title">{prop.title}</h4>
-                    <p className="value-description">{prop.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* 5️⃣ Bloc Confiance & Confidentialité */}
-        <Card className="confidentiality-card">
-          <CardContent className="confidentiality-content">
-            <div className="confidentiality-icon">
-              <Lock className="h-10 w-10" />
-            </div>
-            <h2>Confidentialité & Respect de vos données</h2>
-            <p>
-              Nous comprenons que vos données personnelles et professionnelles sont <strong>sensibles et privées</strong>.
-            </p>
-            <ul className="confidentiality-list">
-              <li>
-                <Eye className="h-4 w-4" />
-                <span><strong>Respect total</strong> de vos données personnelles</span>
-              </li>
-              <li>
-                <ShieldCheck className="h-4 w-4" />
-                <span><strong>Confidentialité garantie</strong> : aucun accès à vos fichiers sans nécessité</span>
-              </li>
-              <li>
-                <Lock className="h-4 w-4" />
-                <span><strong>Aucune exploitation</strong> des fichiers récupérés</span>
-              </li>
-            </ul>
-            <p className="confidentiality-note">
-              Votre confiance est notre priorité. Nous traitons chaque dossier avec la plus grande discrétion.
-            </p>
-          </CardContent>
-        </Card>
-
-        {/* 6️⃣ CTA renforcé */}
-        <Card className="cta-card">
-          <CardContent className="cta-card-content">
-            <h2>Vous avez perdu des données ?</h2>
-            <p className="cta-subtitle">
-              N'attendez pas. Chaque minute compte pour maximiser les chances de récupération.
-            </p>
-            <Button 
-              asChild
-              size="lg"
-              className="data-recovery-cta"
-            >
-              <a 
-                href="https://wa.me/594694458584" 
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <MessageCircle className="mr-2 h-5 w-5" />
-                Contactez-nous maintenant
-              </a>
-            </Button>
-            <p className="cta-reassurance">
-              <Clock className="h-4 w-4" />
-              Premier diagnostic gratuit • Réponse rapide • Sans engagement
-            </p>
-          </CardContent>
-        </Card>
-
-        {/* 7️⃣ Mention légale */}
-        <div className="legal-mention">
-          <Info className="h-4 w-4" />
-          <p>
-            <strong>Information importante :</strong> La récupération de données dépend de nombreux facteurs 
-            (type de panne, état du support, manipulations antérieures) et ne peut être garantie. 
-            Un diagnostic professionnel est systématiquement réalisé avant toute intervention afin de 
-            vous informer des possibilités réelles de récupération.
-          </p>
+          <CTAButtons variant="hero" />
         </div>
       </div>
+
+      {/* ========== CE QUE NOUS RÉCUPÉRONS ========== */}
+      <div className="dr-block" data-testid="dr-devices-block">
+        <h2 className="dr-block-title">
+          <HardDrive className="h-5 w-5" />
+          Ce que nous récupérons
+        </h2>
+        <div className="dr-devices-grid">
+          {supportedDevices.map((device, index) => (
+            <div key={index} className="dr-device-item" data-testid={`dr-device-${index}`}>
+              <device.icon className="h-5 w-5" />
+              <span>{device.label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ========== PROBLÈMES COURANTS ========== */}
+      <div className="dr-block dr-problems" data-testid="dr-problems-block">
+        <h2 className="dr-block-title">
+          <Search className="h-5 w-5" />
+          Problèmes courants
+        </h2>
+        <ul className="dr-problems-list">
+          {commonProblems.map((problem, index) => (
+            <li key={index} data-testid={`dr-problem-${index}`}>
+              <CheckCircle className="h-4 w-4" />
+              <span>{problem}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* ========== CTA MILIEU ========== */}
+      <div className="dr-cta-section" data-testid="dr-cta-middle">
+        <p className="dr-cta-text">Besoin d'aide maintenant ?</p>
+        <CTAButtons variant="middle" />
+      </div>
+
+      {/* ========== NOTRE MÉTHODE ========== */}
+      <div className="dr-block dr-method" data-testid="dr-method-block">
+        <h2 className="dr-block-title">
+          <RefreshCcw className="h-5 w-5" />
+          Notre méthode
+        </h2>
+        <p className="dr-method-subtitle">Simple & rassurante</p>
+        <div className="dr-method-steps">
+          {methodSteps.map((step, index) => (
+            <div key={index} className="dr-method-step" data-testid={`dr-step-${index}`}>
+              <div className="dr-step-number">{step.number}</div>
+              <div className="dr-step-content">
+                <h3>{step.title}</h3>
+                <p>{step.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ========== POURQUOI NOUS FAIRE CONFIANCE ========== */}
+      <div className="dr-block dr-trust" data-testid="dr-trust-block">
+        <h2 className="dr-block-title">
+          <Shield className="h-5 w-5" />
+          Pourquoi nous faire confiance
+        </h2>
+        <div className="dr-trust-grid">
+          {trustReasons.map((reason, index) => (
+            <div key={index} className="dr-trust-item" data-testid={`dr-trust-${index}`}>
+              <div className="dr-trust-icon">
+                <reason.icon className="h-5 w-5" />
+              </div>
+              <div className="dr-trust-content">
+                <h4>{reason.title}</h4>
+                <p>{reason.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ========== CTA FINAL ========== */}
+      <div className="dr-cta-final" data-testid="dr-cta-final">
+        <h2>Vous avez perdu des données ?</h2>
+        <p>Contactez-nous maintenant pour un diagnostic gratuit</p>
+        <CTAButtons variant="final" />
+        <Button 
+          asChild
+          variant="outline"
+          size="lg"
+          className="dr-cta-devis"
+          data-testid="dr-devis-btn"
+        >
+          <a 
+            href="https://wa.me/594694458584?text=Bonjour,%20je%20souhaite%20un%20devis%20pour%20une%20récupération%20de%20données" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            <FileText className="h-5 w-5" />
+            Demande de devis gratuit
+          </a>
+        </Button>
+      </div>
+
+      {/* ========== MENTION LÉGALE ========== */}
+      <div className="dr-legal" data-testid="dr-legal">
+        <p>
+          La récupération de données dépend de l'état du support. 
+          Diagnostic professionnel avant toute intervention.
+        </p>
+      </div>
+
     </section>
   );
 };
