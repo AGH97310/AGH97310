@@ -140,7 +140,7 @@ export const PerfumeSectionWithCart = () => {
               </p>
               <div className="paypal-4x-badge">
                 <img 
-                  src="https://customer-assets.emergentagent.com/job_082652f8-6982-4266-bdd7-1ba9de34a6c9/artifacts/xfv8f9if_4foissansfrais-641db5399afe3.png" 
+                  src="https://customer-assets.emergentagent.com/job_ef46b335-ea61-4c9d-b003-e94ce8b61b64/artifacts/1utqldp3_paypal-4fois.png" 
                   alt="PayPal 4x sans frais" 
                   className="paypal-4x-image"
                 />

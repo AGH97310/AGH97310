@@ -3,14 +3,14 @@ import { Card, CardContent } from './ui/card';
 import { ShoppingBag } from 'lucide-react';
 import './OrderProcessSection.css';
 
-const paypalLogo = "https://customer-assets.emergentagent.com/job_ef46b335-ea61-4c9d-b003-e94ce8b61b64/artifacts/pqyrgik4_paypal-4fois.png";
+const paypalLogo = "https://customer-assets.emergentagent.com/job_ef46b335-ea61-4c9d-b003-e94ce8b61b64/artifacts/1utqldp3_paypal-4fois.png";
 
 export const OrderProcessSection = () => {
   const orderProcess = [
     {
       step: '01',
       title: 'Sélection des articles',
-      description: 'Choisissez vos produits via WhatsApp / Instagram / Catalogue'
+      description: 'Ajoutez vos produits au panier directement sur le site'
     },
     {
       step: '02',
@@ -20,7 +20,7 @@ export const OrderProcessSection = () => {
     {
       step: '03',
       title: 'Paiement sécurisé',
-      description: '100% sécurisé avant validation finale : Virement / CB / Espèces (RDV)',
+      description: '100% sécurisé avant validation finale : Virement / CB',
       important: true
     },
     {
