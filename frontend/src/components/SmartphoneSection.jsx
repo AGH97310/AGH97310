@@ -40,30 +40,6 @@ export const SmartphoneSection = () => {
     }
   ];
 
-  const orderProcess = [
-    {
-      step: '01',
-      title: 'Sélection des articles',
-      description: 'Choisissez vos produits via WhatsApp / Instagram / Catalogue'
-    },
-    {
-      step: '02',
-      title: 'Confirmation & Devis',
-      description: 'Recevez un récapitulatif avec détails, quantité, prix et délai'
-    },
-    {
-      step: '03',
-      title: 'Paiement sécurisé',
-      description: '100% sécurisé avant validation finale : Virement / CB / Espèces (RDV)',
-      important: true
-    },
-    {
-      step: '04',
-      title: 'Livraison & Suivi',
-      description: 'Livraison rapide sous 4 à 7 jours ouvrés • Suivi personnalisé'
-    }
-  ];
-
   const handleAddToCart = (phone) => {
     if (!phone.outOfStock) {
       addToCart(phone, 'smartphone');
