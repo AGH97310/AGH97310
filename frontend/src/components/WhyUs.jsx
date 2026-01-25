@@ -6,8 +6,8 @@ export const WhyUs = () => {
   const reasons = [
     {
       icon: Zap,
-      title: 'Sans Déplacement',
-      description: 'Je me connecte, je règle, vous payez après résultat. Économisez temps et argent.',
+      title: 'Intervention Flexible',
+      description: 'À distance ou sur place sur RDV. Je m\'adapte à vos besoins. Paiement après résultat.',
       color: 'blue'
     },
     {
