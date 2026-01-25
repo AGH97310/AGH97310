@@ -2,8 +2,7 @@ import React from 'react';
 import { Card, CardContent } from './ui/card';
 import { Button } from './ui/button';
 import { 
-  Smartphone, CheckCircle, Shield, Plus, ShoppingBag,
-  MessageCircle, Phone, ArrowLeft, AlertTriangle
+  Smartphone, Plus, MessageCircle, ArrowLeft, AlertTriangle
 } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { Link } from 'react-router-dom';
