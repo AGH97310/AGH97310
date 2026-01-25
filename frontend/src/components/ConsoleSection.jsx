@@ -206,25 +206,6 @@ export const ConsoleSection = () => {
                 </div>
               ))}
             </div>
-
-            <div className="order-info-grid">
-              <div className="order-info-item">
-                <Clock className="order-info-icon" />
-                <div>
-                  <p className="order-info-title">Validation des commandes</p>
-                  <p className="order-info-text">Les commandes sont validées chaque vendredi à 19h</p>
-                </div>
-              </div>
-
-              <div className="order-info-item">
-                <Truck className="order-info-icon" />
-                <div>
-                  <p className="order-info-title">Délai de livraison</p>
-                  <p className="order-info-text">Livraison à partir du mardi ou mercredi au plus tard</p>
-                  <p className="order-info-sub">Livraison gratuite à Kourou</p>
-                </div>
-              </div>
-            </div>
           </CardContent>
         </Card>
 
