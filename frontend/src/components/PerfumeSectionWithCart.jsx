@@ -1,8 +1,9 @@
 import React from 'react';
 import { Card, CardContent } from './ui/card';
 import { Button } from './ui/button';
-import { Sparkles, ShoppingBag, MessageCircle, Plus } from 'lucide-react';
+import { Sparkles, ShoppingBag, MessageCircle, Plus, ArrowLeft } from 'lucide-react';
 import { useCart } from '../context/CartContext';
+import { Link } from 'react-router-dom';
 import './PerfumeSectionWithCart.css';
 
 // Images réelles des parfums
