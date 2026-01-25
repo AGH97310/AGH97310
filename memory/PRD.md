@@ -86,12 +86,16 @@ Site web professionnel multi-pages pour une entreprise d'assistance informatique
   - Section "Comment commander ?" en 4 étapes
   - Trust badges (100% neufs, Sélection qualité, Paiement sécurisé, Livraison gratuite)
   - CTA milieu + CTA final "Prêt à jouer ?"
-- [x] **Smartphones & Tablettes** - IMPROVED Jan 25, 2026
-  - Bouton "← Explorer d'autres catégories" en haut/bas
-  - Description premium + CTAs WhatsApp/Appeler répétés
-  - Section "Comment commander ?" en 4 étapes
-  - Trust badges + CTA final "Prêt à changer de smartphone ?"
-- [x] Parfumerie Orientale (référence pour le style)
+- [x] **Smartphones & Tablettes** - UPDATED Jan 25, 2026
+  - Samsung Galaxy S24 SUPPRIMÉ
+  - Badges "RUPTURE DE STOCK" sur Samsung Galaxy S25 Ultra et iPhone 16 Pro Max
+  - Boutons "Me prévenir" au lieu de "Ajouter au panier" pour produits en rupture
+  - Bouton "← Explorer d'autres catégories" en haut
+  - Section "Processus de Commande" en 4 étapes (identique à Parfumerie)
+- [x] **Parfumerie Orientale** - UPDATED Jan 25, 2026
+  - Bouton "← Explorer d'autres catégories" AJOUTÉ en haut
+  - Section "Comment commander ?" en 4 étapes (RÉFÉRENCE pour les autres pages)
+  - Design cohérent avec le thème cyberpunk
 
 ### Legal & Compliance
 - [x] CGV, CGU, Politique de confidentialité
