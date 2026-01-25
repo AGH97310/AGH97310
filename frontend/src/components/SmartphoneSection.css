@@ -848,6 +848,237 @@
 .sp-info-item span {
   color: rgba(255, 255, 255, 0.6);
   font-size: 0.8rem;
+
+
+/* =============================================
+   OUT OF STOCK STYLES
+   ============================================= */
+
+.smartphone-card.out-of-stock {
+  opacity: 0.85;
+}
+
+.smartphone-card.out-of-stock .smartphone-image {
+  filter: grayscale(30%);
+}
+
+.smartphone-stock-badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(239, 68, 68, 0.95);
+  color: #ffffff;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
+  z-index: 10;
+}
+
+.smartphone-notify-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%) !important;
+  color: #1a1a2e !important;
+  font-weight: 600 !important;
+}
+
+.smartphone-notify-btn:hover {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important;
+}
+
+/* =============================================
+   ORDER PROCESS STYLES (Copy from Parfumerie)
+   ============================================= */
+
+.order-process-card {
+  border: 2px solid var(--neon-cyan) !important;
+  background: linear-gradient(145deg, rgba(20, 35, 60, 0.95) 0%, rgba(10, 20, 40, 0.98) 100%) !important;
+  border-radius: 16px !important;
+  margin: 2rem 0;
+}
+
+.order-process-content {
+  padding: 2rem !important;
+}
+
+.order-process-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.order-process-header svg {
+  color: var(--neon-cyan);
+}
+
+.order-process-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0.75rem 0 0.5rem;
+}
+
+.order-process-description {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.highlight {
+  font-weight: 600;
+  color: var(--neon-cyan);
+}
+
+.order-steps-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.order-step {
+  text-align: center;
+  padding: 1rem;
+  background: rgba(0, 212, 255, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 212, 255, 0.15);
+}
+
+.order-step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.3) 0%, rgba(157, 0, 255, 0.2) 100%);
+  border: 2px solid var(--neon-cyan);
+  color: var(--neon-cyan);
+  font-family: 'Space Mono', monospace;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.order-step-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 0.95rem;
+  margin-bottom: 0.35rem;
+}
+
+.order-step-description {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+}
+
+.order-step-warning {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: #fbbf24;
+  font-weight: 600;
+}
+
+.order-info-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.order-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 1rem;
+  background: rgba(0, 212, 255, 0.06);
+  border-radius: 10px;
+  border: 1px solid rgba(0, 212, 255, 0.15);
+}
+
+.order-info-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--neon-cyan);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.order-info-title {
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 0.9rem;
+  margin-bottom: 0.2rem;
+}
+
+.order-info-text {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.order-info-sub {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 0.2rem;
+}
+
+/* CTA Group */
+.sp-cta-group {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.sp-cta-group.top {
+  margin-bottom: 2.5rem;
+}
+
+.sp-cta-primary {
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%) !important;
+  color: #ffffff !important;
+  border: none !important;
+  padding: 0.9rem 2rem !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+}
+
+.sp-cta-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
+}
+
+/* Responsive for order process */
+@media (min-width: 600px) {
+  .order-steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .order-info-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .order-steps-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .order-process-content {
+    padding: 2.5rem !important;
+  }
+}
+
 }
 
 /* Trust badges - Updated */
