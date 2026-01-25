@@ -521,12 +521,11 @@
 
 /* Trust badges */
 .console-trust {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
   margin-top: 2rem;
-  padding: 1.5rem;
+  padding: 1.25rem;
   background: rgba(20, 35, 60, 0.4);
   border-radius: 12px;
   border: 1px solid rgba(157, 0, 255, 0.15);
@@ -537,13 +536,285 @@
   align-items: center;
   gap: 0.5rem;
   color: rgba(255, 255, 255, 0.8);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
 
 .trust-icon {
   color: #bf5fff;
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* Back Navigation Button */
+.console-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  text-decoration: none;
+  margin-bottom: 1.5rem;
+  padding: 0.5rem 0;
+  transition: all 0.3s ease;
+}
+
+.console-back-btn:hover {
+  color: var(--neon-cyan);
+}
+
+.console-back-btn.bottom {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Description */
+.console-description {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 1rem auto 0;
+  text-align: center;
+}
+
+.console-description strong {
+  color: #ffffff;
+}
+
+/* CTA Buttons */
+.console-cta-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto 2rem;
+}
+
+.console-cta-buttons.top {
+  margin-bottom: 2.5rem;
+}
+
+.console-cta-whatsapp,
+.console-cta-phone {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0.9rem 1.25rem !important;
+  min-height: 65px !important;
+  border-radius: 12px !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 700 !important;
+  transition: all 0.3s ease !important;
+  text-decoration: none !important;
+}
+
+.console-cta-whatsapp {
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%) !important;
+  color: #ffffff !important;
+  border: none !important;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+}
+
+.console-cta-whatsapp:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
+}
+
+.console-cta-phone {
+  background: linear-gradient(135deg, #bf5fff 0%, #9d00ff 100%) !important;
+  color: #ffffff !important;
+  border: none !important;
+  box-shadow: 0 4px 20px rgba(157, 0, 255, 0.3);
+}
+
+.console-cta-phone:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(157, 0, 255, 0.4);
+}
+
+.console-cta-whatsapp span,
+.console-cta-phone span {
+  font-size: 1rem;
+}
+
+.console-cta-whatsapp small,
+.console-cta-phone small {
+  font-size: 0.7rem;
+  font-weight: 500;
+  opacity: 0.9;
+  margin-top: 0.1rem;
+}
+
+/* CTA Section */
+.console-cta-section {
+  text-align: center;
+  padding: 2rem 1rem;
+  margin: 2rem 0;
+  background: linear-gradient(135deg, rgba(157, 0, 255, 0.08) 0%, rgba(0, 212, 255, 0.05) 100%);
+  border-radius: 16px;
+  border: 1px solid rgba(157, 0, 255, 0.15);
+}
+
+.console-cta-section > p {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
+
+/* Order Process Card */
+.console-order-card {
+  background: linear-gradient(145deg, rgba(20, 35, 60, 0.9) 0%, rgba(10, 20, 40, 0.95) 100%) !important;
+  border: 1px solid rgba(157, 0, 255, 0.25) !important;
+  border-radius: 16px !important;
+  margin: 2rem 0;
+}
+
+.console-order-content {
+  padding: 1.75rem !important;
+}
+
+.console-order-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.console-order-header svg {
+  color: #bf5fff;
+  margin-bottom: 0.75rem;
+}
+
+.console-order-header h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.35rem;
+}
+
+.console-order-header p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.console-order-steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.console-order-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 0.85rem;
+  background: rgba(157, 0, 255, 0.06);
+  border-radius: 10px;
+}
+
+.console-step-number {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, rgba(157, 0, 255, 0.3) 0%, rgba(0, 212, 255, 0.2) 100%);
+  border: 2px solid rgba(157, 0, 255, 0.4);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #bf5fff;
+  flex-shrink: 0;
+}
+
+.console-step-content h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.15rem;
+}
+
+.console-step-content p {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.8rem;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.console-step-note {
+  display: inline-block;
+  color: #ffc107;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.console-order-info {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+.console-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.85rem;
+  background: rgba(0, 212, 255, 0.05);
+  border: 1px solid rgba(0, 212, 255, 0.15);
+  border-radius: 10px;
+}
+
+.console-info-item svg {
+  color: var(--neon-cyan);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.console-info-item strong {
+  display: block;
+  color: #ffffff;
+  font-size: 0.9rem;
+  margin-bottom: 0.1rem;
+}
+
+.console-info-item span {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.8rem;
+}
+
+/* CTA Final */
+.console-cta-final {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  margin-top: 2rem;
+  background: linear-gradient(135deg, rgba(157, 0, 255, 0.1) 0%, rgba(0, 212, 255, 0.08) 100%);
+  border-radius: 16px;
+  border: 1px solid rgba(157, 0, 255, 0.2);
+}
+
+.console-cta-final h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.5rem;
+}
+
+.console-cta-final > p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
 }
 
 /* Responsive */
@@ -568,8 +839,47 @@
   }
 
   .console-trust {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+}
+
+@media (min-width: 600px) {
+  .console-cta-buttons {
+    flex-direction: row;
+    max-width: 400px;
+  }
+
+  .console-cta-whatsapp,
+  .console-cta-phone {
+    flex: 1;
+  }
+
+  .console-order-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .console-order-info {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .console-trust {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .console-order-steps {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .console-order-step {
     flex-direction: column;
-    gap: 1rem;
-    align-items: center;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .console-step-number {
+    margin-bottom: 0.5rem;
   }
 }
