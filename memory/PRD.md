@@ -47,7 +47,16 @@ Site web professionnel multi-pages pour une entreprise d'assistance informatique
 
 ### Service Pages
 - [x] Home page with overview
-- [x] Dépannage à distance (Remote Troubleshooting)
+- [x] **Dépannage à distance** (Remote IT) - REFACTORED Jan 25, 2026 (MOBILE-FIRST)
+  - Hero avec CTAs "WhatsApp" + "Appeler"
+  - "Dans quels cas intervenir ?" : 7 cas d'usage
+  - "Comment ça fonctionne ?" : 4 étapes simples
+  - CTA milieu "Besoin d'aide maintenant ?"
+  - "Sécurité & Confidentialité" : 4 points clés + note réassurance
+  - "Pourquoi choisir le dépannage à distance ?" : 4 avantages
+  - "Pourquoi choisir NEOTECH ?" : 4 raisons
+  - Promesse + CTA final + Demande de devis
+  - Design 100% responsive
 - [x] **Récupération de données** (Data Recovery) - REFACTORED Jan 25, 2026 (MOBILE-FIRST)
   - Hero visible sans scroll avec CTAs WhatsApp + Appeler
   - "Ce que nous récupérons" : 6 types de supports
