@@ -131,7 +131,28 @@ export const SmartphoneSection = () => {
                 <div className="smartphone-new-badge">NEUF</div>
                 <div className="smartphone-brand-badge">{phone.brand}</div>
                 {phone.outOfStock && (
-                  <div className="smartphone-stock-badge">
+                  <div 
+                    className="smartphone-stock-badge"
+                    style={{
+                      position: 'absolute',
+                      top: '1rem',
+                      left: '1rem',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.4rem',
+                      background: 'rgba(239, 68, 68, 0.95)',
+                      color: '#ffffff',
+                      padding: '0.4rem 0.7rem',
+                      borderRadius: '6px',
+                      fontSize: '0.7rem',
+                      fontWeight: '700',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.03em',
+                      boxShadow: '0 4px 15px rgba(239, 68, 68, 0.4)',
+                      zIndex: 20,
+                      whiteSpace: 'nowrap'
+                    }}
+                  >
                     <AlertTriangle className="h-4 w-4" />
                     Rupture de stock
                   </div>
