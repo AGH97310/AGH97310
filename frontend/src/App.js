@@ -35,8 +35,8 @@ import './App.css';
 const Home = () => {
   return (
     <div>
-      <Header />
       <ScrollingLogo />
+      <Header />
       <main>
         <Hero />
         <HomeOverview />
