@@ -149,6 +149,13 @@ async def root_health_check():
     """Root health check endpoint for Kubernetes liveness/readiness probes"""
     return {"status": "healthy", "timestamp": datetime.now(timezone.utc).isoformat()}
 
+
+@app.post("/health")
+async def root_health_check_post():
+    """Root health check endpoint for POST requests (Kubernetes compatibility)"""
+    return {"status": "healthy", "timestamp": datetime.now(timezone.utc).isoformat()}
+
+
 # Add Security Headers Middleware (must be added before CORS)
 app.add_middleware(SecurityHeadersMiddleware)
 
