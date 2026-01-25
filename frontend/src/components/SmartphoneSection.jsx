@@ -220,35 +220,6 @@ export const SmartphoneSection = () => {
           </Button>
         </div>
 
-        {/* Order Process - En bas de page comme Parfumerie */}
-        <Card className="order-process-card">
-          <CardContent className="order-process-content">
-            <div className="order-process-header">
-              <ShoppingBag className="h-8 w-8 text-accent" />
-              <h3 className="order-process-title">Processus de Commande</h3>
-              <p className="order-process-description">
-                Commandes via <span className="highlight">WhatsApp</span> ou{' '}
-                <span className="highlight">E-mail</span>
-              </p>
-            </div>
-
-            <div className="order-steps-grid">
-              {orderProcess.map((step, index) => (
-                <div key={index} className="order-step">
-                  <div className="order-step-number">{step.step}</div>
-                  <h4 className="order-step-title">{step.title}</h4>
-                  <p className="order-step-description">{step.description}</p>
-                  {step.important && (
-                    <p className="order-step-warning">
-                      ⚠️ Commande traitée après règlement
-                    </p>
-                  )}
-                </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
-
         {/* Back Navigation Bottom */}
         <Link to="/" className="sp-back-btn bottom">
           <ArrowLeft className="h-4 w-4" />
