@@ -108,6 +108,12 @@ export const SiteVitrineSection = () => {
   return (
     <section className="sv-section" data-testid="site-vitrine-section">
       
+      {/* Back Navigation */}
+      <Link to="/" className="sv-back-btn" data-testid="sv-back-btn">
+        <ArrowLeft className="h-4 w-4" />
+        <span>Retour à l'accueil</span>
+      </Link>
+
       {/* ========== HERO - VISIBLE SANS SCROLL ========== */}
       <div className="sv-hero" data-testid="sv-hero">
         <div className="sv-hero-content">

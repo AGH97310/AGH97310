@@ -83,6 +83,12 @@ export const DataRecoverySection = () => {
   return (
     <section className="dr-section" data-testid="data-recovery-section">
       
+      {/* Back Navigation */}
+      <Link to="/" className="dr-back-btn" data-testid="dr-back-btn">
+        <ArrowLeft className="h-4 w-4" />
+        <span>Retour à l'accueil</span>
+      </Link>
+
       {/* ========== HERO - VISIBLE SANS SCROLL ========== */}
       <div className="dr-hero" data-testid="dr-hero">
         <div className="dr-hero-content">

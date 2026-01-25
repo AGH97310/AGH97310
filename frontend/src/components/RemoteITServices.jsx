@@ -90,6 +90,12 @@ export const RemoteITServices = () => {
   return (
     <section className="rit-section" data-testid="remote-it-section">
       
+      {/* Back Navigation */}
+      <Link to="/" className="rit-back-btn" data-testid="rit-back-btn">
+        <ArrowLeft className="h-4 w-4" />
+        <span>Retour à l'accueil</span>
+      </Link>
+
       {/* ========== HERO - VISIBLE SANS SCROLL ========== */}
       <div className="rit-hero" data-testid="rit-hero">
         <div className="rit-hero-content">
