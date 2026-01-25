@@ -87,9 +87,21 @@ async def root():
     return {"message": "Hello World"}
 
 
+@api_router.post("/")
+async def root_post():
+    """Handle POST requests to /api/ for health check compatibility"""
+    return {"status": "healthy", "message": "API is running", "timestamp": datetime.now(timezone.utc).isoformat()}
+
+
 @api_router.get("/health")
 async def health_check():
     """Health check endpoint for monitoring"""
+    return {"status": "healthy", "timestamp": datetime.now(timezone.utc).isoformat()}
+
+
+@api_router.post("/health")
+async def health_check_post():
+    """Health check endpoint for POST requests (some health checkers use POST)"""
     return {"status": "healthy", "timestamp": datetime.now(timezone.utc).isoformat()}
 
 
