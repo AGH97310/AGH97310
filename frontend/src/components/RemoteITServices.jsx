@@ -1,248 +1,258 @@
 import React from 'react';
-import { Card, CardContent } from './ui/card';
 import { Button } from './ui/button';
 import { 
-  Zap, Shield, Key, Monitor, Wifi, Printer, 
-  HardDrive, Mail, AppWindow, Lock, MessageCircle,
-  Clock, DollarSign, Heart, Car
+  Monitor, Shield, Lock, Zap, MessageCircle, Phone, FileText,
+  CheckCircle, Eye, XCircle, Clock, Home, DollarSign, Users,
+  MapPin, Headphones, Wrench, RefreshCcw, Mail, Bug, Settings,
+  Laptop, AlertTriangle
 } from 'lucide-react';
 import './RemoteITServices.css';
 
 export const RemoteITServices = () => {
-  const services = [
-    {
-      icon: '🧠',
-      number: '1️⃣',
-      title: 'PROBLÈMES DE PERFORMANCE & LENTEUR',
-      features: [
-        'PC lent / qui rame',
-        'Démarrage très long',
-        'Nettoyage fichiers inutiles',
-        'Optimisation disque (HDD / SSD)',
-        'Gestion des programmes au démarrage',
-        'Nettoyage registre (selon OS)'
-      ]
-    },
-    {
-      icon: '🛡️',
-      number: '2️⃣',
-      title: 'VIRUS, MALWARES & SÉCURITÉ',
-      features: [
-        'Détection et suppression de virus',
-        'Suppression malwares / adwares',
-        'Analyse antivirus approfondie',
-        'Installation antivirus pro',
-        'Sécurisation navigateur',
-        'Paramétrage pare-feu logiciel',
-        'Conseils cybersécurité personnalisés'
-      ]
-    },
-    {
-      icon: '🔑',
-      number: '3️⃣',
-      title: 'COMPTES & ACCÈS BLOQUÉS',
-      subtitle: '(HORS PIRATAGE COMPLEXE)',
-      warning: 'Uniquement sur preuve de propriété',
-      features: [
-        'Récupération Gmail',
-        'Récupération Facebook',
-        'Récupération Instagram',
-        'Problèmes mot de passe Windows',
-        'Problèmes session utilisateur',
-        'Problèmes compte Microsoft / Google'
-      ]
-    },
-    {
-      icon: '🪟',
-      number: '4️⃣',
-      title: 'SYSTÈMES D\'EXPLOITATION',
-      subtitle: '(WINDOWS / MAC / LINUX)',
-      features: [
-        'Installation Windows à distance',
-        'Réinstallation Windows',
-        'Mise à jour système',
-        'Réparation erreurs Windows',
-        'Problèmes écran bleu (BSOD – analyse)',
-        'Création / gestion comptes utilisateurs',
-        'Paramétrage OS après installation'
-      ]
-    },
-    {
-      icon: '🌐',
-      number: '5️⃣',
-      title: 'RÉSEAU & INTERNET',
-      subtitle: '(NIVEAU LOGICIEL)',
-      features: [
-        'Problème Wi-Fi (logiciel)',
-        'Paramétrage carte réseau',
-        'Conflit IP',
-        'DNS / DHCP (poste client)',
-        'VPN client',
-        'Accès réseau entreprise',
-        'Dépannage imprimante réseau'
-      ]
-    },
-    {
-      icon: '🖨️',
-      number: '6️⃣',
-      title: 'IMPRIMANTES & PÉRIPHÉRIQUES',
-      features: [
-        'Installation imprimante',
-        'Problème impression',
-        'File d\'attente bloquée',
-        'Pilotes imprimante',
-        'Scanner non reconnu'
-      ]
-    },
-    {
-      icon: '📂',
-      number: '7️⃣',
-      title: 'DONNÉES & SAUVEGARDES',
-      features: [
-        'Sauvegarde fichiers',
-        'Restauration données',
-        'Configuration cloud (Drive, OneDrive)',
-        'Synchronisation dossiers',
-        'Migration données (PC → PC)'
-      ]
-    },
-    {
-      icon: '📧',
-      number: '8️⃣',
-      title: 'EMAIL & OUTILS PRO',
-      features: [
-        'Configuration email pro',
-        'Problème Outlook / Gmail',
-        'Synchronisation mobile / PC',
-        'Sécurité email (spam, phishing)',
-        'Configuration nom de domaine email'
-      ]
-    },
-    {
-      icon: '🧑‍💻',
-      number: '9️⃣',
-      title: 'LOGICIELS & APPLICATIONS',
-      features: [
-        'Installation logiciels',
-        'Mise à jour applications',
-        'Problèmes licences',
-        'Paramétrage logiciels métiers',
-        'Désinstallation propre'
-      ]
-    },
-    {
-      icon: '🔐',
-      number: '1️⃣0️⃣',
-      title: 'ACCÈS DISTANT & TÉLÉTRAVAIL',
-      features: [
-        'Installation TeamViewer / AnyDesk',
-        'Paramétrage accès sécurisé',
-        'Dépannage session distante',
-        'Assistance télétravail'
-      ]
-    }
+  // Dans quels cas intervenir à distance ?
+  const useCases = [
+    { icon: Laptop, text: 'Ordinateur lent ou bloqué' },
+    { icon: Monitor, text: 'Problèmes Windows ou macOS' },
+    { icon: AlertTriangle, text: 'Erreurs logicielles' },
+    { icon: Settings, text: 'Installation de logiciels' },
+    { icon: RefreshCcw, text: 'Problèmes de mises à jour' },
+    { icon: Mail, text: 'Paramétrage e-mails' },
+    { icon: Bug, text: 'Suppression virus / malwares' }
   ];
 
-  const advantages = [
-    { icon: Clock, text: 'Rapide' },
-    { icon: DollarSign, text: 'Moins cher' },
-    { icon: Heart, text: 'Zéro stress' },
-    { icon: Car, text: 'Pas besoin de se déplacer' }
+  // Comment fonctionne le dépannage ?
+  const processSteps = [
+    { number: '1', title: 'Prise de contact', desc: 'Analyse rapide du problème' },
+    { number: '2', title: 'Connexion sécurisée', desc: 'Accès avec votre accord' },
+    { number: '3', title: 'Diagnostic & intervention', desc: 'Résolution en direct' },
+    { number: '4', title: 'Explications & conseils', desc: 'Vous comprenez tout' }
   ];
+
+  // Sécurité & confidentialité
+  const securityPoints = [
+    { icon: Lock, text: 'Connexion sécurisée', highlight: true },
+    { icon: Eye, text: 'Vous voyez tout en temps réel', highlight: true },
+    { icon: XCircle, text: 'Aucun accès sans votre autorisation', highlight: false },
+    { icon: Shield, text: 'Confidentialité totale des données', highlight: false }
+  ];
+
+  // Avantages du dépannage à distance
+  const advantages = [
+    { icon: Zap, title: 'Intervention rapide', desc: 'Résolution souvent en moins d\'1h' },
+    { icon: Home, title: 'Pas de déplacement', desc: 'Restez chez vous' },
+    { icon: DollarSign, title: 'Coût réduit', desc: 'Pas de frais de déplacement' },
+    { icon: Clock, title: 'Gain de temps', desc: 'Disponible rapidement' }
+  ];
+
+  // Pourquoi nous choisir
+  const whyChooseUs = [
+    { icon: Headphones, title: 'Accompagnement humain', desc: 'Écoute et patience' },
+    { icon: Wrench, title: 'Expertise technique', desc: 'Problèmes Windows & Mac' },
+    { icon: MapPin, title: 'Service local', desc: 'Réactif en Guyane' },
+    { icon: MessageCircle, title: 'Explications claires', desc: 'Pas de jargon' }
+  ];
+
+  // Composant CTA réutilisable
+  const CTAButtons = ({ variant = 'default' }) => (
+    <div className={`rit-cta-buttons ${variant}`} data-testid="rit-cta-buttons">
+      <Button 
+        asChild
+        size="lg"
+        className="rit-cta-whatsapp"
+        data-testid="rit-whatsapp-btn"
+      >
+        <a 
+          href="https://wa.me/594694458584?text=Bonjour,%20j'ai%20besoin%20d'aide%20pour%20un%20problème%20informatique" 
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+          <MessageCircle className="h-5 w-5" />
+          <span>WhatsApp</span>
+          <small>Assistance rapide</small>
+        </a>
+      </Button>
+      <Button 
+        asChild
+        size="lg"
+        className="rit-cta-phone"
+        data-testid="rit-phone-btn"
+      >
+        <a href="tel:+594694458584">
+          <Phone className="h-5 w-5" />
+          <span>Appeler</span>
+          <small>Maintenant</small>
+        </a>
+      </Button>
+    </div>
+  );
 
   return (
-    <section className="remote-it-section">
-      <div className="remote-it-container">
-        {/* Header */}
-        <div className="remote-it-header">
-          <div className="remote-it-badge">
-            <Monitor className="h-4 w-4" />
-            REMOTE
-          </div>
-          <h2 className="remote-it-title">Assistance IT & Digitale à Distance</h2>
-          <p className="remote-it-subtitle">(sur devis)</p>
-          <div className="remote-it-tagline">
-            <span className="tagline-icon">💻</span>
-            <span>DÉPANNAGE IT POSSIBLE À DISTANCE</span>
-          </div>
+    <section className="rit-section" data-testid="remote-it-section">
+      
+      {/* ========== HERO - VISIBLE SANS SCROLL ========== */}
+      <div className="rit-hero" data-testid="rit-hero">
+        <div className="rit-hero-content">
+          <h1 className="rit-hero-title" data-testid="rit-hero-title">
+            Dépannage informatique
+            <span>à distance</span>
+          </h1>
+          <p className="rit-hero-tagline">Assistance rapide et sécurisée</p>
+          <p className="rit-hero-subtitle">
+            Un problème informatique ? Nous intervenons <strong>à distance</strong>, 
+            rapidement et en toute sécurité.
+          </p>
+          <CTAButtons variant="hero" />
         </div>
+      </div>
 
-        {/* Services Grid */}
-        <div className="remote-it-grid">
-          {services.map((service, index) => (
-            <Card 
-              key={index} 
-              className={`remote-it-card fade-in-up ${service.highlight ? 'highlighted' : ''}`}
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <CardContent className="remote-it-card-content">
-                <div className="service-header">
-                  <span className="service-emoji">{service.icon}</span>
-                  <span className="service-number">{service.number}</span>
-                </div>
-                <h3 className="service-title">{service.title}</h3>
-                {service.subtitle && (
-                  <p className="service-subtitle">{service.subtitle}</p>
-                )}
-                <ul className="service-features">
-                  {service.features.map((feature, idx) => (
-                    <li key={idx} className="service-feature">
-                      <span className="feature-check">✔️</span>
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                {service.highlight && (
-                  <div className="service-highlight">
-                    👉 {service.highlight}
-                  </div>
-                )}
-                {service.warning && (
-                  <div className="service-warning">
-                    ⚠️ {service.warning}
-                  </div>
-                )}
-              </CardContent>
-            </Card>
+      {/* ========== DANS QUELS CAS INTERVENIR ? ========== */}
+      <div className="rit-block" data-testid="rit-usecases-block">
+        <h2 className="rit-block-title">
+          <Monitor className="h-5 w-5" />
+          Dans quels cas intervenir à distance ?
+        </h2>
+        <div className="rit-usecases-grid">
+          {useCases.map((useCase, index) => (
+            <div key={index} className="rit-usecase-item" data-testid={`rit-usecase-${index}`}>
+              <useCase.icon className="h-5 w-5" />
+              <span>{useCase.text}</span>
+            </div>
           ))}
         </div>
-
-        {/* Promise Section */}
-        <Card className="promise-card">
-          <CardContent className="promise-content">
-            <h3 className="promise-title">🧠 Notre Promesse</h3>
-            <p className="promise-text">
-              "Je me connecte, je diagnostique, je règle. À distance ou sur place sur RDV. Paiement après résultat."
-            </p>
-            
-            <div className="advantages-grid">
-              {advantages.map((adv, index) => (
-                <div key={index} className="advantage-item">
-                  <div className="advantage-icon">
-                    <adv.icon className="h-6 w-6" />
-                  </div>
-                  <span className="advantage-text">{adv.text}</span>
-                </div>
-              ))}
-            </div>
-
-            <Button 
-              asChild
-              size="lg"
-              className="remote-it-cta"
-            >
-              <a 
-                href="https://wa.me/594694458584" 
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <MessageCircle className="mr-2 h-5 w-5" />
-                Demander un devis
-              </a>
-            </Button>
-          </CardContent>
-        </Card>
       </div>
+
+      {/* ========== COMMENT ÇA FONCTIONNE ? ========== */}
+      <div className="rit-block rit-process" data-testid="rit-process-block">
+        <h2 className="rit-block-title">
+          <Settings className="h-5 w-5" />
+          Comment ça fonctionne ?
+        </h2>
+        <p className="rit-block-subtitle">Un processus simple et rassurant</p>
+        <div className="rit-process-steps">
+          {processSteps.map((step, index) => (
+            <div key={index} className="rit-process-step" data-testid={`rit-step-${index}`}>
+              <div className="rit-step-number">{step.number}</div>
+              <div className="rit-step-content">
+                <h3>{step.title}</h3>
+                <p>{step.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ========== CTA MILIEU ========== */}
+      <div className="rit-cta-section" data-testid="rit-cta-middle">
+        <p className="rit-cta-text">Besoin d'aide maintenant ?</p>
+        <CTAButtons variant="middle" />
+      </div>
+
+      {/* ========== SÉCURITÉ & CONFIDENTIALITÉ ========== */}
+      <div className="rit-block rit-security" data-testid="rit-security-block">
+        <h2 className="rit-block-title">
+          <Shield className="h-5 w-5" />
+          Sécurité & Confidentialité
+        </h2>
+        <p className="rit-block-subtitle">Votre tranquillité est notre priorité</p>
+        <div className="rit-security-grid">
+          {securityPoints.map((point, index) => (
+            <div 
+              key={index} 
+              className={`rit-security-item ${point.highlight ? 'highlight' : ''}`}
+              data-testid={`rit-security-${index}`}
+            >
+              <point.icon className="h-5 w-5" />
+              <span>{point.text}</span>
+            </div>
+          ))}
+        </div>
+        <div className="rit-security-note">
+          <Eye className="h-4 w-4" />
+          <p>Vous gardez le contrôle total pendant toute l'intervention.</p>
+        </div>
+      </div>
+
+      {/* ========== AVANTAGES DU DÉPANNAGE À DISTANCE ========== */}
+      <div className="rit-block rit-advantages" data-testid="rit-advantages-block">
+        <h2 className="rit-block-title">
+          <Zap className="h-5 w-5" />
+          Pourquoi choisir le dépannage à distance ?
+        </h2>
+        <div className="rit-advantages-grid">
+          {advantages.map((adv, index) => (
+            <div key={index} className="rit-advantage-item" data-testid={`rit-advantage-${index}`}>
+              <div className="rit-advantage-icon">
+                <adv.icon className="h-5 w-5" />
+              </div>
+              <div className="rit-advantage-content">
+                <h4>{adv.title}</h4>
+                <p>{adv.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ========== POURQUOI NEOTECH ? ========== */}
+      <div className="rit-block rit-why" data-testid="rit-why-block">
+        <h2 className="rit-block-title">
+          <Users className="h-5 w-5" />
+          Pourquoi choisir NEOTECH ?
+        </h2>
+        <div className="rit-why-grid">
+          {whyChooseUs.map((item, index) => (
+            <div key={index} className="rit-why-item" data-testid={`rit-why-${index}`}>
+              <div className="rit-why-icon">
+                <item.icon className="h-5 w-5" />
+              </div>
+              <div className="rit-why-content">
+                <h4>{item.title}</h4>
+                <p>{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ========== PROMESSE ========== */}
+      <div className="rit-promise" data-testid="rit-promise">
+        <p>
+          <CheckCircle className="h-4 w-4" />
+          "Je me connecte, je diagnostique, je règle. Paiement après résultat."
+        </p>
+      </div>
+
+      {/* ========== CTA FINAL ========== */}
+      <div className="rit-cta-final" data-testid="rit-cta-final">
+        <h2>Un problème informatique ?</h2>
+        <p>Contactez-nous pour une assistance immédiate</p>
+        <CTAButtons variant="final" />
+        <Button 
+          asChild
+          variant="outline"
+          size="lg"
+          className="rit-cta-devis"
+          data-testid="rit-devis-btn"
+        >
+          <a 
+            href="https://wa.me/594694458584?text=Bonjour,%20je%20souhaite%20un%20devis%20pour%20un%20dépannage%20informatique" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            <FileText className="h-5 w-5" />
+            Demande de devis rapide
+          </a>
+        </Button>
+      </div>
+
+      {/* ========== MENTION LÉGALE ========== */}
+      <div className="rit-legal" data-testid="rit-legal">
+        <p>
+          Intervention à distance uniquement. Pour les pannes matérielles, 
+          contactez-nous pour un diagnostic.
+        </p>
+      </div>
+
     </section>
   );
 };
