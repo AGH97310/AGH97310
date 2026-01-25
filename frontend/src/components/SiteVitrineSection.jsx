@@ -1,10 +1,11 @@
 import React from 'react';
 import { Button } from './ui/button';
+import { Link } from 'react-router-dom';
 import { 
   Globe, CheckCircle, Smartphone, MessageCircle, Phone, FileText,
   Users, Store, Wrench, Heart, Building, Zap, Search, TrendingUp,
   Palette, Rocket, MapPin, Headphones, RefreshCcw, Layout, Target,
-  ShoppingBag, Star
+  ShoppingBag, Star, ArrowLeft
 } from 'lucide-react';
 import './SiteVitrineSection.css';
 
