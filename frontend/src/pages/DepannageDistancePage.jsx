@@ -11,8 +11,8 @@ import { FloatingWhatsApp } from '../components/FloatingWhatsApp';
 export const DepannageDistancePage = () => {
   return (
     <div>
-      <Header />
       <ScrollingLogo />
+      <Header />
       <main>
         <RemoteITServices />
         <WhyUs />

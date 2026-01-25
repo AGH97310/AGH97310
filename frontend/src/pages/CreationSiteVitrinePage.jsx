@@ -10,8 +10,8 @@ import { FloatingWhatsApp } from '../components/FloatingWhatsApp';
 export const CreationSiteVitrinePage = () => {
   return (
     <div>
-      <Header />
       <ScrollingLogo />
+      <Header />
       <main>
         <SiteVitrineSection />
         <Contact />

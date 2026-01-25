@@ -11,8 +11,8 @@ import { FloatingWhatsApp } from '../components/FloatingWhatsApp';
 export const GamingAccessoiresPage = () => {
   return (
     <div>
-      <Header />
       <ScrollingLogo />
+      <Header />
       <main>
         <ConsoleSection />
         <WhyUs />

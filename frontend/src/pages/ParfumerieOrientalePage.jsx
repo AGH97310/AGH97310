@@ -11,8 +11,8 @@ import { FloatingWhatsApp } from '../components/FloatingWhatsApp';
 export const ParfumerieOrientalePage = () => {
   return (
     <div>
-      <Header />
       <ScrollingLogo />
+      <Header />
       <main>
         <PerfumeSectionWithCart />
         <WhyUs />

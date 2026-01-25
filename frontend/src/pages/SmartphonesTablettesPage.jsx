@@ -13,8 +13,8 @@ import { FloatingWhatsApp } from '../components/FloatingWhatsApp';
 export const SmartphonesTablettesPage = () => {
   return (
     <div>
-      <Header />
       <ScrollingLogo />
+      <Header />
       <main>
         <SmartphoneSection />
         <MiniSmartphoneSection />
