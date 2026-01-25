@@ -52,7 +52,7 @@ export const AboutSection = () => {
                   <span className="about-accent">100 % guyanaise</span> née d'une conviction simple :
                 </p>
                 <p className="about-quote">
-                  👉 la technologie doit être accessible à tous, sans déplacement et sans complication.
+                  👉 la technologie doit être accessible à tous, à distance ou sur place, sans complication.
                 </p>
                 <p className="about-text">
                   Forte d'une solide expérience dans le secteur IT et la gestion de parcs informatiques, 
