@@ -212,7 +212,7 @@ export const RemoteITServices = () => {
           <CardContent className="promise-content">
             <h3 className="promise-title">🧠 Notre Promesse</h3>
             <p className="promise-text">
-              "Je me connecte, je diagnostique, je règle. Sans déplacement. Paiement après résultat."
+              "Je me connecte, je diagnostique, je règle. À distance ou sur place sur RDV. Paiement après résultat."
             </p>
             
             <div className="advantages-grid">
