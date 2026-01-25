@@ -864,22 +864,22 @@
 }
 
 .smartphone-stock-badge {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  display: flex;
+  position: absolute !important;
+  top: 1rem !important;
+  left: 1rem !important;
+  display: flex !important;
   align-items: center;
   gap: 0.4rem;
-  background: rgba(239, 68, 68, 0.95);
-  color: #ffffff;
-  padding: 0.4rem 0.7rem;
+  background: rgba(239, 68, 68, 0.95) !important;
+  color: #ffffff !important;
+  padding: 0.4rem 0.7rem !important;
   border-radius: 6px;
   font-size: 0.7rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.03em;
   box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
-  z-index: 20;
+  z-index: 20 !important;
   white-space: nowrap;
 }
 
