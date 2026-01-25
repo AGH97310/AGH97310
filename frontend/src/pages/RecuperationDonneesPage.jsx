@@ -11,8 +11,8 @@ import { FloatingWhatsApp } from '../components/FloatingWhatsApp';
 export const RecuperationDonneesPage = () => {
   return (
     <div>
-      <Header />
       <ScrollingLogo />
+      <Header />
       <main>
         <DataRecoverySection />
         <WhyUs />
