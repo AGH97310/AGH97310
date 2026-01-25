@@ -38,7 +38,7 @@ export const Hero = () => {
           <div className="hero-features fade-in-up" style={{ animationDelay: '0.3s' }}>
             <div className="feature-item">
               <CheckCircle size={20} className="feature-icon" />
-              <span>Sans déplacement</span>
+              <span>À distance ou sur place</span>
             </div>
             <div className="feature-item">
               <CheckCircle size={20} className="feature-icon" />
