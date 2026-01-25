@@ -202,7 +202,25 @@ export const SmartphoneSection = () => {
           ))}
         </div>
 
-        {/* Order Process - Copié de Parfumerie */}
+        {/* CTA Buttons */}
+        <div className="sp-cta-group">
+          <Button 
+            asChild
+            size="lg"
+            className="sp-cta-primary"
+          >
+            <a 
+              href="https://wa.me/594694458584" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <MessageCircle className="mr-2 h-5 w-5" />
+              Demander un devis
+            </a>
+          </Button>
+        </div>
+
+        {/* Order Process - En bas de page comme Parfumerie */}
         <Card className="order-process-card">
           <CardContent className="order-process-content">
             <div className="order-process-header">
@@ -230,24 +248,6 @@ export const SmartphoneSection = () => {
             </div>
           </CardContent>
         </Card>
-
-        {/* CTA Buttons */}
-        <div className="sp-cta-group">
-          <Button 
-            asChild
-            size="lg"
-            className="sp-cta-primary"
-          >
-            <a 
-              href="https://wa.me/594694458584" 
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
-              <MessageCircle className="mr-2 h-5 w-5" />
-              Demander un devis
-            </a>
-          </Button>
-        </div>
 
         {/* Back Navigation Bottom */}
         <Link to="/" className="sp-back-btn bottom">
