@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, CardContent } from './ui/card';
 import { Button } from './ui/button';
 import { 
-  CheckCircle, Gamepad2, Plus, ShoppingBag,
+  CheckCircle, Gamepad2, Plus,
   MessageCircle, ArrowLeft
 } from 'lucide-react';
 import { useCart } from '../context/CartContext';
