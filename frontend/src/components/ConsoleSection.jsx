@@ -2,8 +2,8 @@ import React from 'react';
 import { Card, CardContent } from './ui/card';
 import { Button } from './ui/button';
 import { 
-  CheckCircle, Zap, Truck, Gamepad2, Plus, ShoppingBag,
-  MessageCircle, Phone, ArrowLeft, Package, CreditCard, Star
+  CheckCircle, Truck, Gamepad2, Plus, ShoppingBag,
+  MessageCircle, ArrowLeft, Clock
 } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { Link } from 'react-router-dom';
@@ -68,62 +68,30 @@ export const ConsoleSection = () => {
   const orderProcess = [
     {
       step: '01',
-      title: 'Choix du produit',
-      description: 'Sélectionnez votre console ou accessoire'
+      title: 'Sélection des articles',
+      description: 'Choisissez vos produits via WhatsApp / Instagram / Catalogue'
     },
     {
       step: '02',
-      title: 'Confirmation',
-      description: 'Vérification de disponibilité et devis'
+      title: 'Confirmation & Devis',
+      description: 'Recevez un récapitulatif avec détails, quantité, prix et délai'
     },
     {
       step: '03',
       title: 'Paiement sécurisé',
-      description: 'CB via PayPal, Virement ou Espèces (RDV)',
+      description: '100% sécurisé avant validation finale : Virement / CB / Espèces (RDV)',
       important: true
     },
     {
       step: '04',
-      title: 'Livraison',
-      description: 'Retrait sur place ou livraison Kourou'
+      title: 'Livraison & Suivi',
+      description: 'Livraison rapide sous 4 à 7 jours ouvrés • Suivi personnalisé'
     }
   ];
 
   const handleAddToCart = (consoleItem) => {
     addToCart(consoleItem, 'console');
   };
-
-  // CTA Buttons Component
-  const CTAButtons = ({ variant = 'default' }) => (
-    <div className={`console-cta-buttons ${variant}`}>
-      <Button 
-        asChild
-        size="lg"
-        className="console-cta-whatsapp"
-      >
-        <a 
-          href="https://wa.me/594694458584?text=Bonjour,%20je%20suis%20intéressé%20par%20une%20console%20gaming" 
-          target="_blank" 
-          rel="noopener noreferrer"
-        >
-          <MessageCircle className="h-5 w-5" />
-          <span>WhatsApp</span>
-          <small>Commander / Se renseigner</small>
-        </a>
-      </Button>
-      <Button 
-        asChild
-        size="lg"
-        className="console-cta-phone"
-      >
-        <a href="tel:+594694458584">
-          <Phone className="h-5 w-5" />
-          <span>Appeler</span>
-          <small>Pour commander</small>
-        </a>
-      </Button>
-    </div>
-  );
 
   return (
     <section className="console-section">
@@ -149,7 +117,22 @@ export const ConsoleSection = () => {
         </div>
 
         {/* CTA Top */}
-        <CTAButtons variant="top" />
+        <div className="console-cta-group top">
+          <Button 
+            asChild
+            size="lg"
+            className="console-cta-primary"
+          >
+            <a 
+              href="https://wa.me/594694458584?text=Bonjour,%20je%20suis%20intéressé%20par%20une%20console%20gaming" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <MessageCircle className="mr-2 h-5 w-5" />
+              Commander via WhatsApp
+            </a>
+          </Button>
+        </div>
 
         {/* Consoles Grid */}
         <div className="console-grid">
@@ -197,80 +180,70 @@ export const ConsoleSection = () => {
           ))}
         </div>
 
-        {/* Order Process */}
-        <Card className="console-order-card">
-          <CardContent className="console-order-content">
-            <div className="console-order-header">
-              <ShoppingBag className="h-7 w-7" />
-              <h3>Comment commander ?</h3>
-              <p>Un processus simple et rapide</p>
+        {/* Order Process - Copié de Parfumerie */}
+        <Card className="order-process-card">
+          <CardContent className="order-process-content">
+            <div className="order-process-header">
+              <ShoppingBag className="h-8 w-8 text-accent" />
+              <h3 className="order-process-title">Processus de Commande</h3>
+              <p className="order-process-description">
+                Commandes via <span className="highlight">WhatsApp</span> ou{' '}
+                <span className="highlight">E-mail</span>
+              </p>
             </div>
 
-            <div className="console-order-steps">
+            <div className="order-steps-grid">
               {orderProcess.map((step, index) => (
-                <div key={index} className="console-order-step">
-                  <div className="console-step-number">{step.step}</div>
-                  <div className="console-step-content">
-                    <h4>{step.title}</h4>
-                    <p>{step.description}</p>
-                    {step.important && (
-                      <span className="console-step-note">⚠️ Commande traitée après règlement</span>
-                    )}
-                  </div>
+                <div key={index} className="order-step">
+                  <div className="order-step-number">{step.step}</div>
+                  <h4 className="order-step-title">{step.title}</h4>
+                  <p className="order-step-description">{step.description}</p>
+                  {step.important && (
+                    <p className="order-step-warning">
+                      ⚠️ Commande traitée après règlement
+                    </p>
+                  )}
                 </div>
               ))}
             </div>
 
-            <div className="console-order-info">
-              <div className="console-info-item">
-                <Package className="h-5 w-5" />
+            <div className="order-info-grid">
+              <div className="order-info-item">
+                <Clock className="order-info-icon" />
                 <div>
-                  <strong>Retrait sur place</strong>
-                  <span>Disponible à Kourou sur RDV</span>
+                  <p className="order-info-title">Validation des commandes</p>
+                  <p className="order-info-text">Les commandes sont validées chaque vendredi à 19h</p>
                 </div>
               </div>
-              <div className="console-info-item">
-                <Truck className="h-5 w-5" />
+
+              <div className="order-info-item">
+                <Truck className="order-info-icon" />
                 <div>
-                  <strong>Livraison gratuite</strong>
-                  <span>Sur Kourou uniquement</span>
+                  <p className="order-info-title">Délai de livraison</p>
+                  <p className="order-info-text">Livraison à partir du mardi ou mercredi au plus tard</p>
+                  <p className="order-info-sub">Livraison gratuite à Kourou</p>
                 </div>
               </div>
             </div>
           </CardContent>
         </Card>
 
-        {/* CTA Middle */}
-        <div className="console-cta-section">
-          <p>Une question ? Besoin de conseils ?</p>
-          <CTAButtons variant="middle" />
-        </div>
-
-        {/* Trust badges */}
-        <div className="console-trust">
-          <div className="trust-item">
-            <CheckCircle className="trust-icon" />
-            <span>Produits 100% neufs</span>
-          </div>
-          <div className="trust-item">
-            <Star className="trust-icon" />
-            <span>Sélection qualité</span>
-          </div>
-          <div className="trust-item">
-            <CreditCard className="trust-icon" />
-            <span>Paiement sécurisé</span>
-          </div>
-          <div className="trust-item">
-            <Truck className="trust-icon" />
-            <span>Livraison gratuite Kourou</span>
-          </div>
-        </div>
-
-        {/* Final CTA */}
-        <div className="console-cta-final">
-          <h3>Prêt à jouer ?</h3>
-          <p>Contactez-nous pour passer commande</p>
-          <CTAButtons variant="final" />
+        {/* CTA Buttons */}
+        <div className="console-cta-group">
+          <Button 
+            asChild
+            size="lg"
+            className="console-cta-primary"
+          >
+            <a 
+              href="https://wa.me/594694458584" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <MessageCircle className="mr-2 h-5 w-5" />
+              Demander un devis
+            </a>
+          </Button>
         </div>
 
         {/* Back Navigation Bottom */}
